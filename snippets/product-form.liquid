@@ -30,6 +30,8 @@
     {% endfor %}
   </select>
 
+  <div id="infiniteoptions-container"></div>
+  
   {% if settings.quantity_enable %}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
       <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
