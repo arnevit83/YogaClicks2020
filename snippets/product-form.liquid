@@ -13,7 +13,7 @@
       {% endif %}
     {% endfor %}
   {% endunless %}
-
+  <div class="ruk_rating_snippet" data-sku="{{  current_variant.sku }}"></div> 
   <select name="id" id="ProductSelect-{{ section_id }}" class="product-single__variants no-js">
     {% for variant in product.variants %}
       {% if variant.available %}

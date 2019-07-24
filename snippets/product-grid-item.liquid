@@ -121,6 +121,12 @@
       </div>
 
       <div class="grid-product__meta">
+        
+        {% capture the_snippet_review_avg %}{% include 'ssw-widget-avg-rate-listing' %}{% endcapture %}
+        {% unless the_snippet_review_avg contains 'Liquid error' %}
+        {{ the_snippet_review_avg }}
+        {% endunless %}
+        
         <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title }}</div>
         {% if settings.vendor_enable %}
           <div class="grid-product__vendor">{{ product.vendor }}</div>
@@ -150,9 +156,11 @@
             {% endif %}
           {% endif %}
         </div>
+        {% comment %} 
         {% if settings.enable_product_reviews %}
-          <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
+        <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
         {% endif %}
+        {% endcomment %}
       </div>
     </a>
   </div>

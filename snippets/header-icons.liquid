@@ -4,6 +4,9 @@
 
 <div class="site-nav">
   <div class="site-nav__icons">
+    
+    {% capture the_snippet_auth %}{% include 'socialshopwave-widget-auth' %}{% endcapture %}
+    {% if the_snippet_auth contains 'Liquid error' %}
     {% if shop.customer_accounts_enabled %}
       <a class="site-nav__link site-nav__link--icon small--hide" href="/account">
         {% include 'icon-user' %}
@@ -15,6 +18,25 @@
           {% endif %}
         </span>
       </a>
+    {% endif %}
+    {% else %}
+    {% if shop.customer_accounts_enabled %}
+    {% if customer %}
+    <a class="ssw-dropdown-toggle site-nav__link site-nav__link--icon small--hide" data-toggle="ssw-dropdown" href="javascript:void(0);">
+      {% include 'icon-user' %}
+    </a>
+    <ul class="ssw-dropdown-menu" role="menu" aria-labelledby="dLabel">
+      <li id="customer_myorders_li"><a tabindex="-1" href="/account">{{ 'socialshopwave.my_orders' | t }}</a></li>
+      {% include 'ssw-widget-dropdown' %}
+      <li class="ssw-divider"></li>
+      <li><a id="customer_logout_link" tabindex="-1" href="/account/logout">{{ 'socialshopwave.logout' | t }}</a></li>
+    </ul>
+    {% else %}
+    <a class="site-nav__link site-nav__link--icon small--hide" id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">
+      {% include 'icon-user' %}
+    </a>
+    {% endif %}
+    {% endif %}
     {% endif %}
 
     {% if section.settings.header_search_enable %}

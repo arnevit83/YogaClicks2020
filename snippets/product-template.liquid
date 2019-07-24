@@ -48,9 +48,7 @@
             {% endif %}
 
             {% if settings.vendor_enable %}
-              <div class="product-single__vendor">
-                {{ product.vendor }}
-              </div>
+              <div id="product-vendor" class="product-single__vendor">{{ product.vendor }}</div>
             {% endif %}
 
             {% if isModal %}

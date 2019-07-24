@@ -153,6 +153,8 @@
               {% endfor %}
             {% endif %}
 
+            {% capture the_snippet_auth %}{% include 'socialshopwave-widget-auth' %}{% endcapture %}
+            {% if the_snippet_auth contains 'Liquid error' %}
             {% if shop.customer_accounts_enabled %}
               {%- assign animation_row = animation_row | plus: 1 -%}
               <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }}">
@@ -165,6 +167,21 @@
                 </a>
               </div>
             {% endif %}
+            {% else %}
+            {% if shop.customer_accounts_enabled %}
+            <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }}">
+              {% if customer %}
+              <a class="mobile-nav__link" tabindex="-1" href="/account">{{ 'socialshopwave.my_orders' | t }}</a>
+              <a class="mobile-nav__link" tabindex="-1" href="/pages/profile-edit">{{ 'socialshopwave.edit_profile' | t }}</a>
+              <a class="mobile-nav__link" id="customer_logout_link" tabindex="-1" href="/account/logout">{{ 'socialshopwave.logout' | t }}</a>
+              {% else %}
+              <a class="mobile-nav__link" id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.log_in' | t }}</a>
+              <a class="mobile-nav__link" id="customer_register_link" data-toggle="ssw-modal" data-target="#signup_modal" href="javascript:void(0);" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.sign_up' | t }}</a>
+              {% endif %}
+            </div>
+            {% endif %}
+            {% endif %}
+
           </div>
         </li>
       {% endif %}

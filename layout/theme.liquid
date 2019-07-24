@@ -24,6 +24,9 @@
   {% include 'font-face' %}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
 
+  {{ 'YC.scss.css' | asset_url | stylesheet_tag }}
+ 
+
   {% style %}
     .collection-item__title {
       font-size: {{ settings.type_collection_size | times: 0.8 }}px;
@@ -76,9 +79,14 @@
   {%- if template contains 'customers' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {%- endif -%}
+{% section 'filter-menu-settings' %}
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
+{% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
+            {% unless the_snippet_content contains 'Liquid error' %}
+              {{ the_snippet_content }}
+            {% endunless %}
 
   {% comment %}
     Enable below script if page transitions enabled

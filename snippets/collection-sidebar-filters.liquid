@@ -16,7 +16,9 @@
   </ul>
 {% endif %}
 
+{% include 'filter-menu' %}
 {% for block in section.blocks %}
+
   {%- assign collapsed_state = block.settings.collapsed -%}
 
   <div class="collection-sidebar__group--{{ block.id }}" {{ block.shopify_attributes }}>

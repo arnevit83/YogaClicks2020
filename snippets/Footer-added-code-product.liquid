@@ -1,0 +1,26 @@
+<script src="https://widget.reviews.co.uk/product/dist.js"></script>
+
+<script src="https://widget.reviews.co.uk/rating-snippet/dist.js"></script>
+<link rel="stylesheet" href="https://widget.reviews.co.uk/rating-snippet/dist.css" />
+
+<script>
+ratingSnippet("ruk_rating_snippet",{
+store: "yogaclicks-store",
+color: "#f47e27",
+linebreak: true,
+text: "Reviews"
+});
+
+window.onload = function () { $("[data-shipping-toggle]").each(function() {
+    $(this).attr("data-shipping-toggle") === $("#product-vendor").text() && $(this).show()
+}) }
+</script> 
+
+<script src="https://widget.reviews.co.uk/rich-snippet/dist.js"></script>
+<script>
+richSnippet({
+    store: 'yogaclicks-store',
+    sku: '{{ product.handle }};{{ product.variants | map: "sku" | join: ";" }};{{ product.variants | map: "id" | join: ";" }}'
+});
+</script>
+

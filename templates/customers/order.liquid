@@ -10,6 +10,7 @@
 
   <header class="section-header">
     <h1 class="section-header__title">{{ 'customer.order.title' | t: name: order.name }}</h1>
+    <a href="/account/" class="btn btn--secondary btn--small section-header__link">Back to account</a>
   </header>
 
   <div class="grid">
@@ -128,7 +129,11 @@
           </tr>
         </tfoot>
       </table>
-
+      <p><br />If you have bought digital content.
+          <a href='/apps/downloads/customers/{{customer.id}}/orders/{{order.id}}/shopify_show' style="text-decoration: underline;">
+            View it here
+          </a>.
+        </p>
       <hr class="hr--small hr--clear">
 
     </div>
