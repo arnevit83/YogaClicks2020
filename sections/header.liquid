@@ -1,4 +1,4 @@
-{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
 {%- assign toolbar_menu = linklists[section.settings.toolbar_menu] -%}
 
 {%- assign logo_alignment = 'left' -%}
@@ -89,7 +89,7 @@
                     <div class="site-nav small--hide">
                       <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition">
                         {% include 'icon-search' %}
-                        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
+                        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007313' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
                       </a>
                     </div>
                   {% endif %}
@@ -105,7 +105,7 @@
                     class="site-nav__link site-nav__link--icon js-drawer-open-nav"
                     aria-controls="NavDrawer">
                     {% include 'icon-hamburger' %}
-                    <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
+                    <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.drawers.navigation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.drawers.navigation' | t }}{% endcapture %}{% include 'ly-static-string' with '15007314' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
                   </button>
                 </div>
               </div>
@@ -139,13 +139,13 @@
                 <input type="hidden" name="type" value="{{ settings.search_type }}">
                 <button type="submit" class="text-link site-header__search-btn">
                   {% include 'icon-search' %}
-                  <span class="icon__fallback-text">{{ 'general.search.submit' | t }}</span>
+                  <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '15007315' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
                 </button>
-                <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'general.search.placeholder' | t }}" class="site-header__search-input" aria-label="{{ 'general.search.placeholder' | t }}">
+                <input type="search" name="q" value="{{ search.terms | escape }}" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.search.placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '15007316' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" class="site-header__search-input" aria-label="{% comment %}ly_i18n_replace_for_[ 'general.search.placeholder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.placeholder' | t }}{% endcapture %}{% include 'ly-static-string' with '15007316' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
               </form>
               <button type="button" class="js-search-header-close text-link site-header__search-btn">
                 {% include 'icon-close' %}
-                <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+                <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.close_modal' | t | json ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.close_modal' | t | json }}{% endcapture %}{% include 'ly-static-string' with '15007317' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape | json }}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
               </button>
             </div>
           </div>

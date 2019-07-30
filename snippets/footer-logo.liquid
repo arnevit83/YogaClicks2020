@@ -1,4 +1,4 @@
-{% if block.settings.logo %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if block.settings.logo %}
   {% style %}
     .footer__logo a {
       height: {{ block.settings.desktop_logo_height }}px;
@@ -7,7 +7,7 @@
   {%- assign footer_logo_size = block.settings.desktop_logo_height | prepend: 'x' -%}
   <div class="footer__logo">
     <a href="/">
-      <img src="{{ block.settings.logo | img_url: footer_logo_size, scale: 2 }}" alt="{{ block.settings.logo.alt | default: shop.name }}">
+      <img src="{{ block.settings.logo | img_url: footer_logo_size, scale: 2 }}" alt="{{ block.settings.logo.alt | default: langify_shop_name }}">
     </a>
   </div>
 {% endif %}

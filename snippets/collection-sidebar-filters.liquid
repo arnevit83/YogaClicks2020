@@ -1,4 +1,4 @@
-{% if current_tags %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if current_tags %}
   <ul class="no-bullets tag-list">
     {% for tag in current_tags %}
       {%- assign tag_text = tag -%}
@@ -274,14 +274,14 @@
               {% for link in linklists[block.settings.menu].links %}
                 <li {% if link.current %}class="tag--active"{% endif %}>
                   <a href="{{ link.url }}" class="no-ajax">
-                    {{ link.title }}
+                    {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                   </a>
                   {% if link.links %}
                     <ul class="no-bullets tag-list">
                       {% for childlink in link.links %}
                         <li {% if childlink.current %}class="tag--active"{% endif %}>
                           <a href="{{ childlink.url }}" class="no-ajax">
-                            {{ childlink.title }}
+                            {% comment %}ly_code_replace_for_[ childlink.title ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                           </a>
                         </li>
                       {% endfor %}

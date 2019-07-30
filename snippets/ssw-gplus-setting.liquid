@@ -1,4 +1,4 @@
-        window.addEventListener('sswoauthcallback', function (e) {
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}        window.addEventListener('sswoauthcallback', function (e) {
             if (e.detail && e.detail.service == 'gplus') {
 ssw.ajax({
       type: 'POST',

@@ -1,19 +1,19 @@
-{%- assign newsletter_form_id = 'newsletter-' | append: section_id -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign newsletter_form_id = 'newsletter-' | append: section_id -%}
 {% form 'customer', id: newsletter_form_id %}
   {% if form.posted_successfully? %}
-    <div class="note note--success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
+    <div class="note note--success">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_confirmation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_confirmation' | t }}{% endcapture %}{% include 'ly-static-string' with '15007440' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</div>
   {% endif %}
   {% if form.errors and form.context == snippet_context %}
     {{ form.errors | default_errors }}
   {% endif %}
 
-  <label for="Email-{{ section_id }}" class="hidden-label">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+  <label for="Email-{{ section_id }}" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_email' | t }}{% endcapture %}{% include 'ly-static-string' with '15007441' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
   <input type="hidden" name="contact[tags]" value="prospect,newsletter">
   <input type="hidden" name="contact[context]" value="{{ snippet_context }}">
   <div class="input-group newsletter__input-group">
-    <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" name="contact[email]" id="Email-{{ section_id }}" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+    <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.newsletter_email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.newsletter_email' | t }}{% endcapture %}{% include 'ly-static-string' with '15007441' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" name="contact[email]" id="Email-{{ section_id }}" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
     <button type="submit" class="btn input-group-btn" name="commit">
-      <span class="form__submit--large">{{ 'general.newsletter_form.submit' | t }}</span>
+      <span class="form__submit--large">{% comment %}ly_i18n_replace_for_[ 'general.newsletter_form.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.newsletter_form.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '15007442' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
       <span class="form__submit--small">
         {% include 'icon-arrow-right' %}
       </span>

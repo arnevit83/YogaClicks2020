@@ -1,4 +1,4 @@
-{%- assign count = section.settings.count | times: 6 -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign count = section.settings.count | times: 6 -%}
 {%- assign grid_item_width = 'small--one-half medium-up--one-sixth' -%}
 
 {% if section.settings.divider %}<div class="section--divider">{% endif %}

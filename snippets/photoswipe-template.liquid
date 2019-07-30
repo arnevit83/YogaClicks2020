@@ -1,4 +1,4 @@
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="pswp__bg"></div>
   <div class="pswp__scroll-wrap">
     <div class="pswp__container">
@@ -8,15 +8,15 @@
     </div>
 
     <div class="pswp__ui pswp__ui--hidden">
-      <button class="btn btn--body btn--circle pswp__button pswp__button--arrow--left" title="{{ 'general.pagination.previous' | t }}">
+      <button class="btn btn--body btn--circle pswp__button pswp__button--arrow--left" title="{% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% include 'ly-static-string' with '15007457' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
         {% include 'icon-chevron-left' %}
       </button>
 
-      <button class="btn btn--body btn--circle btn--large pswp__button pswp__button--close" title="{{ 'general.accessibility.close_modal' | t }}">
+      <button class="btn btn--body btn--circle btn--large pswp__button pswp__button--close" title="{% comment %}ly_i18n_replace_for_[ 'general.accessibility.close_modal' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.close_modal' | t }}{% endcapture %}{% include 'ly-static-string' with '15007458' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
         {% include 'icon-close' %}
       </button>
 
-      <button class="btn btn--body btn--circle pswp__button pswp__button--arrow--right" title="{{ 'general.pagination.next' | t }}">
+      <button class="btn btn--body btn--circle pswp__button pswp__button--arrow--right" title="{% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% include 'ly-static-string' with '15007459' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
         {% include 'icon-chevron-right' %}
       </button>
     </div>

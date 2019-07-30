@@ -1,8 +1,8 @@
-{% if settings.show_breadcrumbs %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if settings.show_breadcrumbs %}
 
   {% unless template.name == 'index' or template.name == 'cart' %}
   <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
-    <a href="/" title="{{ 'general.breadcrumbs.home_link_title' | t }}">{{ 'general.breadcrumbs.home' | t }}</a>
+    <a href="/" title="{% comment %}ly_i18n_replace_for_[ 'general.breadcrumbs.home_link_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.breadcrumbs.home_link_title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007335' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">{% comment %}ly_i18n_replace_for_[ 'general.breadcrumbs.home' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.breadcrumbs.home' | t }}{% endcapture %}{% include 'ly-static-string' with '15007336' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
 
     {% if template.name == 'product' %}
 
@@ -10,7 +10,7 @@
         <span class="divider" aria-hidden="true">/</span>
         {% if collection.handle %}
           {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-          {{ collection.title | link_to: url }}
+          {% comment %}ly_code_replace_for_[ collection.title | link_to: url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: url }}{% comment %}ly_code_replace_end{% endcomment %}
         {% endif %}
       {% endif %}
       <span class="divider" aria-hidden="true">/</span>
@@ -22,7 +22,7 @@
       {% if current_tags %}
 
         {% capture url %}/collections/{{ collection.handle }}{% endcapture %}
-        {{ collection.title | link_to: url }}
+        {% comment %}ly_code_replace_for_[ collection.title | link_to: url ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation | link_to: url }}{% comment %}ly_code_replace_end{% endcomment %}
 
         <span class="divider" aria-hidden="true">/</span>
 
@@ -44,7 +44,7 @@
 
       <span class="divider" aria-hidden="true">/</span>
       {% if current_tags %}
-        {{ blog.title | link_to: blog.url }}
+        {% comment %}ly_code_replace_for_[ blog.title | link_to: blog.url ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation | link_to: blog.url }}{% comment %}ly_code_replace_end{% endcomment %}
         <span class="divider" aria-hidden="true">/</span>
         <span>{{ current_tags | join: " + " }}</span>
       {% endif %}
@@ -52,7 +52,7 @@
     {% elsif template.name == 'article' %}
 
       <span class="divider" aria-hidden="true">/</span>
-      {{ blog.title | link_to: blog.url }}
+      {% comment %}ly_code_replace_for_[ blog.title | link_to: blog.url ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation | link_to: blog.url }}{% comment %}ly_code_replace_end{% endcomment %}
       <span class="divider" aria-hidden="true">/</span>
 
     {% elsif template.name == 'page' %}
@@ -62,7 +62,7 @@
     {% else %}
 
       <span class="divider" aria-hidden="true">/</span>
-      <span>{{ page_title }}</span>
+      <span>{{ langify_title }}</span>
 
     {% endif %}
   </nav>

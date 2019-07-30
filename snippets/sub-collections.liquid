@@ -1,4 +1,4 @@
-{%- assign old_collection = collection -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign old_collection = collection -%}
 <div class="grid grid--uniform grid--collection{% unless settings.collection_grid_gutter %} grid--no-gutters{% endunless %}">
   {% for sub_collection_link in sub_collection_links %}
     {% if sub_collection_link.url contains '/collections/' %}

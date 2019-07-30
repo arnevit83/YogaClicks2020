@@ -1,3 +1,4 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 {% unless limit %}
   {%- assign limit = main_menu.links.size -%}
 {% endunless %}
@@ -25,7 +26,7 @@
       {% if has_dropdown %}aria-haspopup="true"{% endif %}>
 
       <a href="{{ link.url }}" class="site-nav__link site-nav__link--underline{% if has_dropdown %} site-nav__link--has-dropdown{% endif %}">
-        {{ link.title }}
+        {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
       </a>
       {% if is_megamenu %}
         {%- assign previous_column_type = '' -%}
@@ -66,7 +67,7 @@
                   {% endif %}
 
                   <div class="h5">
-                    <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level">{{ childlink.title }}</a>
+                    <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--top-level">{% comment %}ly_code_replace_for_[ childlink.title ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
                   </div>
 
                   {% if childlink.levels > 0 %}
@@ -78,7 +79,7 @@
                   {% for grandchildlink in childlink.links %}
                     <div>
                       <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">
-                        {{grandchildlink.title}}
+                        {% comment %}ly_code_replace_for_[grandchildlink.title]_begin{% endcomment %}{% include 'ly-title' with grandchildlink %}{{ly_translation}}{% comment %}ly_code_replace_end{% endcomment %}
                       </a>
                     </div>
                   {% endfor %}
@@ -97,7 +98,7 @@
 
             <li class="{% if has_sub_dropdown %} site-nav__deep-dropdown-trigger{% endif %}">
               <a href="{{ childlink.url }}" class="site-nav__dropdown-link site-nav__dropdown-link--second-level {% if has_sub_dropdown %} site-nav__dropdown-link--has-children{% endif %}">
-                {{ childlink.title | escape }}
+                {% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
                 {% if has_sub_dropdown %}
                   {% include 'icon-chevron-down' %}
                 {% endif %}
@@ -106,7 +107,7 @@
                 <ul class="site-nav__deep-dropdown">
                   {% for grandchildlink in childlink.links %}
                     <li>
-                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">{{ grandchildlink.title | escape }}</a>
+                      <a href="{{ grandchildlink.url }}" class="site-nav__dropdown-link">{% comment %}ly_code_replace_for_[ grandchildlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with grandchildlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}</a>
                     </li>
                   {% endfor %}
                 </ul>

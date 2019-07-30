@@ -1,11 +1,11 @@
-{% unless customer %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% unless customer %}
 <div class='ssw-social-login-widget'>
   <div class="ssw-socialconnect">
     {% include 'ssw-social-buttons' %}
     <div class="ssw-simple-login ssw-social-btn">
-      <a title="{{ 'socialshopwave.log_in' | t }}" href="javascript://" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">
+      <a title="{% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007837' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" href="javascript://" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">
         <i class="ssw-icon-at"></i>
-        <span>{{ 'socialshopwave.social_login_simple' | t }}</span>
+        <span>{% comment %}ly_i18n_replace_for_[ 'socialshopwave.social_login_simple' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.social_login_simple' | t }}{% endcapture %}{% include 'ly-static-string' with '15007838' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
       </a>
     </div>
   </div>

@@ -1,4 +1,4 @@
-{% if shop.customer_accounts_enabled %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.customer_accounts_enabled %}
   {% if customer %}
     {% capture the_snippet_auth %}{% include 'socialshopwave-widget-auth' %}{% endcapture %}
     {% unless the_snippet_auth contains 'Liquid error' %}
@@ -7,11 +7,11 @@
   {% else %}
     <span class="ssw-auth-dropdown">
           <span class="ssw-auth-dropdown-register">
-            <a href="/account/register">{{ 'socialshopwave.sign_up' | t }}</a>
+            <a href="/account/register">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.sign_up' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.sign_up' | t }}{% endcapture %}{% include 'ly-static-string' with '15007723' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
           </span>
           <span class="ssw-dropdown">
             <a href="javascript:void(0);" class="ssw-dropdown-toggle" data-toggle="ssw-dropdown">
-              {{ 'socialshopwave.log_in' | t }}
+              {% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007724' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
               <i class="ssw-icon-down-open-big"></i>
             </a>
             <ul class="ssw-dropdown-menu" role="menu" aria-labelledby="dLabel">
@@ -19,17 +19,17 @@
                 <form method="post" action="/account/login">
                   <div class="ssw-auth-dropdown-message"></div>
                   <div class="ssw-control-group">
-                    <input name="customer[email]" type="email" placeholder="{{ 'socialshopwave.email_address' | t }}" class="ssw-input-block-level" required="required">
+                    <input name="customer[email]" type="email" placeholder="{% comment %}ly_i18n_replace_for_[ 'socialshopwave.email_address' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.email_address' | t }}{% endcapture %}{% include 'ly-static-string' with '15007725' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" class="ssw-input-block-level" required="required">
                   </div>
                   <div class="ssw-control-group">
-                    <input name="customer[password]" type="password" placeholder="{{ 'socialshopwave.password' | t }}" class="ssw-input-block-level" required="required">
+                    <input name="customer[password]" type="password" placeholder="{% comment %}ly_i18n_replace_for_[ 'socialshopwave.password' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.password' | t }}{% endcapture %}{% include 'ly-static-string' with '15007726' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}" class="ssw-input-block-level" required="required">
                   </div>
                   <div class="ssw-control-group">
-                    <a href="/account/login#recover" class="ssw-pull-right">{{ 'socialshopwave.forgot_password' | t }}</a>
+                    <a href="/account/login#recover" class="ssw-pull-right">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.forgot_password' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.forgot_password' | t }}{% endcapture %}{% include 'ly-static-string' with '15007727' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
                     <div class="ssw-clearfix"></div>
                   </div>
                   <div class="ssw-control-group">
-                    <input type="submit" class="btn button ssw-input-block-level" value="{{ 'socialshopwave.log_in' | t }}">
+                    <input type="submit" class="btn button ssw-input-block-level" value="{% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007724' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
                   </div>
                 </form>
               </li>

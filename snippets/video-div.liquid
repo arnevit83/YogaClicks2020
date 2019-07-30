@@ -1,4 +1,4 @@
-{% if url contains 'youtube.com/watch' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if url contains 'youtube.com/watch' %}
   {%- assign video_id = url | split: 'v=' -%}
   {%- assign video_id = video_id[1] | split: '&' | first -%}
   <div

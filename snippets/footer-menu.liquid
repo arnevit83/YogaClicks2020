@@ -1,10 +1,10 @@
-{% if linklists[block.settings.menu].links.size > 0 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if linklists[block.settings.menu].links.size > 0 %}
   {% if block.settings.show_footer_title %}
     <p class="h4 footer__title small--hide">
-      {{ linklists[block.settings.menu].title }}
+      {% comment %}ly_code_replace_for_[ linklists[block.settings.menu].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[block.settings.menu] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
     </p>
     <button type="button" class="h4 footer__title collapsible-trigger collapsible-trigger-btn medium-up--hide" aria-controls="Footer-{{ block.id }}">
-      {{ linklists[block.settings.menu].title }}
+      {% comment %}ly_code_replace_for_[ linklists[block.settings.menu].title ]_begin{% endcomment %}{% include 'ly-title' with linklists[block.settings.menu] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
       {% include 'collapsible-icons' %}
     </button>
   {% endif %}
@@ -16,7 +16,7 @@
       <div class="footer__collapsible{% unless block.settings.show_footer_title %} footer_collapsible--disabled{% endunless %}">
         <ul class="no-bullets site-footer__linklist">
           {% for link in linklists[block.settings.menu].links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            <li><a href="{{ link.url }}">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a></li>
           {% endfor %}
         </ul>
       </div>

@@ -1,4 +1,4 @@
-{%- assign per_row = section.settings.per_row -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign per_row = section.settings.per_row -%}
 {%- assign paginate_by = per_row | times: section.settings.rows_per_page -%}
 
 {% paginate collection.products by paginate_by %}
@@ -10,7 +10,7 @@
 
   {% if collection.description != blank %}
     <div class="rte">
-      {{ collection.description }}
+      {% comment %}ly_code_replace_for_[ collection.description ]_begin{% endcomment %}{% include 'ly-description' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
     </div>
     <hr class="hr--clear hr--small">
   {% endif %}
@@ -27,7 +27,7 @@
         class="js-drawer-open-collection-filters btn btn--tertiary{% unless current_filter_size == 0 %} btn--tertiary-active{% endunless %}"
         aria-controls="FilterDrawer">
         {% include 'icon-filter' %}
-        {{ 'collections.filters.title_tags' | t }}
+        {% comment %}ly_i18n_replace_for_[ 'collections.filters.title_tags' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.filters.title_tags' | t }}{% endcapture %}{% include 'ly-static-string' with '15007288' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         {% if current_filter_size > 0 %}
           ({{ current_filter_size }})
         {% endif %}
@@ -35,7 +35,7 @@
     </div>
 
     <div class="collection-filter__item collection-filter__item--count">
-      {{ 'collections.general.items_with_count' | t: count: collection.products_count }}
+      {% comment %}ly_i18n_replace_for_[ 'collections.general.items_with_count' | t: count: collection.products_count ]_begin{% endcomment %}{% if collection.products_count  == 0 %}{% capture ly_template %}{{ 'collections.general.items_with_count' | t: count: collection.products_count }}{% endcapture %}{% include 'ly-static-string' with '15007290' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = collection.products_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif collection.products_count  == 1 %}{% capture ly_template %}{{ 'collections.general.items_with_count' | t: count: collection.products_count }}{% endcapture %}{% include 'ly-static-string' with '15007289' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = collection.products_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif collection.products_count  == 2 %}{% capture ly_template %}{{ 'collections.general.items_with_count' | t: count: collection.products_count }}{% endcapture %}{% include 'ly-static-string' with '15007290' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = collection.products_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'collections.general.items_with_count' | t: count: collection.products_count }}{% endcapture %}{% include 'ly-static-string' with '15007290' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = collection.products_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
     </div>
 
     <div class="collection-filter__item collection-filter__item--sort">
@@ -45,9 +45,9 @@
         {% if sort_by == collection.default_sort_by %}
           {%- assign default_sorted = true -%}
         {% endif %}
-        <label for="SortBy" class="hidden-label">{{ 'collections.sorting.title' | t }}</label>
+        <label for="SortBy" class="hidden-label">{% comment %}ly_i18n_replace_for_[ 'collections.sorting.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.sorting.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007293' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
         <select name="SortBy" id="SortBy">
-          <option value="title-ascending"{% if sort_by == collection.default_sort_by %} selected="selected"{% endif %}>{{ 'collections.sorting.title' | t }}</option>
+          <option value="title-ascending"{% if sort_by == collection.default_sort_by %} selected="selected"{% endif %}>{% comment %}ly_i18n_replace_for_[ 'collections.sorting.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.sorting.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007293' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</option>
           {% for option in collection.sort_options %}
             <option value="{{ option.value }}" {% unless default_sorted %}{% if option.value == sort_by %}selected="selected"{% endif %}{% endunless %}>{{ option.name }}</option>
           {% endfor %}
@@ -74,7 +74,7 @@
       {% include 'product-grid-item' %}
     {% else %}
       <div class="grid__item">
-        <p>{{ 'collections.general.no_matches' | t }}</p>
+        <p>{% comment %}ly_i18n_replace_for_[ 'collections.general.no_matches' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.no_matches' | t }}{% endcapture %}{% include 'ly-static-string' with '15007294' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
       </div>
     {% endfor %}
 

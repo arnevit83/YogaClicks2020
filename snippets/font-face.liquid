@@ -1,4 +1,4 @@
-{%- assign header_font = settings.type_header_font_family -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign header_font = settings.type_header_font_family -%}
 {%- assign base_font = settings.type_base_font_family -%}
 {%- assign base_font_bold = base_font | font_modify: 'weight', 'bolder' -%}
 {%- assign base_font_italic = base_font | font_modify: 'style', 'italic' -%}

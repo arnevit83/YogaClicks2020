@@ -1,4 +1,4 @@
-{% assign ssw_review_enabled = 1 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign ssw_review_enabled = 1 %}
 {% if shop.metafields.ssw['review_enabled'] %}
   {% assign ssw_review_enabled = shop.metafields.ssw['review_enabled'] %}
 {% endif %}

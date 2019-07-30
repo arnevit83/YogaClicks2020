@@ -1,13 +1,13 @@
-{% assign campaign_id = ssw-widget-share-links %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% assign campaign_id = ssw-widget-share-links %}
 {% if campaign_id %}
   <div class="ssw-widget-share-links-html-{{ campaign_id }}"
-       id="ssw-widget-share-links-html-{{ campaign_id }}-{{ product.id }}" data-title="{{ product.title|strip_html }}"
+       id="ssw-widget-share-links-html-{{ campaign_id }}-{{ product.id }}" data-title="{% comment %}ly_code_replace_for_[ product.title|strip_html ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation|strip_html }}{% comment %}ly_code_replace_end{% endcomment %}"
        data-handle="{{ product.handle }}"
        data-images="{{ product.featured_image | product_img_url: lightbox_image_size }}"
        data-campaign-id="{{ campaign_id }}"></div>
 {% else %}
   <div class="ssw-widget-share-links-html-{{ campaign_id }}" id="ssw-widget-share-links-html-{{ product.id }}"
-       data-title="{{ product.title|strip_html }}" data-handle="{{ product.handle }}"
+       data-title="{% comment %}ly_code_replace_for_[ product.title|strip_html ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation|strip_html }}{% comment %}ly_code_replace_end{% endcomment %}" data-handle="{{ product.handle }}"
        data-images="{{ product.featured_image | product_img_url: lightbox_image_size }}"></div>
 {% endif %}
 <script type="text/javascript" defer>

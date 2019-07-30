@@ -1,4 +1,4 @@
-{%- assign link_count = 0 -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign link_count = 0 -%}
 {% for link in main_menu.links %}
   {%- assign link_count = link_count | plus: 1 -%}
 {% endfor %}

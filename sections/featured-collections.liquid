@@ -1,4 +1,4 @@
-{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if section.settings.divider %}<div class="section--divider">{% endif %}
 
 <div class="page-width">
   {% if section.settings.title != blank %}
@@ -38,7 +38,7 @@
         <div class="grid">
           <div class="grid__item">
             <div class="rte">
-              {{ 'home_page.onboarding.no_content' | t }}
+              {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.no_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.no_content' | t }}{% endcapture %}{% include 'ly-static-string' with '15007305' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
             </div>
           </div>
         </div>

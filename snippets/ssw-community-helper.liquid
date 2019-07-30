@@ -1,4 +1,4 @@
-{% capture ssw_widget_community_bar %}{% include 'ssw-widget-community-bar' %}{% endcapture %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% capture ssw_widget_community_bar %}{% include 'ssw-widget-community-bar' %}{% endcapture %}
 {% unless ssw_widget_community_bar contains 'Liquid error' %}
 	{{ ssw_widget_community_bar }}
 {% endunless %}

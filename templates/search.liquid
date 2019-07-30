@@ -1,4 +1,4 @@
-{% paginate search.results by 12 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% paginate search.results by 12 %}
 
 <div class="page-width page-content">
 
@@ -8,7 +8,7 @@
     <div class="grid__item">
       <header class="section-header">
         <h1 class="section-header__title">
-          {{ 'general.search.title' | t }}
+          {% comment %}ly_i18n_replace_for_[ 'general.search.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15008195' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
         </h1>
       </header>
 
@@ -21,11 +21,11 @@
         <div data-section-id="{{ section.id }}" data-section-type="collection-template">
           <div class="section-header">
             <h2 class="section-header__title">
-              {{ 'general.search.result_count' | t: count: search.results_count }}
+              {% comment %}ly_i18n_replace_for_[ 'general.search.result_count' | t: count: search.results_count ]_begin{% endcomment %}{% if search.results_count  == 0 %}{% capture ly_template %}{{ 'general.search.result_count' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '15008197' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 1 %}{% capture ly_template %}{{ 'general.search.result_count' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '15008196' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% elsif search.results_count  == 2 %}{% capture ly_template %}{{ 'general.search.result_count' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '15008197' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% else %}{% capture ly_template %}{{ 'general.search.result_count' | t: count: search.results_count }}{% endcapture %}{% include 'ly-static-string' with '15008197' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.results_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
             </h2>
             {% if search.results_count == 0 %}
               <p>
-                {{ 'general.search.no_results_html' | t: terms: search.terms }}
+                {% comment %}ly_i18n_replace_for_[ 'general.search.no_results_html' | t: terms: search.terms ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.no_results_html' | t: terms: search.terms }}{% endcapture %}{% include 'ly-static-string' with '15008201' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = search.terms  %}{% assign ly_template = ly_template | replace: '[[terms]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
               </p>
             {% endif %}
           </div>
@@ -41,7 +41,7 @@
                   <div class="grid-search__page">
                     <a href="{{ item.url }}" class="grid-search__page-link">
                       <span class="grid-search__page-content">
-                        <span class="h4">{{ item.title }}</span>
+                        <span class="h4">{% comment %}ly_code_replace_for_[ item.title ]_begin{% endcomment %}{% include 'ly-title' with item %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</span>
                         {% if item.object_type == 'article' and item.image %}
                           {%- assign img_url = item.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
                           <img class="grid-product__image lazyload"
@@ -49,9 +49,9 @@
                               data-widths="[180, 360, 540]"
                               data-aspectratio="{{ item.image.aspect_ratio }}"
                               data-sizes="auto"
-                              alt="{{ item.title | escape }}">
+                              alt="{% comment %}ly_code_replace_for_[ item.title | escape ]_begin{% endcomment %}{% include 'ly-title' with item %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">
                         {% endif %}
-                        {{ item.content | strip_html | truncatewords: 60 }}
+                        {% comment %}ly_code_replace_for_[ item.content | strip_html | truncatewords: 60 ]_begin{% endcomment %}{% include 'ly-content' with item %}{{ ly_translation | strip_html | truncatewords: 60 }}{% comment %}ly_code_replace_end{% endcomment %}
                       </span>
                     </a>
                   </div>

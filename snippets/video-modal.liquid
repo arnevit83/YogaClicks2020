@@ -1,4 +1,4 @@
-<div id="VideoModal" class="modal modal--solid">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div id="VideoModal" class="modal modal--solid">
   <div class="modal__inner">
     <div class="modal__centered page-width text-center">
       <div class="modal__centered-content">
@@ -11,6 +11,6 @@
 
   <button type="button" class="modal__close js-modal-close text-link">
     {% include 'icon-close' %}
-    <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t | json }}</span>
+    <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.close_modal' | t | json ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.close_modal' | t | json }}{% endcapture %}{% include 'ly-static-string' with '15007911' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape | json }}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
   </button>
 </div>

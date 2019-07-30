@@ -1,4 +1,4 @@
-{% if template contains 'product' and product %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if template contains 'product' and product %}
   {% assign ssw_review_enabled = 1 %}
   {% if shop.metafields.ssw['review_enabled'] %}
     {% assign ssw_review_enabled = shop.metafields.ssw['review_enabled'] %}
@@ -64,12 +64,12 @@
         {% endif %}
         <span class="ssw-review-count">
               {% if ssw_count_rate == '0' %}
-                {{ 'socialshopwave.write_a_review' | t }}
+                {% comment %}ly_i18n_replace_for_[ 'socialshopwave.write_a_review' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.write_a_review' | t }}{% endcapture %}{% include 'ly-static-string' with '15007738' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
               {% else %}
                 {% if ssw_count_rate == '1' %}
-                  {{ 'socialshopwave.quantity_review2' | t: ssw_count_rate: ssw_count_rate }}
+                  {% comment %}ly_i18n_replace_for_[ 'socialshopwave.quantity_review2' | t: ssw_count_rate: ssw_count_rate ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.quantity_review2' | t: ssw_count_rate: ssw_count_rate }}{% endcapture %}{% include 'ly-static-string' with '15007740' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = ssw_count_rate  %}{% assign ly_template = ly_template | replace: '[[ssw_count_rate]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                 {% else %}
-                  {{ 'socialshopwave.quantity_reviews2' | t: ssw_count_rate: ssw_count_rate }}
+                  {% comment %}ly_i18n_replace_for_[ 'socialshopwave.quantity_reviews2' | t: ssw_count_rate: ssw_count_rate ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.quantity_reviews2' | t: ssw_count_rate: ssw_count_rate }}{% endcapture %}{% include 'ly-static-string' with '15007742' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = ssw_count_rate  %}{% assign ly_template = ly_template | replace: '[[ssw_count_rate]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                 {% endif %}
               {% endif %}
             </span>
@@ -85,12 +85,12 @@
             {% assign ssw_question_count = product.metafields.ssw[ssw_question_count_key] %}
           {% endif %}
           {% if ssw_question_count == 0 %}
-            <i class="ssw-icon-chat"></i>{{ 'socialshopwave.ask_question' | t }}
+            <i class="ssw-icon-chat"></i>{% comment %}ly_i18n_replace_for_[ 'socialshopwave.ask_question' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.ask_question' | t }}{% endcapture %}{% include 'ly-static-string' with '15007743' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
             {% else %}
             {% if ssw_question_count == 1 %}
-              <i class="ssw-icon-chat"></i>{{ 'socialshopwave.quantity_question' | t: ssw_question_count: ssw_question_count }}
+              <i class="ssw-icon-chat"></i>{% comment %}ly_i18n_replace_for_[ 'socialshopwave.quantity_question' | t: ssw_question_count: ssw_question_count ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.quantity_question' | t: ssw_question_count: ssw_question_count }}{% endcapture %}{% include 'ly-static-string' with '15007745' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = ssw_question_count  %}{% assign ly_template = ly_template | replace: '[[ssw_question_count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                 {% else %}
-              <i class="ssw-icon-chat"></i>{{ 'socialshopwave.quantity_questions' | t: ssw_question_count: ssw_question_count }}
+              <i class="ssw-icon-chat"></i>{% comment %}ly_i18n_replace_for_[ 'socialshopwave.quantity_questions' | t: ssw_question_count: ssw_question_count ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.quantity_questions' | t: ssw_question_count: ssw_question_count }}{% endcapture %}{% include 'ly-static-string' with '15007747' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = ssw_question_count  %}{% assign ly_template = ly_template | replace: '[[ssw_question_count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
             {% endif %}
           {% endif %}
           </span>
@@ -135,7 +135,7 @@
     {
       "@context": "http://schema.org/",
       "@type": "Product",
-      "name": {{ product.title | json }},
+      "name": {% comment %}ly_code_replace_for_[ product.title | json ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "{{ ssw_avg_rate }}",

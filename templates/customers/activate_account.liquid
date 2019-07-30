@@ -1,11 +1,11 @@
-<div class="page-width page-content">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="page-width page-content">
   <div class="grid">
     <div class="grid__item medium-up--one-third medium-up--push-one-third">
 
       <header class="section-header">
-        <h1 class="section-header__title">{{ 'customer.activate_account.title' | t }}</h1>
+        <h1 class="section-header__title">{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007968' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
         <br>
-        <p>{{ 'customer.activate_account.subtext' | t }}</p>
+        <p>{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.subtext' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.subtext' | t }}{% endcapture %}{% include 'ly-static-string' with '15007969' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</p>
       </header>
 
       <div class="form-vertical">
@@ -13,14 +13,14 @@
 
           {{ form.errors | default_errors }}
 
-          <label for="CustomerPassword">{{ 'customer.activate_account.password' | t }}</label>
+          <label for="CustomerPassword">{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.password' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.password' | t }}{% endcapture %}{% include 'ly-static-string' with '15007970' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
           <input type="password" value="" name="customer[password]" id="CustomerPassword" class="input-full">
 
-          <label for="CustomerPasswordConfirmation">{{ 'customer.activate_account.password_confirm' | t }}</label>
+          <label for="CustomerPasswordConfirmation">{% comment %}ly_i18n_replace_for_[ 'customer.activate_account.password_confirm' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.password_confirm' | t }}{% endcapture %}{% include 'ly-static-string' with '15007971' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
           <input type="password" value="" name="customer[password_confirmation]" id="CustomerPasswordConfirmation" class="input-full">
 
           <button type="submit" class="btn">
-            {{ 'customer.activate_account.submit' | t }}
+            {% comment %}ly_i18n_replace_for_[ 'customer.activate_account.submit' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'customer.activate_account.submit' | t }}{% endcapture %}{% include 'ly-static-string' with '15007972' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
           </button>
         {% endform %}
       </div>

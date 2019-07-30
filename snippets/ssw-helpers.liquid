@@ -1,4 +1,4 @@
-{% capture ssw_login_helper %}{% include 'ssw-login-helper' %}{% endcapture %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% capture ssw_login_helper %}{% include 'ssw-login-helper' %}{% endcapture %}
 {% unless ssw_login_helper contains 'Liquid error' %}
 	{{ ssw_login_helper }}
 {% endunless %}

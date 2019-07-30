@@ -1,4 +1,4 @@
-<div class="grid">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="grid">
   <div class="grid__item medium-up--one-quarter">
     <span class="h5 comment-author">{{ comment.author }}</span>
     <span class="comment-date">
@@ -7,7 +7,7 @@
   </div>
   <div class="grid__item medium-up--three-quarters">
     <div class="rte">
-      {{ comment.content }}
+      {% comment %}ly_code_replace_for_[ comment.content ]_begin{% endcomment %}{% include 'ly-content' with comment %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
     </div>
   </div>
 </div>

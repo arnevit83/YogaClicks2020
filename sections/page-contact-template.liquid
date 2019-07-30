@@ -1,4 +1,4 @@
-{% if section.settings.page_title_enable or section.settings.page_content_enable %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if section.settings.page_title_enable or section.settings.page_content_enable %}
   <div class="page-width page-content{% if section.blocks.size > 0 %} page-content--with-blocks{% endif %}">
 
     <div class="grid">
@@ -7,13 +7,13 @@
 
         {% if section.settings.page_title_enable %}
           <header class="section-header">
-            <h1 class="section-header__title">{{ page.title }}</h1>
+            <h1 class="section-header__title">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
           </header>
         {% endif %}
 
         {% if section.settings.page_content_enable %}
           <div class="rte text-spacing">
-            {{ page.content }}
+            {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
           </div>
         {% endif %}
 

@@ -1,10 +1,10 @@
-<div class="page-width page-content">
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="page-width page-content">
 
   {% include 'breadcrumbs' %}
 
   {% if section.settings.title_enable %}
     <header class="section-header">
-      <h1 class="section-header__title">{{ 'collections.general.catalog_title' | t }}</h1>
+      <h1 class="section-header__title">{% comment %}ly_i18n_replace_for_[ 'collections.general.catalog_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.catalog_title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007318' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</h1>
     </header>
   {% endif %}
 

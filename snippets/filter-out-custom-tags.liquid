@@ -1,4 +1,4 @@
-{% if tag contains '_' %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if tag contains '_' %}
   {%- assign tag_starts_with = tag | slice: 0 -%}
   {% if tag_starts_with == '_' %}
     {% if tag_count %}

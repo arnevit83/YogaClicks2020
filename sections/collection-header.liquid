@@ -1,4 +1,4 @@
-{% if section.settings.enable %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if section.settings.enable %}
   {% if section.settings.collection_image_enable and collection.image %}
     <div
       id="CollectionHeaderSection"
@@ -38,7 +38,7 @@
               <div class="section-header__shadow">
                 {% include 'breadcrumbs' %}
                 <h1 class="section-header__title">
-                  {{ collection.title }}
+                  {% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
                 </h1>
               </div>
             </header>
@@ -51,7 +51,7 @@
       <header class="section-header section-header--flush">
         {% include 'breadcrumbs' %}
         <h1 class="section-header__title">
-          {{ collection.title }}
+          {% comment %}ly_code_replace_for_[ collection.title ]_begin{% endcomment %}{% include 'ly-title' with collection %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
         </h1>
       </header>
     </div>

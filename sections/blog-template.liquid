@@ -1,4 +1,4 @@
-{% paginate blog.articles by 21 %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% paginate blog.articles by 21 %}
 
 <div data-section-id="{{ section.id }}" data-section-type="blog">
   <div class="page-width page-content">
@@ -7,19 +7,19 @@
 
     <header class="section-header{% if section.settings.blog_show_tag_filter and blog.tags.size > 0 %}{% unless settings.type_headers_align_text %} section-header--with-link{% endunless %}{% endif %}">
       <h1 class="section-header__title">
-        {{ blog.title }}
+        {% comment %}ly_code_replace_for_[ blog.title ]_begin{% endcomment %}{% include 'ly-title' with blog %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
 
         {% if section.settings.blog_show_rss %}
           <a href="{{ shop.url }}{{ blog.url }}.atom" class="rss-link">
             {% include 'icon-rss' %}
-            <span class="icon__fallback-text">RSS</span>
+            <span class="icon__fallback-text"><ly-as-15007286>RSS</ly-as-15007286></span>
           </a>
         {% endif %}
       </h1>
 
       {% if section.settings.blog_show_tag_filter and blog.tags.size > 0%}
         <select id="BlogTagFilter">
-          <option value="/blogs/{{ blog.handle }}">All</option>
+          <option value="/blogs/{{ blog.handle }}"><ly-as-15007287>All</ly-as-15007287></option>
           {% for tag in blog.all_tags %}
             {% include 'filter-out-custom-tags' %}
             <option value="/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" {% if current_tags contains tag %}selected{% endif %}>{{ tag }}</option>

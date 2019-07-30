@@ -1,8 +1,9 @@
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 {%- assign current_variant = product.selected_or_first_available_variant -%}
 {%- assign review_rating = false -%}
 {% if settings.enable_product_reviews %}
   {% if product.metafields.spr.reviews %}
-    {% capture review_data %}{{ product.metafields.spr.reviews }}{% endcapture %}
+    {% capture review_data %}{% comment %}ly_code_replace_for_[ product.metafields.spr.reviews ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign ns = language | append: 'spr' %}{% assign key = 'reviews' %}{% if product.metafields[ns][key] %}{% assign ly_translation = product.metafields[ns][key] %}{% else %}{% assign ly_translation =  product.metafields.spr.reviews  %}{% endif %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}{% endcapture %}
     {%- assign rating_keyword = '"ratingValue"' -%}
     {%- assign rd_a1 = review_data | split: rating_keyword -%}
     {%- assign rd_a2 = rd_a1[1] | split: "=" -%}
@@ -28,10 +29,10 @@
       "priceCurrency": "{{ shop.currency }}",
       "url": "{{ shop.url }}{{ product.url }}"
     },
-    "brand": "{{ product.vendor }}",
+    "brand": "{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}",
     {% if settings.sku_enable %}{% if current_variant.sku %}"sku": "{{ current_variant.sku }}",{% endif %}{% endif %}
-    "name": "{{ product.title }}",
-    "description": {{ product.description | strip_html | json }},
+    "name": "{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}",
+    "description": {% comment %}ly_code_replace_for_[ product.description | strip_html | json ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation | strip_html | json }}{% comment %}ly_code_replace_end{% endcomment %},
     "category": "",
     "url": "{{ shop.url }}{{ product.url }}",
     {% if review_rating %}
@@ -45,7 +46,7 @@
       "@type": "ImageObject",
       "url": "https:{{ product.featured_image.src | img_url: '1024x1024' }}",
       "image": "https:{{ product.featured_image.src | img_url: '1024x1024' }}",
-      "name": "{{ product.title }}",
+      "name": "{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}",
       "width": 1024,
       "height": 1024
     }
