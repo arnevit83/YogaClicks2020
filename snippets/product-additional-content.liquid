@@ -154,7 +154,71 @@
 
       <div id="Product-content-5-{{ section_id }}" class="collapsible-content collapsible-content--all">
         <div class="collapsible-content__inner product-reviews product-reviews--tab">
-          <div id="shopify-product-reviews" data-id="{{product.id}}">{% comment %}ly_code_replace_for_[ product.metafields.spr.reviews ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign ns = language | append: 'spr' %}{% assign key = 'reviews' %}{% if product.metafields[ns][key] %}{% assign ly_translation = product.metafields[ns][key] %}{% else %}{% assign ly_translation =  product.metafields.spr.reviews  %}{% endif %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+
+<div id="ReviewsWidget"></div>
+<link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">
+<script src="https://widget.reviews.co.uk/combined/dist.js?v1"></script>
+<link rel="stylesheet" href="https://widget.reviews.co.uk/combined/style.css?v1">
+<script>
+    new ReviewsWidget('#ReviewsWidget', {
+        store: 'yogaclicks-store',
+        widget: 'combined-widget',
+        options: {
+            types: 'product_review',
+            per_page: 20, 
+            product_review: {
+                sku: '{{ current_variant.sku }}',
+                enable_write_review:true,
+                enable_smart_filters:false,
+                enable_rating_filters:true,
+                enable_toggle_filters:false,
+                enable_social_sharing:false,
+                enable_helpful:false,
+                enable_featured_review_photos:true,
+                enable_featured_social_photos:true,
+                show_mention_text:true,
+                show_dates:true,
+                show_replies:true,
+                show_avatars:true,
+                show_photos:true,
+                show_verify_status:true
+            }
+
+        },
+
+        /* Customise Colours & Fonts */
+        styles: {
+            starColor:'#FFD700',
+            textColor:'#333333',
+            primaryColor:'#444444',
+            neutralColor:'#ececec',
+            backgroundColor:'#ffffff',
+            formColor:'#dcdcdc',
+            baseTextSize:'14px',
+            review_style:'',
+            header_style:''
+        },
+
+        /* Customise Buttons */
+        buttons:{
+            smart_filter:'solid',
+            
+            selected_page:'outline'
+        },
+
+        /* Avatar Settings */
+        avatars:{
+            enable_gravatar:true,
+            gravatar_fallback:'identicon'
+        },
+
+        /* Other Options*/
+        reviewsLogo:{
+            show_logo:false,
+            style:'black'
+        }
+    });
+</script>
         </div>
       </div>
     {% endif %}
