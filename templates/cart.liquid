@@ -80,10 +80,10 @@
                       {% endif %}
 
                       <p class="cart__product-meta">
-                        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn--secondary btn--small small--hide">
+                        <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="btn btn--secondary btn--small small--hide">
                           {% comment %}ly_i18n_replace_for_[ 'cart.general.remove' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.remove' | t }}{% endcapture %}{% include 'ly-static-string' with '15007924' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
                         </a>
-                        <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" class="btn btn--small medium-up--hide">
+                        <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="btn btn--small medium-up--hide">
                           <small>{% comment %}ly_i18n_replace_for_[ 'cart.general.remove' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.remove' | t }}{% endcapture %}{% include 'ly-static-string' with '15007924' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</small>
                         </a>
                       </p>

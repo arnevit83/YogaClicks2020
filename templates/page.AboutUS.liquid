@@ -1,4 +1,4 @@
-<hiddenonapp></hiddenonapp>
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<hiddenonapp></hiddenonapp>
 <style>
     .AboutUSs {
         max-width: 1032px !important;
@@ -69,11 +69,11 @@
     }
 
     .YogiGlobal {
-        background: url({{'about-us-lead-image.webp' | asset_url}}) no-repeat;
+        background: url({% comment %}ly_asset_replace_for_['about-us-lead-image.webp' | asset_url]_begin{% endcomment %}{% assign ly_asset = 'about-us-lead-image.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}) no-repeat;
     }
 
     .YogiGlobalMid {
-        background: url({{'about-us-mid-image.webp' | asset_url}}) no-repeat;
+        background: url({% comment %}ly_asset_replace_for_['about-us-mid-image.webp' | asset_url]_begin{% endcomment %}{% assign ly_asset = 'about-us-mid-image.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}) no-repeat;
     }
 
     .HeaderWhite span {
@@ -190,10 +190,10 @@
 
 <div class="AboutUSs page-body " style="max-width:1200px!important">
     <div class="page-body-content" style="max-width:1200px!important">
-        <div class="HeaderWhite YogiGlobal"><span>OUR STORY</span></div><img
-            data-src="{{'about-us-lead-image.webp' | asset_url}}" class="hiddenman"> <br /> <br />
+        <div class="HeaderWhite YogiGlobal"><span><ly-as-15024367>OUR STORY</ly-as-15024367></span></div><img
+            data-src="{% comment %}ly_asset_replace_for_['about-us-lead-image.webp' | asset_url]_begin{% endcomment %}{% assign ly_asset = 'about-us-lead-image.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}" class="hiddenman"> <br /> <br />
         <div class="othdiv12">
-            <h1 class="welcomef">Yoga book inspires yoga shop</h1>
+            <h1 class="welcomef"><ly-as-15024368>Yoga book inspires yoga shop</ly-as-15024368></h1>
         </div><br /><br />
         <div class="Midtexts"> I was a burnt out corporate, working eighty hour weeks in advertising. Nothing in my life
             was working, so I decided to straighten myself out with six months in the yoga schools of India.
@@ -202,35 +202,35 @@
             all over the world. As I shared my story readers shared theirs – how yoga had also woken them up to their
             creativity. </div><br /><br /> <br />
         <div class="othdiv12">
-            <h1 class="welcomef">Making with sustainability in mind</h1>
+            <h1 class="welcomef"><ly-as-15024371>Making with sustainability in mind</ly-as-15024371></h1>
         </div><br /><br />
         <div class="Midtexts"> Whether they were making yoga pants, yoga mats or yoga gifts, they were informed by their
             knowledge of what yogis need, and by yogi values – making with sustainability in mind. <br /><br /> Feeling
             inspired by this expertise, and desire to make the world a better place, I decided to create a yoga shop –
             YogaClicks would be a gathering of the very best yogi makers from around the world. </div><br /><br /> <img
-            data-src="{{'about-us-mid-image.webp' | asset_url}}"> <br /> <br /> <br />
+            data-src="{% comment %}ly_asset_replace_for_['about-us-mid-image.webp' | asset_url]_begin{% endcomment %}{% assign ly_asset = 'about-us-mid-image.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  }}{% comment %}ly_asset_replace_end{% endcomment %}"> <br /> <br /> <br />
         <div class="othdiv12">
-            <h1 class="welcomef">From yoga pants to the best yoga mats</h1>
+            <h1 class="welcomef"><ly-as-15024374>From yoga pants to the best yoga mats</ly-as-15024374></h1>
         </div><br /><br />
         <div class="Midtexts">It's a daily joy to work with these amazing yogis, most of whom are also yoga teachers.
             From sustainable fashion guru Natalia who makes yoga pants out of recycled coffee grounds, to Reiki healer
             Delphine, charging her gemstones with rays of light, to Anna – a mother of three who somehow finds the time
             to create beautifully patterned, super soft, eco yoga mats. <br /><br /> I hope all this creativity will act
             as a beacon of light to you, inspiring you to fulfil a yoga-inspired dream of your own. <br /><br /> With
-            gratitude for the practice of yoga, and all my teachers. <br /> <br /> <span class="Lucy"> Lucy xx </span>
-            <br /> <span class="LucyF"> YogaClicks Founder </span> </div><br /><br />
+            gratitude for the practice of yoga, and all my teachers. <br /> <br /> <span class="Lucy"> <ly-as-15024378>Lucy xx</ly-as-15024378> </span>
+            <br /> <span class="LucyF"> <ly-as-15024379>YogaClicks Founder</ly-as-15024379> </span> </div><br /><br />
         <hr /> <br /><br />
         <div class="othdiv12">
-            <h1 class="welcomef">DISCOVER MORE</h1>
+            <h1 class="welcomef"><ly-as-15024380>DISCOVER MORE</ly-as-15024380></h1>
         </div>
         <div class="wrappersecond">
-            <div> <a href="/pages/meet-your-makers">{{'about-us-makers.png.webp' | asset_url | img_tag: 'MEET THE MAKERS', 'responsive'}}<span
+            <div> <a href="/pages/meet-your-makers">{% comment %}ly_asset_replace_for_['about-us-makers.png.webp' | asset_url | img_tag: 'MEET THE MAKERS', 'responsive']_begin{% endcomment %}{% assign ly_asset = 'about-us-makers.png.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | img_tag: 'MEET THE MAKERS', 'responsive' }}{% comment %}ly_asset_replace_end{% endcomment %}<span
                         class="secondWhiteboxs Swoperimage">
-                        <h2> MEET THE MAKERS </h2>
+                        <h2> <ly-as-15024381>MEET THE MAKERS</ly-as-15024381> </h2>
                     </span> </a> </div>
-            <div> <a href="/pages/sustainability">{{'about-us-sustainable.webp' | asset_url | img_tag: ' SUSTAINABILITY STORIES', 'responsive '}}<span
+            <div> <a href="/pages/sustainability">{% comment %}ly_asset_replace_for_['about-us-sustainable.webp' | asset_url | img_tag: ' SUSTAINABILITY STORIES', 'responsive ']_begin{% endcomment %}{% assign ly_asset = 'about-us-sustainable.webp' %}{% include 'ly-asset' with ly_asset %}{{ ly_translation  | img_tag: ' SUSTAINABILITY STORIES', 'responsive ' }}{% comment %}ly_asset_replace_end{% endcomment %}<span
                         class="secondWhiteboxs Swoperimage">
-                        <h2> SUSTAINABILITY STORIES </h2>
+                        <h2> <ly-as-15024382>SUSTAINABILITY STORIES</ly-as-15024382> </h2>
                     </span> </a> </div>
         </div><br /><br /> <br /><br />
     </div>  </div>
