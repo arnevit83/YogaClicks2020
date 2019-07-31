@@ -37,6 +37,23 @@
       {% endif %}
     {% endfor %}
 
+
+
+
+
+    <button id="btn-desc" type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-0-{{ section_id }}">
+        <ly-as-15084498>Description</ly-as-15084498> {% include 'collapsible-icons' %}
+       </button>
+
+
+   
+     <div id="Product-content-0-{{ section_id }}" class="collapsible-content collapsible-content--all">
+        <div class="collapsible-content__inner rte">
+          {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        </div>
+      </div>
+
+
     {% if settings.product_content_1 != blank %}
       {% if settings.product_content_collapse_1 %}
         <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-1-{{ section_id }}">

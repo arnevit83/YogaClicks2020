@@ -160,10 +160,12 @@
             {% endunless %}
 
             {% unless description_style == 'full' %}
-              <div class="product-single__description rte">
-                {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
-              </div>
 
+
+ 
+
+            
+             
               {% include 'product-additional-content', section_id: section_id %}
             {% endunless %}
 
@@ -195,10 +197,10 @@
       </div> -->
 
 
-
+<!-- 
         <div class="product-single__description-full rte">
       
-        </div>
+        </div> -->
 
         {% include 'product-additional-content', section_id: section_id %}
       {% endif %}
