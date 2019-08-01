@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% unless grid_item_width %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% unless grid_item_width %}
   {%- assign grid_item_width = 'medium-up--one-quarter small--one-half' -%}
 {% endunless %}
 
@@ -95,6 +96,10 @@
           {% endif %}
         {% endunless %}
 
+
+
+    
+
         {% if settings.collection_color_swatches %}
           {% for option in product.options_with_values %}
             {%- assign option_name = option.name | downcase -%}
@@ -122,10 +127,12 @@
 
       <div class="grid-product__meta">
         
-        {% capture the_snippet_review_avg %}{% include 'ssw-widget-avg-rate-listing' %}{% endcapture %}
+          <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div> 
+     
+        <!-- {% capture the_snippet_review_avg %}{% include 'ssw-widget-avg-rate-listing' %}{% endcapture %}
         {% unless the_snippet_review_avg contains 'Liquid error' %}
         {{ the_snippet_review_avg }}
-        {% endunless %}
+        {% endunless %} -->
         
         <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
         {% if settings.vendor_enable %}

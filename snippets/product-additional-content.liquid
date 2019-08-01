@@ -171,13 +171,10 @@
 
       <div id="Product-content-5-{{ section_id }}" class="collapsible-content collapsible-content--all">
         <div class="collapsible-content__inner product-reviews product-reviews--tab">
+      <div id="ReviewsWidget-{{ section_id }}"></div>
 
-<div id="ReviewsWidget"></div>
-<link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">
-<script src="https://widget.reviews.co.uk/combined/dist.js?v1"></script>
-<link rel="stylesheet" href="https://widget.reviews.co.uk/combined/style.css?v1">
 <script>
-    new ReviewsWidget('#ReviewsWidget', {
+    new ReviewsWidget('#ReviewsWidget-{{ section_id }}', {
         store: 'yogaclicks-store',
         widget: 'combined-widget',
         options: {

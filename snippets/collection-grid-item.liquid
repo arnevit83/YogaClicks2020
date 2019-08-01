@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% unless grid_item_width %}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% unless grid_item_width %}
   {%- assign grid_item_width = 'small--one-half medium-up--one-third' -%}
 {% endunless %}
 
@@ -51,6 +52,11 @@
       class="collection-item__title collection-item__title--{{ settings.collection_grid_style }} collection-item__title--{{ settings.type_collection_font }} collection-item__title--{{ settings.collection_grid_text_align }}">
       <span>
         {{ title_output }}
+    
+
+
+        
+
       </span>
     </span>
 
