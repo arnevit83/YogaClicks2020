@@ -184,7 +184,7 @@
             types: 'product_review',
             per_page: 20, 
             product_review: {
-                sku: '{{ current_variant.sku }}',
+                sku: '{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}',
                 enable_write_review:true,
                 enable_smart_filters:false,
                 enable_rating_filters:true,
