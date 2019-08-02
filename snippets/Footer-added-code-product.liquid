@@ -4,8 +4,12 @@
 document.addEventListener("DOMContentLoaded", function(event){
     $(document).ready(function(){
       $("#btn-desc").click();
+      $("[data-shipping-toggle]").each(function() {
+    $(this).attr("data-shipping-toggle") === $("#product-vendor").text() && $(this).show()
+})
 });
  });
+
 </script>
 
 <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">

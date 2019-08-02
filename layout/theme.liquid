@@ -76,9 +76,6 @@
   {% if template contains 'product' %}
     {% include "Footer-added-code-product" %}
   {% endif %}
-  {% if template contains 'collection' %}
-  {% include "Footer-added-code-collection" %}
-  {% endif %}
 
 
 
@@ -149,7 +146,10 @@
   {% if template contains 'product' %}
     {% include 'recently-viewed-product-template' %}
   {% endif %}
-  
+  {% if template contains 'collection' %}
+  {% include "Footer-added-code-collection" %}
+  {% endif %}
+
   
   
   <script src="https://widget.reviews.co.uk/product/dist.js"></script>
@@ -162,7 +162,7 @@
     window.onload = function() {
       ratingSnippet("ruk_rating_snippet",{
         store: "yogaclicks-store",
-        color: "#f47e27",
+        color: "#d79f45",
         linebreak: true,
         text: "Reviews"
       });

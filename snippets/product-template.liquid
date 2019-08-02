@@ -62,25 +62,12 @@
               </h1>
             {% endif %}
 		
-            {% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
-              {% if isModal %}
-                {%- assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id -%}
-              {% else %}
-                {%- assign review_link = '#Reviews-' | append: product.id -%}
-              {% endif %}
-              <a href="{{ review_link }}" class="product-single__review-link">
-                <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
-              </a>
-              
-            {% endif %}
+        
 
-            {% if settings.sku_enable %}
-              <p id="Sku-{{ section_id }}" class="product-single__sku">
-                {% if current_variant.sku %}
-                  {{ current_variant.sku }}
-                {% endif %}
-              </p>
-            {% endif %}
+
+            <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div> 
+
+
 
             {%- assign hide_sale_price = true -%}
             {% if product.compare_at_price_max > product.price %}
