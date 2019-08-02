@@ -61,7 +61,7 @@
                 {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
               </h1>
             {% endif %}
-
+		
             {% if settings.enable_product_reviews and settings.reviews_layout == 'full' %}
               {% if isModal %}
                 {%- assign review_link = product.url | within: collection | append: '#Reviews-' | append: product.id -%}
