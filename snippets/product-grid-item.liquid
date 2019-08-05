@@ -139,7 +139,7 @@
           <div class="grid-product__vendor">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
         {% endif %}
         <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
- 
+
         <div class="grid-product__price">
           {% if on_sale %}
             <span class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007477' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
@@ -171,6 +171,8 @@
         <span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span>
         {% endif %}
         {% endcomment %}
+        <div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div> 
+  
       </div>
     </a>
   </div>

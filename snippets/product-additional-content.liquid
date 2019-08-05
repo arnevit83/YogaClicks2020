@@ -3,7 +3,6 @@
 {% if product %}
   {%- assign blockId = block.id | append: product.id -%}
 {% endif %}
-<div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div> 
 
 {%- assign has_custom_tabs = false -%}
 {% for tag in product.tags %}
