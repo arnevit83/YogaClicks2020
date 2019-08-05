@@ -1,12 +1,22 @@
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
-
+<script src="https://widget.reviews.co.uk/rich-snippet/dist.js"></script>
 <script >
 document.addEventListener("DOMContentLoaded", function(event){
     $(document).ready(function(){
       $("#btn-desc").click();
+      $("[data-shipping-toggle]").each(function() {
+    $(this).attr("data-shipping-toggle") === $("#product-vendor").text() && $(this).show()
+})
 });
+
+
+richSnippet({
+                  store: 'yogaclicks-store',
+                  sku: '{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}'
+              });
  });
-</script>
+
+</script> 
 
 <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">
 <script src="https://widget.reviews.co.uk/combined/dist.js?v1"></script>

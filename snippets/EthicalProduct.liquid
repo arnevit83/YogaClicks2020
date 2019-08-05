@@ -1,0 +1,42 @@
+{% for tag in product.tags %}
+{% if tag contains 'Environmental' or tag contains 'Workplace'  or tag contains 'Fair'  or tag contains 'Fostering'  or tag contains 'Championing'  or tag contains 'Repairing'  or tag contains 'Transparency'  or tag contains 'Giving'  or tag contains 'Animal' %}
+<br /><br /><br /><h3 class="Ethicalness">Ethical Audit</h3><br /> 
+{% break %} 
+{% endif %}        		
+{% endfor %}
+<div class="ethical-icons"> 
+
+  
+{% for tag in product.tags %}
+                {% if tag contains 'Animal' %}
+             			<img src="{{'Icon_Animal_Welfare.svg' | asset_url }}" alt="Ethical Shopping" title="No animal suffering. Ever. " class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                {% if tag contains 'Championing' %}
+             			<img src="{{'Icon_Championing_Diversity.svg' | asset_url }}" alt="Ethical Shopping" title="Inclusivity and equality for all." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                {% if tag contains 'Environmental' %}
+             			<img src="{{'Icon_Enviromental_Safeguarding.svg' | asset_url }}" alt="Ethical Shopping" title="Growing. Making. Packing. Transporting." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                  {% if tag contains 'Fair' %}
+             			<img src="{{'Icon_Fair_Pay.svg' | asset_url }}" alt="Ethical Shopping" title="Lifting people and communities out of poverty." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                {% if tag contains 'Fostering' %}
+             			<img src="{{'Icon_Fostering_Craftmanship.svg' | asset_url }}" alt="Ethical Shopping" title="Honouring the artisan. Handmade." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+          		{% if tag contains 'Giving' %}
+             			<img src="{{'Icon_Giving_Back.svg' | asset_url }}" alt="Ethical Shopping" title="Charitable donations and involvement." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                {% if tag contains 'Repairing' %}
+             			<img src="{{'Icon_Repairing_And_Recycling.svg' | asset_url }}" alt="Ethical Shopping" title="Creating for longevity, not landfill." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+                {% if tag contains 'Transparency' %}
+             			<img src="{{'Icon_Transparency.svg' | asset_url }}" alt="Ethical Shopping" title="No hiding. Supply chain accountability." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}	
+                {% if tag contains 'Workplace' %}
+             			<img src="{{'Icon_Workplace_Welbeing.svg' | asset_url }}" alt="Ethical Shopping" title="Dignified working conditions. Being heard." class="tooltip img-fluid img-responsive img-ethical">
+                {% endif %}
+             		
+{% endfor %}
+</div>
+<br/>
+<br/>

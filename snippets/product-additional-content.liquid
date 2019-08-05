@@ -3,6 +3,7 @@
 {% if product %}
   {%- assign blockId = block.id | append: product.id -%}
 {% endif %}
+<div class="ruk_rating_snippet" data-sku="{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}"></div> 
 
 {%- assign has_custom_tabs = false -%}
 {% for tag in product.tags %}
@@ -48,8 +49,14 @@
 
    
      <div id="Product-content-0-{{ section_id }}" class="collapsible-content collapsible-content--all">
-        <div class="collapsible-content__inner rte">
-          {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        <div class="collapsible-content__inner rte">&nbsp;{% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+            {% if settings.sku_enable %}
+            <p id="Sku-{{ section_id }}" class="product-single__sku">
+              {% if current_variant.sku %}
+             <sub style="float:right">{{ current_variant.sku }}</sub>   
+              {% endif %}
+            </p>
+          {% endif %}
         </div>
       </div>
 
@@ -69,6 +76,7 @@
       <div id="Product-content-1-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_1 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
         <div class="collapsible-content__inner rte">
           {% comment %}ly_code_replace_for_[ pages[settings.product_content_1].content ]_begin{% endcomment %}{% include 'ly-content' with pages[settings.product_content_1] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+   
         </div>
       </div>
     {% endif %}
@@ -164,13 +172,14 @@
     {% endif %}
 
     {% if reviews_as_tab %}
-      <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-5-{{ section_id }}">
+      <!-- <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-5-{{ section_id }}">
         <ly-as-15007461>Reviews</ly-as-15007461>
         {% include 'collapsible-icons' %}
-      </button>
+      </button> -->
 
-      <div id="Product-content-5-{{ section_id }}" class="collapsible-content collapsible-content--all">
+      <!-- <div id="Product-content-5-{{ section_id }}" class="collapsible-content collapsible-content--all">
         <div class="collapsible-content__inner product-reviews product-reviews--tab">
+
       <div id="ReviewsWidget-{{ section_id }}"></div>
 
 <script>
@@ -234,7 +243,7 @@
     });
 </script>
         </div>
-      </div>
+      </div> -->
     {% endif %}
 
   </div>
