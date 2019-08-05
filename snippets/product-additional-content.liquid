@@ -100,7 +100,7 @@
     {% endif %}
     {% if settings.product_content_3 != blank %}
       {% if settings.product_content_collapse_3 %}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
+        <button type="button" class="label Product-content-3 collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
           {% comment %}ly_code_replace_for_[ pages[settings.product_content_3].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_3] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
           {% include 'collapsible-icons' %}
         </button>

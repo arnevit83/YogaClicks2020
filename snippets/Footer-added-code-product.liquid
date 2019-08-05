@@ -4,9 +4,33 @@
 document.addEventListener("DOMContentLoaded", function(event){
     $(document).ready(function(){
       $("#btn-desc").click();
-      $("[data-shipping-toggle]").each(function() {
-    $(this).attr("data-shipping-toggle") === $("#product-vendor").text() && $(this).show()
+
+
+
+
+
+$("[data-sizing-toggle]").each(function() {
+  if ( $(this).attr("data-sizing-toggle") === $("#product-vendor").text()) {
+    $(this).show();
+    $('.Product-content-1').show();
+  } 
 })
+$("[data-shipping-toggle]").each(function() {
+  if ( $(this).attr("data-shipping-toggle") === $("#product-vendor").text()) {
+    $(this).show();
+    $('.Product-content-2').show();
+  } 
+})
+
+$("[data-brands-toggle]").each(function() {
+  if ( $(this).attr("data-brands-toggle") === $("#product-vendor").text()) {
+    $(this).show();
+    $('.Product-content-3').show();
+  } 
+})
+
+
+
 });
 
 
