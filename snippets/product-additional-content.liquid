@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{% comment %}ly_settings_replace_for_[9ebceca52a15b3e718e9c6991e1cd718=settings.product_contact_title]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id15007460"] %}{% assign 9ebceca52a15b3e718e9c6991e1cd718 = shop.metafields[namespace]["id15007460"] %}{% else %}{% assign 9ebceca52a15b3e718e9c6991e1cd718 = settings.product_contact_title %}{% endif %}{% comment %}ly_settings_replace_end{% endcomment %}{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 {%- assign blockId = block.id -%}
 {% if product %}
   {%- assign blockId = block.id | append: product.id -%}
@@ -42,13 +42,13 @@
 
 
     <button id="btn-desc" type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-0-{{ section_id }}">
-        <ly-as-15084498>Description</ly-as-15084498> {% include 'collapsible-icons' %}
+        <ly-as-15142051>Description</ly-as-15142051> {% include 'collapsible-icons' %}
        </button>
 
 
    
      <div id="Product-content-0-{{ section_id }}" class="collapsible-content collapsible-content--all">
-        <div class="collapsible-content__inner rte">&nbsp;{% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        <div class="collapsible-content__inner rte"> {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
             {% if settings.sku_enable %}
             <p id="Sku-{{ section_id }}" class="product-single__sku">
               {% if current_variant.sku %}
@@ -99,7 +99,7 @@
     {% endif %}
     {% if settings.product_content_3 != blank %}
       {% if settings.product_content_collapse_3 %}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
+        <button type="button" class="label Product-content-3 collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
           {% comment %}ly_code_replace_for_[ pages[settings.product_content_3].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_3] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
           {% include 'collapsible-icons' %}
         </button>
@@ -119,7 +119,7 @@
     {% if settings.product_contact %}
       {% form 'contact' %}
         <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-4-{{ section_id }}">
-          {% comment %}ly_new_settings_replace_for_[ settings.product_contact_title ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id15007460"] %}{% assign ly_translation = shop.metafields[namespace]["id15007460"] %}{% else %}{% assign ly_translation = settings.product_contact_title %}{% endif %}{{ ly_translation }}{% comment %}ly_new_settings_replace_end{% endcomment %}
+          {{ settings.product_contact_title }}
           {% include 'collapsible-icons' %}
         </button>
 

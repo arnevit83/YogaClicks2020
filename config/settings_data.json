@@ -2,7 +2,7 @@
   "current": {
     "color_body_bg": "#ffffff",
     "color_body_text": "#000000",
-    "color_price": "#1c1d1d",
+    "color_price": "#000000",
     "color_savings_text": "#ff4e4e",
     "color_borders": "#e8e8e1",
     "color_button": "#111111",
@@ -789,41 +789,10 @@
       },
       "collection-sidebar": {
         "type": "collection-sidebar",
-        "blocks": {
-          "1563284114179": {
-            "type": "color_group",
-            "settings": {
-              "title": "Colours",
-              "tag_list": "Blue\nGrey\nPurple\nBlack\nGold\nMulti\nPink\nWhite\nYellow\nOrange\nGreen\nRed\nNavy\nNatural\nSilver\nRose Gold",
-              "collapsed": false
-            }
-          },
-          "1563286834298": {
-            "type": "tags_group",
-            "settings": {
-              "title": "Size",
-              "tag_list": "X-small\nSmall\nMedium\nLarge\nX-large",
-              "collapsed": false
-            }
-          },
-          "1563287242720": {
-            "type": "subcollections",
-            "settings": {
-              "enable_subsubcollections": true,
-              "enable_count": false,
-              "collapsed": false
-            }
-          }
-        },
-        "block_order": [
-          "1563284114179",
-          "1563286834298",
-          "1563287242720"
-        ],
         "settings": {
           "enable_sidebar": true,
           "filter_style": "sidebar",
-          "tags_combine": true,
+          "tags_combine": false,
           "enable_sort": true
         }
       },
@@ -1034,7 +1003,7 @@
               "image": "",
               "title": "FREE DELIVERY & PRICE GUARANTEE",
               "text": "<p>Free shipping to the UK, from all our makers in UK, Europe &amp; US. We also won't be beaten on price, if it's cheaper elsewhere tell us &nbsp;<\/p>",
-              "button_label": "Optional button",
+              "button_label": "",
               "button_link": "shopify:\/\/pages\/shipping"
             }
           },
@@ -1045,7 +1014,7 @@
               "image": "",
               "title": "Ethical Award",
               "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
-              "button_label": "Optional button",
+              "button_label": "",
               "button_link": "shopify:\/\/pages\/ethical-yoga-shop"
             }
           },

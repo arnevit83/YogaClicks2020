@@ -1,4 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
+{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+{%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
 {% unless product.empty? %}
   <div
@@ -213,7 +214,7 @@
         {% endif %}
       </div>
     </div>
-  </div>
+  </div> {% include 'EthicalProduct' %} 
 {% else %}
   <div class="product__photos product__photos-{{ section_id }}">
     <div class="product__main-photos" style="width: 100%">

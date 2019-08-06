@@ -1,2 +1,14 @@
 {% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
 
+
+richSnippet({
+    store: 'yogaclicks-store',
+    sku: '{{ product.handle }};{{ product.variants | map: 'sku' | join: ';' }};{{ product.variants | map: 'id' | join: ';' }}'
+});
+});
+
+</script> 
+
+<link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/40686/revsglobal-pr-mod/style-cf.css?-c0avz5">
+<script src="https://widget.reviews.co.uk/combined/dist.js?v1"></script>
+<link rel="stylesheet" href="https://widget.reviews.co.uk/combined/style.css?v1">
