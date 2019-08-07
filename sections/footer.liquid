@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 <footer class="site-footer">
   <div class="page-width">
 
@@ -37,6 +37,7 @@
             {% include 'footer-custom-text', block: block %}
           {% when 'newsletter' %}
             {% include 'footer-newsletter', block: block %}
+            <div id='jobo_custom_translate_widget' data-placement='top'></div>
           {% when 'menu' %}
             {% include 'footer-menu', block: block %}
           {% endcase %}
@@ -65,7 +66,7 @@
 
     {% if section.settings.show_copyright %}
       <p class="footer__small-text">
-        &copy; {{ 'now' | date: '%Y' }} {{ langify_shop_name }}
+        &copy; {{ 'now' | date: '%Y' }} {{ shop.name }}
         {% if section.settings.copyright_text != blank %}
           {{ section.settings.copyright_text }}
         {% endif %}

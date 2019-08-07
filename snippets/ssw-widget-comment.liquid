@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.customer_accounts_enabled %}
+{% if shop.customer_accounts_enabled %}
   {% assign obj_id = false %}
   {% assign parent_id = false %}
   {% if template contains 'product' and product and product.id %}

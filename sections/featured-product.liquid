@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign product = all_products[section.settings.featured_product] -%}
+{%- assign product = all_products[section.settings.featured_product] -%}
 
 {% if section.settings.divider %}<div class="section--divider">{% endif %}
 
@@ -32,20 +32,20 @@
 
           {% if settings.vendor_enable %}
             <div class="product-single__vendor">
-              {% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+              {{ product.vendor }}
             </div>
           {% endif %}
 
           <div class="h1 product-single__title">
             {% unless product.empty? %}
-              {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+              {{ product.title }}
             {% else %}
-              {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.product_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.product_title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007307' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+              {{ 'home_page.onboarding.product_title' | t }}
             {% endunless %}
           </div>
 
           {% if product.compare_at_price_max > product.price %}
-            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007308' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
             <span class="product__price-wrap-{{ section.id }}">
               <span id="ComparePrice-{{ section.id }}" class="product__price product__price--compare">
                 {% if compare_at_price > price %}
@@ -53,9 +53,9 @@
                 {% endif %}
               </span>
             </span>
-            <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.sale_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.sale_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007309' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span id="ComparePriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
           {% else %}
-            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007308' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span id="PriceA11y-{{ section.id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
           {% endif %}
 
           <span id="ProductPrice-{{ section.id }}"
@@ -72,12 +72,12 @@
           <div class="product-single__description rte">
             {% if section.settings.show_description %}
               {% unless product.empty? %}
-                {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                {{ product.description }}
               {% else %}
-                {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.product_description' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.product_description' | t }}{% endcapture %}{% include 'ly-static-string' with '15007310' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                {{ 'home_page.onboarding.product_description' | t }}
               {% endunless %}
             {% else %}
-              <p><a href="{{ product.url }}">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.learn_more' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.learn_more' | t }}{% endcapture %}{% include 'ly-static-string' with '15007311' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></p>
+              <p><a href="{{ product.url }}">{{ 'general.accessibility.learn_more' | t }}</a></p>
             {% endif %}
           </div>
 

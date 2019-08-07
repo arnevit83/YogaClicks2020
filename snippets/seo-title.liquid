@@ -1,16 +1,16 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- capture seo_title -%}
-  {{ langify_title }}
+{%- capture seo_title -%}
+  {{ page_title }}
   {%- if current_tags -%}
-    {%- assign meta_tags = current_tags | join: ', ' %} – {% comment %}ly_i18n_replace_for_[ 'general.meta.tags' | t: tags: meta_tags ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.tags' | t: tags: meta_tags }}{% endcapture %}{% include 'ly-static-string' with '15007497' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = meta_tags  %}{% assign ly_template = ly_template | replace: '[[tags]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    {%- assign meta_tags = current_tags | join: ', ' %} – {{ 'general.meta.tags' | t: tags: meta_tags }}
   {%- endif -%}
   {%- if current_page != 1 -%}
-    – {% comment %}ly_i18n_replace_for_[ 'general.meta.page' | t: page: current_page ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.meta.page' | t: page: current_page }}{% endcapture %}{% include 'ly-static-string' with '15007499' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = current_page  %}{% assign ly_template = ly_template | replace: '[[page]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+    – {{ 'general.meta.page' | t: page: current_page }}
   {%- endif -%}
   {%- if template == 'password' -%}
-    {{ langify_shop_name }}
+    {{ shop.name }}
   {%- else -%}
-    {%- unless langify_title contains langify_shop_name -%}
-      – {{ langify_shop_name }}
+    {%- unless page_title contains shop.name -%}
+      – {{ shop.name }}
     {%- endunless -%}
   {%- endif -%}
 {%- endcapture -%}

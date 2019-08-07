@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.customer_accounts_enabled %}
+{% if shop.customer_accounts_enabled %}
   {% assign ssw_fave_enabled = 1 %}
   {% if shop.metafields.ssw['fave_enabled'] %}
     {% assign ssw_fave_enabled = shop.metafields.ssw['fave_enabled'] %}
@@ -8,7 +8,7 @@
     <div class="ssw-faveappbtn ssw-faveappbtn-counter ssw-faveappbtn2 ssw-fave-btn ssw-wishlist-element sswfavebtn{{ productId }} ssw-not-synch"
          data-count="..." data-pending="0" data-product-id="{{ productId }}"
          data-params='{"product_id":"{{ productId }}","event":"fave","page":"product_profile"}'>
-      <i class="ssw-icon-heart-o"></i>{% comment %}ly_i18n_replace_for_[ 'socialshopwave.fave' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.fave' | t }}{% endcapture %}{% include 'ly-static-string' with '15007762' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      <i class="ssw-icon-heart-o"></i>{{ 'socialshopwave.fave' | t }}
     </div>
   {% endif %}
 {% endif %}

@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}    window.addEventListener('sswoauthcallback', function (e) {
+    window.addEventListener('sswoauthcallback', function (e) {
       if (e.detail && e.detail.service == 'facebook') {
           ssw.ajax({
       type: 'POST',

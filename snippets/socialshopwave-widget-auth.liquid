@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.customer_accounts_enabled %}
+{% if shop.customer_accounts_enabled %}
   <div id="ssw-topauth" class="ssw-topauth">
     {% if customer %}
       <div class="ssw-tprofile ssw-dropdown">
@@ -11,16 +11,16 @@
           <i class="ssw-icon-down-open-big"></i>
         </a>
         <ul class="ssw-dropdown-menu" role="menu" aria-labelledby="dLabel">
-          <li id="customer_myorders_li"><a tabindex="-1" href="/account">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.my_orders' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.my_orders' | t }}{% endcapture %}{% include 'ly-static-string' with '15007513' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></li>
+          <li id="customer_myorders_li"><a tabindex="-1" href="/account">{{ 'socialshopwave.my_orders' | t }}</a></li>
           {% include 'ssw-widget-dropdown' %}
           <li class="ssw-divider"></li>
-          <li><a id="customer_logout_link" tabindex="-1" href="/account/logout">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.logout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.logout' | t }}{% endcapture %}{% include 'ly-static-string' with '15007514' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></li>
+          <li><a id="customer_logout_link" tabindex="-1" href="/account/logout">{{ 'socialshopwave.logout' | t }}</a></li>
         </ul>
       </div>
     {% else %}
-      <a id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007515' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+      <a id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.log_in' | t }}</a>
       <span class="ssw-login-divider">/</span>
-      <a id="customer_register_link" data-toggle="ssw-modal" data-target="#signup_modal" href="javascript:void(0);" onclick="trackShopStats('login_popup_view', 'all')">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.sign_up' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.sign_up' | t }}{% endcapture %}{% include 'ly-static-string' with '15007516' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+      <a id="customer_register_link" data-toggle="ssw-modal" data-target="#signup_modal" href="javascript:void(0);" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.sign_up' | t }}</a>
     {% endif %}
   </div>
 {% endif %}

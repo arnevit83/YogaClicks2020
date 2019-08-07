@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<header class="giftcard-header" role="banner">
+<header class="giftcard-header" role="banner">
   {%- assign has_logo = section.settings.logo -%}
   {%- assign header_logo_size = section.settings.desktop_logo_width | append: 'x' -%}
   {%- assign header_logo_size_mobile = section.settings.mobile_logo_width | append: 'x' -%}
@@ -26,16 +26,16 @@
           class="small--hide"
           src="{{ section.settings.logo | img_url: header_logo_size }}"
           srcset="{{ section.settings.logo | img_url: header_logo_size }} 1x, {{ section.settings.logo | img_url: header_logo_size, scale: 2 }} 2x"
-          alt="{{ section.settings.logo.alt | default: langify_shop_name }}"
+          alt="{{ section.settings.logo.alt | default: shop.name }}"
           itemprop="logo">
         <img
           class="medium-up--hide"
           src="{{ section.settings.logo | img_url: header_logo_size_mobile }}"
           srcset="{{ section.settings.logo | img_url: header_logo_size_mobile }} 1x, {{ section.settings.logo | img_url: header_logo_size_mobile, scale: 2 }} 2x"
-          alt="{{ section.settings.logo.alt | default: langify_shop_name }}">
+          alt="{{ section.settings.logo.alt | default: shop.name }}">
       </a>
     {% else %}
-      <a href="/" itemprop="url">{{ langify_shop_name }}</a>
+      <a href="/" itemprop="url">{{ shop.name }}</a>
     {% endif %}
   </h1>
 

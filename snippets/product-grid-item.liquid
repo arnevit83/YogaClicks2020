@@ -1,4 +1,4 @@
-{% comment %}ly_settings_replace_for_[4299f9119a308715b545c52ed75f63cf=settings.quick_shop_text]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id15007474"] %}{% assign 4299f9119a308715b545c52ed75f63cf = shop.metafields[namespace]["id15007474"] %}{% else %}{% assign 4299f9119a308715b545c52ed75f63cf = settings.quick_shop_text %}{% endif %}{% comment %}ly_settings_replace_end{% endcomment %}{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {% unless grid_item_width %}
   {%- assign grid_item_width = 'medium-up--one-quarter small--one-half' -%}
 {% endunless %}
@@ -36,12 +36,12 @@
     {% else %}
       {% if sold_out %}
         <div class="grid-product__tag grid-product__tag--sold-out">
-          {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '15007475' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+          {{ 'products.product.sold_out' | t }}
         </div>
       {% endif %}
       {% if on_sale and sold_out == false %}
         <div class="grid-product__tag grid-product__tag--sale">
-          {% comment %}ly_i18n_replace_for_[ 'products.general.sale' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.sale' | t }}{% endcapture %}{% include 'ly-static-string' with '15007476' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+          {{ 'products.general.sale' | t }}
         </div>
       {% endif %}
     {% endif %}
@@ -136,19 +136,19 @@
         {{ the_snippet_review_avg }} 
         {% endunless %} -->
                {% if settings.vendor_enable %}
-          <div class="grid-product__vendor">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+          <div class="grid-product__vendor">{{ product.vendor }}</div>
         {% endif %}
-        <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+        <div class="grid-product__title grid-product__title--{{ settings.type_product_style }}">{{ product.title }}</div>
 
         <div class="grid-product__price">
           {% if on_sale %}
-            <span class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007477' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
             <span class="grid-product__price--original">{{ product.compare_at_price | money }}</span>
-            <span class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.sale_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.sale_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007478' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+            <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
           {% endif %}
           {% if product.price_varies %}
             {%- assign price = product.price_min | money -%}
-            {% comment %}ly_i18n_replace_for_[ 'products.general.from_text_html' | t: price: price ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.from_text_html' | t: price: price }}{% endcapture %}{% include 'ly-static-string' with '15007480' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = price  %}{% assign ly_template = ly_template | replace: '[[price]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'products.general.from_text_html' | t: price: price }}
           {% else %}
             {{ product.price  | money }}
           {% endif %}
@@ -160,7 +160,7 @@
                 {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{% endcapture %}
               {% endif %}
               <span class="grid-product__price--savings">
-                {% comment %}ly_i18n_replace_for_[ 'products.general.save_html' | t: saved_amount: saved_amount ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.save_html' | t: saved_amount: saved_amount }}{% endcapture %}{% include 'ly-static-string' with '15007482' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = saved_amount  %}{% assign ly_template = ly_template | replace: '[[saved_amount]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
               </span>
             {% endif %}
           {% endif %}

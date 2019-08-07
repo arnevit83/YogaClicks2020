@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {% capture form_id %}AddToCartForm-{{ section_id }}{% endcapture %}
 {% form 'product', product, id: form_id, class: 'product-single__form' %}
   {%- assign is_default_variant = false -%}
@@ -21,11 +21,11 @@
         <option {% if variant == product.selected_or_first_available_variant %}
           selected="selected" {% endif %}
           value="{{ variant.id }}">
-          {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {{ variant.price | money_with_currency }}
+          {{ variant.title }} - {{ variant.price | money_with_currency }}
         </option>
       {% else %}
         <option disabled="disabled">
-          {% comment %}ly_code_replace_for_[ variant.title ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %} - {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '15007468' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+          {{ variant.title }} - {{ 'products.product.sold_out' | t }}
         </option>
       {% endif %}
     {% endfor %}
@@ -35,7 +35,7 @@
   
   {% if settings.quantity_enable %}
     <div class="product__quantity product__quantity--{{ settings.variant_type }}">
-      <label for="Quantity-{{ section_id }}">{% comment %}ly_i18n_replace_for_[ 'products.product.quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '15007469' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+      <label for="Quantity-{{ section_id }}">{{ 'products.product.quantity' | t }}</label>
       {% include 'quantity-input', id: section_id, qty: 1, min: 1 %}
     </div>
   {% endif %}
@@ -45,7 +45,7 @@
     class="product__inventory {% unless inventory_visible %}hide{% endunless %}"
     >
     {% if current_variant.available %}
-      {% comment %}ly_i18n_replace_for_[ 'products.product.stock_label' | t: count: current_variant.inventory_quantity ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}{% endcapture %}{% include 'ly-static-string' with '15007471' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = current_variant.inventory_quantity  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {{ 'products.product.stock_label' | t: count: current_variant.inventory_quantity }}
     {% endif %}
   </div>
 
@@ -67,12 +67,12 @@
       <span id="AddToCartText-{{ section_id }}">
         {% if current_variant.available %}
           {% if template == 'product.preorder' %}
-            {% comment %}ly_i18n_replace_for_[ 'products.product.preorder' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.preorder' | t }}{% endcapture %}{% include 'ly-static-string' with '15007472' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'products.product.preorder' | t }}
           {% else %}
-            {% comment %}ly_i18n_replace_for_[ 'products.product.add_to_cart' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.add_to_cart' | t }}{% endcapture %}{% include 'ly-static-string' with '15007473' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'products.product.add_to_cart' | t }}
           {% endif %}
         {% else %}
-          {% comment %}ly_i18n_replace_for_[ 'products.product.sold_out' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.product.sold_out' | t }}{% endcapture %}{% include 'ly-static-string' with '15007468' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+          {{ 'products.product.sold_out' | t }}
         {% endif %}
       </span>
     </button>

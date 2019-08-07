@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign blog = blogs[section.settings.blog] -%}
+{%- assign blog = blogs[section.settings.blog] -%}
 
 {% if section.settings.divider %}<div class="section--divider">{% endif %}
 
@@ -10,7 +10,7 @@
         {{ section.settings.title | escape }}
       </h2>
       {% if section.settings.view_all %}
-        <a href="{{ blog.url }}"  class="btn btn--secondary btn--small section-header__link">{% comment %}ly_i18n_replace_for_[ 'blogs.article.view_all' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'blogs.article.view_all' | t }}{% endcapture %}{% include 'ly-static-string' with '15007285' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+        <a href="{{ blog.url }}"  class="btn btn--secondary btn--small section-header__link">{{ 'blogs.article.view_all' | t }}</a>
       {% endif %}
     </header>
   {% endif %}
@@ -39,7 +39,7 @@
                 {% if section.settings.blog_show_date or article.tags.size > 0 or articles.comments_count > 0 %}
                   <div class="article__date">
                     {% if section.settings.blog_show_comments and article.comments_count > 0 %}
-                      <a href="#"><ly-as-15007282>3 comments</ly-as-15007282></a> ·
+                      <a href="#">3 comments</a> ·
                     {% endif %}
                     {% if section.settings.blog_show_date %}
                       Jul 17, {{ 'now' | date: "%Y" }}
@@ -47,10 +47,10 @@
                   </div>
                 {% endif %}
 
-                <a href="#" class="article__title"><ly-as-15007283>Example blog post</ly-as-15007283></a>
+                <a href="#" class="article__title">Example blog post</a>
 
                 {% if section.settings.blog_show_author %}
-                  <div class="article__author"><ly-as-15007284>by Archetype Themes</ly-as-15007284></div>
+                  <div class="article__author">by Archetype Themes</div>
                 {% endif %}
               </div>
             </div>

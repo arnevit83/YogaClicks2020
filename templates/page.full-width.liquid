@@ -1,15 +1,15 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="page-content page-full">
+<div class="page-content page-full">
 
   {% include 'breadcrumbs' %}
 
   <div class="page-width">
     <header class="section-header">
-      <h1 class="section-header__title">{% comment %}ly_code_replace_for_[ page.title ]_begin{% endcomment %}{% include 'ly-title' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</h1>
+      <h1 class="section-header__title">{{ page.title }}</h1>
     </header>
   </div>
 
   <div class="rte rte--nomargin">
-    {% comment %}ly_code_replace_for_[ page.content ]_begin{% endcomment %}{% include 'ly-content' with page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+    {{ page.content }}
   </div>
 
 </div>

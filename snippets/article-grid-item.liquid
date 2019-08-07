@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign fixed_aspect_ratio = false -%}
+{%- assign fixed_aspect_ratio = false -%}
 {% unless image_size == 'natural' %}
   {%- assign fixed_aspect_ratio = true -%}
 {% endunless %}
@@ -16,7 +16,7 @@
                 data-sizes="auto">
               </div>
               <noscript>
-                <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{% comment %}ly_code_replace_for_[ article.title | escape ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">
+                <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
               </noscript>
             </div>
           {% else %}
@@ -29,7 +29,7 @@
                   data-sizes="auto"
                   alt="{{ article.image.alt | escape }}">
               <noscript>
-                <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{% comment %}ly_code_replace_for_[ article.title | escape ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}">
+                <img class="lazyloaded" src="{{ article.image | img_url: '400x' }}" alt="{{ article.title | escape }}">
               </noscript>
             </div>
           {% endif %}
@@ -65,7 +65,7 @@
           </div>
         {% endif %}
 
-        <a href="{{ article.url }}" class="article__title">{% comment %}ly_code_replace_for_[ article.title ]_begin{% endcomment %}{% include 'ly-title' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+        <a href="{{ article.url }}" class="article__title">{{ article.title }}</a>
 
         {% if section.settings.blog_show_author %}
           <div class="article__author">by {{ article.author }}</div>
@@ -74,9 +74,9 @@
         {% if section.settings.blog_show_excerpt %}
           <div class="rte article__excerpt">
             {% if article.excerpt.size > 0 %}
-              {% comment %}ly_code_replace_for_[ article.excerpt ]_begin{% endcomment %}{% include 'ly-excerpt' with article %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+              {{ article.excerpt }}
             {% else %}
-              {% comment %}ly_code_replace_for_[ article.content | strip_html | truncatewords: 40 ]_begin{% endcomment %}{% include 'ly-content' with article %}{{ ly_translation | strip_html | truncatewords: 40 }}{% comment %}ly_code_replace_end{% endcomment %}
+              {{ article.content | strip_html | truncatewords: 40 }}
             {% endif %}
           </div>
         {% endif %}

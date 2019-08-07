@@ -1,15 +1,15 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign animation_row = 1 -%}
+{%- assign animation_row = 1 -%}
 
 <div id="FilterDrawer" class="drawer drawer--left">
   <div class="drawer__fixed-header">
     <div class="drawer__header appear-animation appear-delay-{{ animation_row }}">
       <div class="h2 drawer__title">
-        {% comment %}ly_i18n_replace_for_[ 'collections.filters.title_tags' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.filters.title_tags' | t }}{% endcapture %}{% include 'ly-static-string' with '15007500' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        {{ 'collections.filters.title_tags' | t }}
       </div>
       <div class="drawer__close">
         <button type="button" class="drawer__close-button js-drawer-close">
           {% include 'icon-close' %}
-          <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.drawers.close_menu' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.drawers.close_menu' | t }}{% endcapture %}{% include 'ly-static-string' with '15007501' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+          <span class="icon__fallback-text">{{ 'general.drawers.close_menu' | t }}</span>
         </button>
       </div>
     </div>

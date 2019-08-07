@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="index-section">
+<div class="index-section">
   <div class="page-width">
 
     <div class="grid">
@@ -17,7 +17,7 @@
 
             {% if form.posted_successfully? %}
               <p class="note note--success">
-                {% comment %}ly_i18n_replace_for_[ 'contact.form.post_success' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.post_success' | t }}{% endcapture %}{% include 'ly-static-string' with '15007295' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                {{ 'contact.form.post_success' | t }}
               </p>
             {% endif %}
 
@@ -25,26 +25,26 @@
 
             <div class="grid grid--small">
               <div class="grid__item medium-up--one-half">
-                <label for="ContactFormName-{{ section.id }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% include 'ly-static-string' with '15007296' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                <label for="ContactFormName-{{ section.id }}">{{ 'contact.form.name' | t }}</label>
                 <input type="text" id="ContactFormName-{{ section.id }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
               </div>
 
               <div class="grid__item medium-up--one-half">
-                <label for="ContactFormEmail-{{ section.id }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.email' | t }}{% endcapture %}{% include 'ly-static-string' with '15007297' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                <label for="ContactFormEmail-{{ section.id }}">{{ 'contact.form.email' | t }}</label>
                 <input type="email" id="ContactFormEmail-{{ section.id }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
               </div>
             </div>
 
             {% if section.settings.show_phone %}
-              <label for="ContactFormPhone-{{ section.id }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.phone' | t }}{% endcapture %}{% include 'ly-static-string' with '15007298' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+              <label for="ContactFormPhone-{{ section.id }}">{{ 'contact.form.phone' | t }}</label>
               <input type="tel" id="ContactFormPhone-{{ section.id }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
             {% endif %}
 
-            <label for="ContactFormMessage-{{ section.id }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% include 'ly-static-string' with '15007299' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+            <label for="ContactFormMessage-{{ section.id }}">{{ 'contact.form.message' | t }}</label>
             <textarea rows="5" id="ContactFormMessage-{{ section.id }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
             <button type="submit" class="btn">
-              {% comment %}ly_i18n_replace_for_[ 'contact.form.send' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.send' | t }}{% endcapture %}{% include 'ly-static-string' with '15007300' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+              {{ 'contact.form.send' | t }}
             </button>
 
           {% endform %}

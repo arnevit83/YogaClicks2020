@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% layout none %}
+{% layout none %}
 {%assign options_size =  product.options_with_values | size %}
 {%assign variants_size =  product.variants | size %}
 {%assign images_size =  product.images | size %}
@@ -27,7 +27,7 @@
 {%assign compare_at_price =  divided_compare_at_price | append: modulo_compare_at_price %}
 {
 "product": {
-"body_html": {% comment %}ly_code_replace_for_[ product.description | json ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
+"body_html": {{ product.description | json }},
 "compare_at_price": {{ compare_at_price | json }},
 "created_at": "{{ product.created_at }}",
 "handle": {{ product.handle | json }},
@@ -62,11 +62,11 @@
 {% endfor %}
 ],
 "price": {{ price | json }},
-"product_type": {% comment %}ly_code_replace_for_[ product.type | json ]_begin{% endcomment %}{% include 'ly-type' with product %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
+"product_type": {{ product.type | json }},
 "published_at": "{{ product.published_at }}",
 "tags": {{ product.tags | join: ', ' | json }},
 "template_suffix": {{ product.template_suffix | json }},
-"title": {% comment %}ly_code_replace_for_[ product.title | json ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
+"title": {{ product.title | json }},
 "updated_at": "{{ product.updated_at }}",
 "variants": [
 {% for variant in product.variants %}
@@ -103,16 +103,16 @@
 "inventory_management": {{ variant.inventory_management | json }},
 "inventory_quantity": {{ variant.inventory_quantity | json }},
 "inventory_policy": {{ variant.inventory_policy | json }},
-"option1": {% comment %}ly_code_replace_for_[ variant.option1 | json ]_begin{% endcomment %}{% include 'ly-option1' with variant %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
-"option2": {% comment %}ly_code_replace_for_[ variant.option2 | json ]_begin{% endcomment %}{% include 'ly-option2' with variant %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
-"option3": {% comment %}ly_code_replace_for_[ variant.option3 | json ]_begin{% endcomment %}{% include 'ly-option3' with variant %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
+"option1": {{ variant.option1 | json }},
+"option2": {{ variant.option2 | json }},
+"option3": {{ variant.option3 | json }},
 "price": {{ price | json }},
 "sku": {{ variant.sku | json }},
-"title": {% comment %}ly_code_replace_for_[ variant.title | json ]_begin{% endcomment %}{% include 'ly-title' with variant %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %},
+"title": {{ variant.title | json }},
 "weight": {{ variant.weight | json }}
 }{% if variants_i < variants_size %},{% endif %}
 {% endfor %}
 ],
-"vendor": {% comment %}ly_code_replace_for_[ product.vendor | json ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation | json }}{% comment %}ly_code_replace_end{% endcomment %}
+"vendor": {{ product.vendor | json }}
 }
 }

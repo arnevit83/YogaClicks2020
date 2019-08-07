@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign per_row = block.settings.per_row -%}
+{%- assign per_row = block.settings.per_row -%}
 {%- assign product_limit = per_row | times: block.settings.rows -%}
 {%- assign collection = collections[block.settings.collection] -%}
 
@@ -14,7 +14,7 @@
             {{ block.settings.title }}
           </h2>
           {% if block.settings.view_all and block.settings.rows == 1 %}
-            <a href="{{ collections[block.settings.collection].url }}" class="btn btn--secondary btn--small section-header__link">{% comment %}ly_i18n_replace_for_[ 'collections.general.all_of_collection' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.all_of_collection' | t }}{% endcapture %}{% include 'ly-static-string' with '15007450' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+            <a href="{{ collections[block.settings.collection].url }}" class="btn btn--secondary btn--small section-header__link">{{ 'collections.general.all_of_collection' | t }}</a>
           {% endif %}
         </div>
       </div>
@@ -55,7 +55,7 @@
                           <div class="image-wrap">{{ 'product-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}</div>
                         </div>
                         <div class="grid-product__meta">
-                          <div class="grid-product__title">{% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.product_title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.product_title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007451' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</div>
+                          <div class="grid-product__title">{{ 'home_page.onboarding.product_title' | t }}</div>
                           <div class="grid-product__price">$29</div>
                         </div>
                       </a>
@@ -75,14 +75,14 @@
 
               {% if block.settings.rows > 1 %}
                 <div class="grid__item text-center {% if block.settings.mobile_scrollable %}small--hide{% endif %}">
-                  <a href="{{ collections[block.settings.collection].url }}" class="btn">{% comment %}ly_i18n_replace_for_[ 'collections.general.all_of_collection' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.all_of_collection' | t }}{% endcapture %}{% include 'ly-static-string' with '15007450' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+                  <a href="{{ collections[block.settings.collection].url }}" class="btn">{{ 'collections.general.all_of_collection' | t }}</a>
                 </div>
               {% endif %}
 
               {% if block.settings.mobile_scrollable %}
                 <div class="grid__item grid__item--view-all text-center {{ grid_item_width }} medium-up--hide">
                   <a href="{{ collections[block.settings.collection].url }}" class="grid-product__see-all">
-                    {% comment %}ly_i18n_replace_for_[ 'collections.general.view_all_products_html' | t: count: collection.products_count ]_begin{% endcomment %}{% capture ly_template %}{{ 'collections.general.view_all_products_html' | t: count: collection.products_count }}{% endcapture %}{% include 'ly-static-string' with '15007453' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = collection.products_count  %}{% assign ly_template = ly_template | replace: '[[count]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    {{ 'collections.general.view_all_products_html' | t: count: collection.products_count }}
                   </a>
                 </div>
               {% endif %}

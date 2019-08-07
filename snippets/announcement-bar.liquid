@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign show_announcement = false -%}
+{%- assign show_announcement = false -%}
 {%- assign announcement_block_count = 0 -%}
 {% for block in section.blocks %}
   {% if block.type == 'announcement' %}

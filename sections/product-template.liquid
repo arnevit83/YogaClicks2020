@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {% include 'product-template',
   description_style: section.settings.description_style,
   image_position: section.settings.image_position,
@@ -12,7 +12,7 @@
   <hr id="Reviews-{{ product.id }}" class="hr--large">
   <div class="index-section index-section--small product-reviews product-reviews--full">
     <div class="page-width">
-      <div id="shopify-product-reviews" data-id="{{product.id}}">{% comment %}ly_code_replace_for_[ product.metafields.spr.reviews ]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign ns = language | append: 'spr' %}{% assign key = 'reviews' %}{% if product.metafields[ns][key] %}{% assign ly_translation = product.metafields[ns][key] %}{% else %}{% assign ly_translation =  product.metafields.spr.reviews  %}{% endif %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+      <div id="shopify-product-reviews" data-id="{{product.id}}">{{ product.metafields.spr.reviews }}</div>
     </div>
     
   </div>

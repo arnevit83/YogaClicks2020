@@ -1,10 +1,10 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% capture previous_label %}
+{% capture previous_label %}
   {% include 'icon-chevron-left' %}
-  <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.previous' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.previous' | t }}{% endcapture %}{% include 'ly-static-string' with '15007455' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+  <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
 {% endcapture %}
 {% capture next_label %}
   {% include 'icon-chevron-right' %}
-  <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.pagination.next' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.pagination.next' | t }}{% endcapture %}{% include 'ly-static-string' with '15007456' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+  <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
 {% endcapture %}
 <div class="pagination">
   {{ paginate | default_pagination: previous: previous_label, next: next_label | replace: 'view=ajax', '' }}

@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if block.settings.space_around %}
+{% if block.settings.space_around %}
   <div class="index-section">
 {% endif %}
 {% unless block.settings.full_width %}
@@ -9,7 +9,7 @@
       {% if block.settings.code != blank %}
         {{ block.settings.code }}
       {% else %}
-        {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.no_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.no_content' | t }}{% endcapture %}{% include 'ly-static-string' with '15007449' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+        {{ 'home_page.onboarding.no_content' | t }}
       {% endif %}
     </div>
   </div>

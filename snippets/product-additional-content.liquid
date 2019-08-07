@@ -1,4 +1,4 @@
-{% comment %}ly_settings_replace_for_[9ebceca52a15b3e718e9c6991e1cd718=settings.product_contact_title]_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign namespace = language | append: "as" %}{% if shop.metafields[namespace]["id15007460"] %}{% assign 9ebceca52a15b3e718e9c6991e1cd718 = shop.metafields[namespace]["id15007460"] %}{% else %}{% assign 9ebceca52a15b3e718e9c6991e1cd718 = settings.product_contact_title %}{% endif %}{% comment %}ly_settings_replace_end{% endcomment %}{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {%- assign blockId = block.id -%}
 {% if product %}
   {%- assign blockId = block.id | append: product.id -%}
@@ -25,12 +25,12 @@
         {%- assign include_page = pages[include_page_handle.last] -%}
         {% if include_page.title != blank %}
           <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-{{ include_page_handle.last }}-{{ section_id }}">
-            {% comment %}ly_code_replace_for_[ include_page.title ]_begin{% endcomment %}{% include 'ly-title' with include_page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+            {{ include_page.title }}
             {% include 'collapsible-icons' %}
           </button>
           <div id="Product-content-{{ include_page_handle.last }}-{{ section_id }}" class="collapsible-content collapsible-content--all">
             <div class="collapsible-content__inner rte">
-              {% comment %}ly_code_replace_for_[ include_page.content ]_begin{% endcomment %}{% include 'ly-content' with include_page %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+              {{ include_page.content }}
             </div>
           </div>
         {% endif %}
@@ -42,13 +42,13 @@
 
 
     <button id="btn-desc" type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-0-{{ section_id }}">
-        <ly-as-15142051>Description</ly-as-15142051> {% include 'collapsible-icons' %}
+        Description {% include 'collapsible-icons' %}
        </button>
 
 
    
      <div id="Product-content-0-{{ section_id }}" class="collapsible-content collapsible-content--all">
-        <div class="collapsible-content__inner rte"> {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+        <div class="collapsible-content__inner rte"> {{ product.description }}
             {% if settings.sku_enable %}
             <p id="Sku-{{ section_id }}" class="product-single__sku">
               {% if current_variant.sku %}
@@ -63,18 +63,18 @@
     {% if settings.product_content_1 != blank %}
       {% if settings.product_content_collapse_1 %}
         <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-1-{{ section_id }}">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_1].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_1] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_1].title }}
           {% include 'collapsible-icons' %}
         </button>
       {% else %}
         <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_1].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_1] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_1].title }}
         </div>
       {% endif %}
 
       <div id="Product-content-1-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_1 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
         <div class="collapsible-content__inner rte">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_1].content ]_begin{% endcomment %}{% include 'ly-content' with pages[settings.product_content_1] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_1].content }}
    
         </div>
       </div>
@@ -82,36 +82,36 @@
     {% if settings.product_content_2 != blank %}
       {% if settings.product_content_collapse_2 %}
         <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-2-{{ section_id }}">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_2].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_2] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_2].title }}
           {% include 'collapsible-icons' %}
         </button>
       {% else %}
         <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_2].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_2] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_2].title }}
         </div>
       {% endif %}
 
       <div id="Product-content-2-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_2 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
         <div class="collapsible-content__inner rte">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_2].content ]_begin{% endcomment %}{% include 'ly-content' with pages[settings.product_content_2] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_2].content }}
         </div>
       </div>
     {% endif %}
     {% if settings.product_content_3 != blank %}
       {% if settings.product_content_collapse_3 %}
         <button type="button" class="label Product-content-3 collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-3-{{ section_id }}">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_3].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_3] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_3].title }}
           {% include 'collapsible-icons' %}
         </button>
       {% else %}
         <div class="label collapsible-trigger-btn collapsible-trigger-btn--borders">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_3].title ]_begin{% endcomment %}{% include 'ly-title' with pages[settings.product_content_3] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_3].title }}
         </div>
       {% endif %}
 
       <div id="Product-content-3-{{ section_id }}" class="collapsible-content{% unless settings.product_content_collapse_3 %} collapsible-content--expanded{% else %} collapsible-content--all{% endunless %}">
         <div class="collapsible-content__inner rte">
-          {% comment %}ly_code_replace_for_[ pages[settings.product_content_3].content ]_begin{% endcomment %}{% include 'ly-content' with pages[settings.product_content_3] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+          {{ pages[settings.product_content_3].content }}
         </div>
       </div>
     {% endif %}
@@ -131,26 +131,26 @@
 
               <div class="grid grid--small">
                 <div class="grid__item medium-up--one-half">
-                  <label for="ContactFormName-{{ blockId }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.name' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.name' | t }}{% endcapture %}{% include 'ly-static-string' with '15007462' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  <label for="ContactFormName-{{ blockId }}">{{ 'contact.form.name' | t }}</label>
                   <input type="text" id="ContactFormName-{{ blockId }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
                 </div>
 
                 <div class="grid__item medium-up--one-half">
-                  <label for="ContactFormEmail-{{ blockId }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.email' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.email' | t }}{% endcapture %}{% include 'ly-static-string' with '15007463' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                  <label for="ContactFormEmail-{{ blockId }}">{{ 'contact.form.email' | t }}</label>
                   <input type="email" id="ContactFormEmail-{{ blockId }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
                 </div>
               </div>
 
               {% if settings.product_contact_show_phone %}
-                <label for="ContactFormPhone-{{ blockId }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.phone' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.phone' | t }}{% endcapture %}{% include 'ly-static-string' with '15007464' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+                <label for="ContactFormPhone-{{ blockId }}">{{ 'contact.form.phone' | t }}</label>
                 <input type="tel" id="ContactFormPhone-{{ blockId }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
               {% endif %}
 
-              <label for="ContactFormMessage-{{ blockId }}">{% comment %}ly_i18n_replace_for_[ 'contact.form.message' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.message' | t }}{% endcapture %}{% include 'ly-static-string' with '15007465' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</label>
+              <label for="ContactFormMessage-{{ blockId }}">{{ 'contact.form.message' | t }}</label>
               <textarea rows="5" id="ContactFormMessage-{{ blockId }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
 
               <button type="submit" class="btn">
-                {% comment %}ly_i18n_replace_for_[ 'contact.form.send' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.send' | t }}{% endcapture %}{% include 'ly-static-string' with '15007466' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                {{ 'contact.form.send' | t }}
               </button>
 
             </div>
@@ -159,7 +159,7 @@
 
         {% if form.posted_successfully? %}
           <p class="note note--success">
-            {% comment %}ly_i18n_replace_for_[ 'contact.form.post_success' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'contact.form.post_success' | t }}{% endcapture %}{% include 'ly-static-string' with '15007467' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'contact.form.post_success' | t }}
           </p>
         {% endif %}
 
@@ -172,7 +172,7 @@
 
     {% if reviews_as_tab %}
       <!-- <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders collapsible--auto-height" aria-controls="Product-content-5-{{ section_id }}">
-        <ly-as-15007461>Reviews</ly-as-15007461>
+        Reviews
         {% include 'collapsible-icons' %}
       </button> -->
 

@@ -1,5 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<script id="CartTemplate" type="text/template">
-<form action="/cart{% comment %}ly_checkout_begin{% endcomment %}{% assign language = cart.attributes["language"] %}{% if language == nil %}{% assign language = shop.metafields["languages"]["default"] %}{% endif %}{% assign checkout_code = shop.metafields.language_codes[language] %}{% if checkout_code %}{% assign checkout_code = '?locale=' | append: checkout_code %}{{ checkout_code }}{% endif %}{% comment %}ly_checkout_end{% endcomment %}" method="post" novalidate class="cart ajaxcart">
+<script id="CartTemplate" type="text/template">
+<form action="/cart" method="post" novalidate class="cart ajaxcart">
   {% raw %}
     <div class="drawer__inner drawer__inner--has-fixed-footer">
       {{#items}}

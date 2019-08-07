@@ -1,5 +1,5 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div id="ssw-suggest-login" data-show-time="0">
+<div id="ssw-suggest-login" data-show-time="0">
   <button class="ssw-close">×</button>
   <span class="ssw-suggest-text ssw-control-group"></span>
-  <span><a class="btn button ssw-login-btn" href="/account/login">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007721' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></span>
+  <span><a class="btn button ssw-login-btn" href="/account/login">{{ 'socialshopwave.log_in' | t }}</a></span>
 </div>

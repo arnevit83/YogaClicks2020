@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if shop.customer_accounts_enabled %}
+{% if shop.customer_accounts_enabled %}
   {% assign ssw_fave_enabled = 1 %}
   {% if shop.metafields.ssw['fave_enabled'] %}
     {% assign ssw_fave_enabled = shop.metafields.ssw['fave_enabled'] %}
@@ -7,7 +7,7 @@
     {% assign productId = ssw-widget-faveicon %}
     <div class="ssw-faveiticon sswfaveicon{{ productId }}">
       <i data-product-id="{{ productId }}" data-count="0" class="ssw-icon-heart-o ssw-fave-icon ssw-wishlist-element ssw-not-synch"
-         title="{% comment %}ly_i18n_replace_for_[ 'socialshopwave.fave' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.fave' | t }}{% endcapture %}{% include 'ly-static-string' with '15007773' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}"
+         title="{{ 'socialshopwave.fave' | t }}"
          data-params='{"product_id":"{{ productId }}","event":"fave_button","page":"product_profile"}'></i>
       <span class="faves-count">...</span>
     </div>

@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div class="js-qty__wrapper">
+<div class="js-qty__wrapper">
   <input type="text" id="Quantity-{{ id }}"
     class="js-qty__num"
     value="{{ qty }}"
@@ -8,13 +8,13 @@
     name="quantity">
   <button type="button"
     class="js-qty__adjust js-qty__adjust--minus"
-    aria-label="{% comment %}ly_i18n_replace_for_[ 'cart.general.reduce_quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.reduce_quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '15007491' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+    aria-label="{{ 'cart.general.reduce_quantity' | t }}">
       {% include 'icon-minus' %}
       <span class="icon__fallback-text" aria-hidden="true">−</span>
   </button>
   <button type="button"
     class="js-qty__adjust js-qty__adjust--plus"
-    aria-label="{% comment %}ly_i18n_replace_for_[ 'cart.general.increase_quantity' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'cart.general.increase_quantity' | t }}{% endcapture %}{% include 'ly-static-string' with '15007492' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+    aria-label="{{ 'cart.general.increase_quantity' | t }}">
       {% include 'icon-plus' %}
       <span class="icon__fallback-text" aria-hidden="true">+</span>
   </button>

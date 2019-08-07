@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if section.settings.divider %}<div class="section--divider">{% endif %}
+{% if section.settings.divider %}<div class="section--divider">{% endif %}
 
 <div
   data-section-id="{{ section.id }}"
@@ -25,9 +25,9 @@
             {% case block.type %}
               {% when 'page' %}
                 {% if block.settings.home_page_content != blank %}
-                  {% comment %}ly_code_replace_for_[ pages[block.settings.home_page_content].content ]_begin{% endcomment %}{% include 'ly-content' with pages[block.settings.home_page_content] %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                  {{ pages[block.settings.home_page_content].content }}
                 {% else %}
-                  {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.no_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.no_content' | t }}{% endcapture %}{% include 'ly-static-string' with '15007306' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {{ 'home_page.onboarding.no_content' | t }}
                 {% endif %}
               {% when 'text' %}
                 {% if block.settings.home_page_richtext != blank %}
@@ -35,7 +35,7 @@
                   {{ block.settings.home_page_richtext }}
                   {% if block.settings.enlarge_text %}</div>{% endif %}
                 {% else %}
-                  {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.no_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.no_content' | t }}{% endcapture %}{% include 'ly-static-string' with '15007306' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {{ 'home_page.onboarding.no_content' | t }}
                 {% endif %}
             {% endcase %}
           </div>

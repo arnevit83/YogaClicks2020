@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% style %}
+{% style %}
   .flex-grid--{{ section.id }} {
     margin-top: -{{ section.settings.gutter_size }}px;
     margin-left: -{{ section.settings.gutter_size }}px;
@@ -332,7 +332,7 @@
                     {% if block_text != blank %}
                       {{ block_text | newline_to_br }}
                     {% else %}
-                      <ly-as-15007489>Simple promotion</ly-as-15007489>
+                      Simple promotion
                     {% endif %}
                   </p>
                 </div>

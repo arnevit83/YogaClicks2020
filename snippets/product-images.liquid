@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {%- assign featured_image = current_variant.featured_image | default: product.featured_image -%}
 
 {% unless product.empty? %}
@@ -85,7 +85,7 @@
                   {% if settings.product_zoom_enable %}
                     <button type="button" class="btn btn--body btn--circle js-photoswipe__zoom product__photo-zoom">
                       {% include 'icon-search' %}
-                      <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.accessibility.close_modal' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.accessibility.close_modal' | t }}{% endcapture %}{% include 'ly-static-string' with '15007484' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+                      <span class="icon__fallback-text">{{ 'general.accessibility.close_modal' | t }}</span>
                     </button>
                   {% endif %}
                 </div>
@@ -143,7 +143,7 @@
                         {% unless isModal %}
                           <source src="{{ image.alt }}" type="video/mp4">
                         {% endunless %}
-                        <ly-as-15007483>Your browser does not support the video tag.</ly-as-15007483>
+                        Your browser does not support the video tag.
                       </video>
                     {% endif %}
                   </div>

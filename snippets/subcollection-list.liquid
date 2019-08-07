@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% unless list_printed %}
+{% unless list_printed %}
   {% if link.active or link.child_active %}
     {%- assign sub_collection_links = link.links -%}
     {% for sub_link in link.links %}
@@ -6,7 +6,7 @@
         {%- assign sub_handle = sub_link.url | remove: '/collections/' -%}
         <li {% if sub_link.current %}class="tag--active"{% endif %}>
           <a href="{{ sub_link.url }}" class="no-ajax">
-            {% comment %}ly_code_replace_for_[ sub_link.title ]_begin{% endcomment %}{% include 'ly-title' with sub_link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+            {{ sub_link.title }}
             {% if block.settings.enable_count and collections[sub_handle].products_count != blank %}
               &mdash; {{ collections[sub_handle].products_count }}
             {% endif %}
@@ -19,7 +19,7 @@
                   {%- assign sub_sub_handle = sub_sub_link.url | remove: '/collections/' -%}
                   <li {% if sub_sub_link.current %}class="tag--active"{% endif %}>
                     <a href="{{ sub_sub_link.url }}" class="no-ajax">
-                      {% comment %}ly_code_replace_for_[ sub_sub_link.title ]_begin{% endcomment %}{% include 'ly-title' with sub_sub_link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                      {{ sub_sub_link.title }}
                       {% if block.settings.enable_count and collections[sub_sub_handle].products_count != blank %}
                         &mdash; {{ collections[sub_sub_handle].products_count }}
                       {% endif %}

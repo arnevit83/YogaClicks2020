@@ -272,7 +272,7 @@
         ],
         "settings": {
           "main_menu_link_list": "main-menu",
-          "main_menu_alignment": "center",
+          "main_menu_alignment": "center-split",
           "header_style": "sticky",
           "sticky_index": false,
           "sticky_collection": false,

@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{% if settings.enable_currencies and section.settings.toolbar_currencies == false %}
+{% if settings.enable_currencies and section.settings.toolbar_currencies == false %}
   {% include 'currency-picker', picker_id: 'header', currency_class: 'small--hide' %}
 {% endif %}
 
@@ -12,9 +12,9 @@
         {% include 'icon-user' %}
         <span class="icon__fallback-text">
           {% if customer %}
-            {% comment %}ly_i18n_replace_for_[ 'layout.customer.account' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.account' | t }}{% endcapture %}{% include 'ly-static-string' with '15007432' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'layout.customer.account' | t }}
           {% else %}
-            {% comment %}ly_i18n_replace_for_[ 'layout.customer.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007433' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+            {{ 'layout.customer.log_in' | t }}
           {% endif %}
         </span>
       </a>
@@ -26,10 +26,10 @@
       {% include 'icon-user' %}
     </a>
     <ul class="ssw-dropdown-menu" role="menu" aria-labelledby="dLabel">
-      <li id="customer_myorders_li"><a tabindex="-1" href="/account">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.my_orders' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.my_orders' | t }}{% endcapture %}{% include 'ly-static-string' with '15007434' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></li>
+      <li id="customer_myorders_li"><a tabindex="-1" href="/account">{{ 'socialshopwave.my_orders' | t }}</a></li>
       {% include 'ssw-widget-dropdown' %}
       <li class="ssw-divider"></li>
-      <li><a id="customer_logout_link" tabindex="-1" href="/account/logout">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.logout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.logout' | t }}{% endcapture %}{% include 'ly-static-string' with '15007435' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a></li>
+      <li><a id="customer_logout_link" tabindex="-1" href="/account/logout">{{ 'socialshopwave.logout' | t }}</a></li>
     </ul>
     {% else %}
     <a class="site-nav__link site-nav__link--icon small--hide" id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">
@@ -42,7 +42,7 @@
     {% if section.settings.header_search_enable %}
       <a href="/search" class="site-nav__link site-nav__link--icon js-search-header js-no-transition{% if section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-split' %} medium-up--hide{% endif %}">
         {% include 'icon-search' %}
-        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.search.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.search.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007436' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+        <span class="icon__fallback-text">{{ 'general.search.title' | t }}</span>
       </a>
     {% endif %}
 
@@ -52,14 +52,14 @@
         class="site-nav__link site-nav__link--icon js-drawer-open-nav{% if section.settings.main_menu_alignment == 'left' or section.settings.main_menu_alignment == 'left-center' %} medium-up--hide{% endif %}"
         aria-controls="NavDrawer">
         {% include 'icon-hamburger' %}
-        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.drawers.navigation' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.drawers.navigation' | t }}{% endcapture %}{% include 'ly-static-string' with '15007437' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+        <span class="icon__fallback-text">{{ 'general.drawers.navigation' | t }}</span>
       </button>
     {% endif %}
 
     <a href="/cart" class="site-nav__link site-nav__link--icon js-drawer-open-cart js-no-transition" aria-controls="CartDrawer">
       <span class="cart-link">
         {% include 'icon-bag' %}
-        <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'layout.cart.title' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.cart.title' | t }}{% endcapture %}{% include 'ly-static-string' with '15007438' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+        <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
         <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
       </span>
     </a>

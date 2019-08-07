@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}
+
 {% unless thumbnail_position %}
   {%- assign thumbnail_position = 'beside' -%}
 {% endunless %}
@@ -49,16 +49,16 @@
             {% endif %}
 
             {% if settings.vendor_enable %}
-              <div id="product-vendor" class="product-single__vendor">{% comment %}ly_code_replace_for_[ product.vendor ]_begin{% endcomment %}{% include 'ly-vendor' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</div>
+              <div id="product-vendor" class="product-single__vendor">{{ product.vendor }}</div>
             {% endif %}
 
             {% if isModal %}
               <p class="h2 product-single__title">
-                {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                {{ product.title }}
               </p>
             {% else %}
               <h1 class="h2 product-single__title">
-                {% comment %}ly_code_replace_for_[ product.title ]_begin{% endcomment %}{% include 'ly-title' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                {{ product.title }}
               </h1>
             {% endif %}
 		
@@ -78,7 +78,7 @@
                 id="PriceA11y-{{ section_id }}"
                 class="visually-hidden"
                 aria-hidden="{{ hide_sale_price }}">
-                  {% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007485' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                  {{ 'products.general.regular_price' | t }}
               </span>
               <span class="product__price-wrap-{{ section_id }}{% if hide_sale_price %} hide{% endif %}">
                 <span id="ComparePrice-{{ section_id }}" class="product__price product__price--compare">
@@ -87,9 +87,9 @@
                   {% endif %}
                 </span>
               </span>
-              <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.sale_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.sale_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007486' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+              <span id="ComparePriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
             {% else %}
-              <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{% comment %}ly_i18n_replace_for_[ 'products.general.regular_price' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.regular_price' | t }}{% endcapture %}{% include 'ly-static-string' with '15007485' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+              <span id="PriceA11y-{{ section_id }}" class="visually-hidden">{{ 'products.general.regular_price' | t }}</span>
             {% endif %}
 
             <span id="ProductPrice-{{ section_id }}"
@@ -104,7 +104,7 @@
                 {% capture saved_amount %}{{ current_variant.compare_at_price | minus: current_variant.price | times: 100.0 | divided_by: current_variant.compare_at_price | round }}%{% endcapture %}
               {% endif %}
               <span id="SavePrice-{{ section_id }}" class="product__price-savings{% if hide_sale_price %} hide{% endif %}">
-                {% comment %}ly_i18n_replace_for_[ 'products.general.save_html' | t: saved_amount: saved_amount ]_begin{% endcomment %}{% capture ly_template %}{{ 'products.general.save_html' | t: saved_amount: saved_amount }}{% endcapture %}{% include 'ly-static-string' with '15007488' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = saved_amount  %}{% assign ly_template = ly_template | replace: '[[saved_amount]]', replacement %}{% if escape_content %}{{ ly_template}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                {{ 'products.general.save_html' | t: saved_amount: saved_amount }}
               </span>
             {% endif %}
 
@@ -173,13 +173,13 @@
 
 
         <!-- <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-desc">
-          {% include 'collapsible-icons' %}<ly-as-15084498>Description</ly-as-15084498>
+          {% include 'collapsible-icons' %}Description
         </button>
 
 
       <div id="Product-content-2-desc" class="collapsible-content--expanded collapsible-content--all">
         <div class="collapsible-content__inner rte">
-            {% comment %}ly_code_replace_for_[ product.description ]_begin{% endcomment %}{% include 'ly-description' with product %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+            {{ product.description }}
         </div>
       </div> -->
 

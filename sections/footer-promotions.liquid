@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign fixed_aspect_ratio = false -%}
+{%- assign fixed_aspect_ratio = false -%}
 {% unless section.settings.image_size == 'natural' %}
   {%- assign fixed_aspect_ratio = true -%}
 {% endunless %}

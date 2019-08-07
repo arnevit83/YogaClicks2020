@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}<div
+<div
   data-section-id="{{ section.id }}"
   data-section-type="slideshow-section"
   data-align-top="true"
@@ -232,7 +232,7 @@
 
   {% if section.blocks.size == 0 %}
     <div class="placeholder-noblocks">
-      {% comment %}ly_i18n_replace_for_[ 'home_page.onboarding.no_content' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'home_page.onboarding.no_content' | t }}{% endcapture %}{% include 'ly-static-string' with '15007326' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+      {{ 'home_page.onboarding.no_content' | t }}
     </div>
   {% endif %}
 </div>

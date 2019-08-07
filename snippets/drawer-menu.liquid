@@ -1,4 +1,4 @@
-{% comment %}ly_global_begin{% endcomment %}{% include 'ly-global' %}{% comment %}ly_global_end{% endcomment %}{%- assign animation_row = 1 -%}
+{%- assign animation_row = 1 -%}
 {%- assign drawer_position = 'right' -%}
 {% if logo_alignment == 'center' %}
   {%- assign drawer_position = 'left' -%}
@@ -13,7 +13,7 @@
       <div class="drawer__close">
         <button type="button" class="drawer__close-button js-drawer-close">
           {% include 'icon-close' %}
-          <span class="icon__fallback-text">{% comment %}ly_i18n_replace_for_[ 'general.drawers.close_menu' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'general.drawers.close_menu' | t }}{% endcapture %}{% include 'ly-static-string' with '15007349' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</span>
+          <span class="icon__fallback-text">{{ 'general.drawers.close_menu' | t }}</span>
         </button>
       </div>
     </div>
@@ -38,7 +38,7 @@
                   {% if link.active or link.child_active %}aria-open="true"{% endif %}
                   class="mobile-nav__link--button mobile-nav__link--top-level collapsible-trigger collapsible--auto-height {% if link.active or link.child_active %}is-open{% endif %}">
                   <span class="mobile-nav__faux-link" {% if link.active %}data-active="true"{% endif %}>
-                    {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                    {{ link.title }}
                   </span>
                   <div class="mobile-nav__toggle">
                     <span class="faux-button">
@@ -51,7 +51,7 @@
                   class="mobile-nav__link mobile-nav__link--top-level"
                   id="Label-{{ child_list_handle }}"
                   {% if link.active %}data-active="true"{% endif %}>
-                  {% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                  {{ link.title }}
                 </a>
                 <div class="mobile-nav__toggle">
                   <button type="button"
@@ -64,7 +64,7 @@
               {% endif %}
             </div>
           {% else %}
-            <a href="{{ link.url }}" class="mobile-nav__link mobile-nav__link--top-level" {% if link.active %}data-active="true"{% endif %}>{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+            <a href="{{ link.url }}" class="mobile-nav__link mobile-nav__link--top-level" {% if link.active %}data-active="true"{% endif %}>{{ link.title }}</a>
           {% endif %}
 
           {% if has_dropdown %}
@@ -88,7 +88,7 @@
                           aria-controls="Sublinklist-{{ child_list_handle }}-{{ grand_child_list_handle }}"
                           {% if childlink.active or childlink.child_active %}aria-open="true"{% endif %}
                           class="mobile-nav__link--button collapsible-trigger {% if childlink.active or childlink.child_active %}is-open{% endif %}">
-                            <span class="mobile-nav__faux-link" {% if childlink.active %}data-active="true"{% endif %}>{% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}</span>
+                            <span class="mobile-nav__faux-link" {% if childlink.active %}data-active="true"{% endif %}>{{ childlink.title | escape }}</span>
                             {% include 'collapsible-icons-alt' %}
                           </button>
                         {% else %}
@@ -96,7 +96,7 @@
                             class="mobile-nav__link"
                             id="Sublabel-{{ grand_child_list_handle }}"
                             {% if childlink.active %}data-active="true"{% endif %}>
-                            {% comment %}ly_code_replace_for_[ childlink.title | escape ]_begin{% endcomment %}{% include 'ly-title' with childlink %}{{ ly_translation | escape }}{% comment %}ly_code_replace_end{% endcomment %}
+                            {{ childlink.title | escape }}
                           </a>
                         {% endif %}
                         {% if childlink.url != '#' and has_sub_dropdown %}
@@ -119,7 +119,7 @@
                               {% for grandchildlink in childlink.links %}
                                 <li class="mobile-nav__item">
                                   <a href="{{ grandchildlink.url }}" class="mobile-nav__link" {% if grandchildlink.active %}data-active="true"{% endif %}>
-                                    {% comment %}ly_code_replace_for_[ grandchildlink.title ]_begin{% endcomment %}{% include 'ly-title' with grandchildlink %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}
+                                    {{ grandchildlink.title }}
                                   </a>
                                 </li>
                               {% endfor %}
@@ -148,7 +148,7 @@
               {% for link in toolbar_menu.links %}
                 {%- assign animation_row = animation_row | plus: 1 -%}
                 <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }} medium-up--hide">
-                  <a href="{{ link.url }}" class="mobile-nav__link">{% comment %}ly_code_replace_for_[ link.title ]_begin{% endcomment %}{% include 'ly-title' with link %}{{ ly_translation }}{% comment %}ly_code_replace_end{% endcomment %}</a>
+                  <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
                 </div>
               {% endfor %}
             {% endif %}
@@ -160,9 +160,9 @@
               <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }}">
                 <a href="/account" class="mobile-nav__link">
                   {% if customer %}
-                    {% comment %}ly_i18n_replace_for_[ 'layout.customer.account' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.account' | t }}{% endcapture %}{% include 'ly-static-string' with '15007350' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    {{ 'layout.customer.account' | t }}
                   {% else %}
-                    {% comment %}ly_i18n_replace_for_[ 'layout.customer.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.customer.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007351' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}
+                    {{ 'layout.customer.log_in' | t }}
                   {% endif %}
                 </a>
               </div>
@@ -171,12 +171,12 @@
             {% if shop.customer_accounts_enabled %}
             <div class="grid__item one-half appear-animation appear-delay-{{ animation_row }}">
               {% if customer %}
-              <a class="mobile-nav__link" tabindex="-1" href="/account">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.my_orders' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.my_orders' | t }}{% endcapture %}{% include 'ly-static-string' with '15007352' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
-              <a class="mobile-nav__link" tabindex="-1" href="/pages/profile-edit">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.edit_profile' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.edit_profile' | t }}{% endcapture %}{% include 'ly-static-string' with '15007353' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
-              <a class="mobile-nav__link" id="customer_logout_link" tabindex="-1" href="/account/logout">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.logout' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.logout' | t }}{% endcapture %}{% include 'ly-static-string' with '15007354' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+              <a class="mobile-nav__link" tabindex="-1" href="/account">{{ 'socialshopwave.my_orders' | t }}</a>
+              <a class="mobile-nav__link" tabindex="-1" href="/pages/profile-edit">{{ 'socialshopwave.edit_profile' | t }}</a>
+              <a class="mobile-nav__link" id="customer_logout_link" tabindex="-1" href="/account/logout">{{ 'socialshopwave.logout' | t }}</a>
               {% else %}
-              <a class="mobile-nav__link" id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.log_in' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.log_in' | t }}{% endcapture %}{% include 'ly-static-string' with '15007355' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
-              <a class="mobile-nav__link" id="customer_register_link" data-toggle="ssw-modal" data-target="#signup_modal" href="javascript:void(0);" onclick="trackShopStats('login_popup_view', 'all')">{% comment %}ly_i18n_replace_for_[ 'socialshopwave.sign_up' | t ]_begin{% endcomment %}{% capture ly_template %}{{ 'socialshopwave.sign_up' | t }}{% endcapture %}{% include 'ly-static-string' with '15007356' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}</a>
+              <a class="mobile-nav__link" id="customer_login_link" href="javascript:void(0);" data-toggle="ssw-modal" data-target="#login_modal" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.log_in' | t }}</a>
+              <a class="mobile-nav__link" id="customer_register_link" data-toggle="ssw-modal" data-target="#signup_modal" href="javascript:void(0);" onclick="trackShopStats('login_popup_view', 'all')">{{ 'socialshopwave.sign_up' | t }}</a>
               {% endif %}
             </div>
             {% endif %}
@@ -191,73 +191,73 @@
     <ul class="mobile-nav__social appear-animation appear-delay-{{ animation_row }}">
       {% if settings.social_facebook_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_facebook_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Facebook' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Facebook' }}{% endcapture %}{% include 'ly-static-string' with '15015638' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015636' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Facebook ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_facebook_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
             {% include 'icon-facebook' %}
-            <span class="icon__fallback-text"><ly-as-15007340>Facebook</ly-as-15007340></span>
+            <span class="icon__fallback-text">Facebook</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_twitter_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_twitter_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Twitter' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Twitter' }}{% endcapture %}{% include 'ly-static-string' with '15015642' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015641' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Twitter ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_twitter_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
             {% include 'icon-twitter' %}
-            <span class="icon__fallback-text"><ly-as-15007341>Twitter</ly-as-15007341></span>
+            <span class="icon__fallback-text">Twitter</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_pinterest_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_pinterest_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Pinterest' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Pinterest' }}{% endcapture %}{% include 'ly-static-string' with '15015645' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015644' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Pinterest ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_pinterest_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
             {% include 'icon-pinterest' %}
-            <span class="icon__fallback-text"><ly-as-15007342>Pinterest</ly-as-15007342></span>
+            <span class="icon__fallback-text">Pinterest</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_instagram_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_instagram_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Instagram' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Instagram' }}{% endcapture %}{% include 'ly-static-string' with '15015648' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015647' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Instagram ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_instagram_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
             {% include 'icon-instagram' %}
-            <span class="icon__fallback-text"><ly-as-15007343>Instagram</ly-as-15007343></span>
+            <span class="icon__fallback-text">Instagram</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_snapchat_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_snapchat_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Snapchat' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Snapchat' }}{% endcapture %}{% include 'ly-static-string' with '15015651' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015650' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Snapchat ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_snapchat_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
             {% include 'icon-snapchat' %}
-            <span class="icon__fallback-text"><ly-as-15007344>Snapchap</ly-as-15007344></span>
+            <span class="icon__fallback-text">Snapchap</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_tumblr_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_tumblr_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Tumblr' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Tumblr' }}{% endcapture %}{% include 'ly-static-string' with '15015654' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015653' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Tumblr ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_tumblr_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
             {% include 'icon-tumblr' %}
-            <span class="icon__fallback-text"><ly-as-15007345>Tumblr</ly-as-15007345></span>
+            <span class="icon__fallback-text">Tumblr</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_linkedin_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_linkedin_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'LinkedIn' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'LinkedIn' }}{% endcapture %}{% include 'ly-static-string' with '15015657' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015656' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'LinkedIn ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_linkedin_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'LinkedIn' }}">
             {% include 'icon-linkedin' %}
-            <span class="icon__fallback-text"><ly-as-15007346>LinkedIn</ly-as-15007346></span>
+            <span class="icon__fallback-text">LinkedIn</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_youtube_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_youtube_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'YouTube' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'YouTube' }}{% endcapture %}{% include 'ly-static-string' with '15015660' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015659' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'YouTube ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_youtube_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
             {% include 'icon-youtube' %}
-            <span class="icon__fallback-text"><ly-as-15007347>YouTube</ly-as-15007347></span>
+            <span class="icon__fallback-text">YouTube</span>
           </a>
         </li>
       {% endif %}
       {% if settings.social_vimeo_link != blank %}
         <li class="mobile-nav__social-item">
-          <a target="_blank" href="{{ settings.social_vimeo_link }}" title="{% comment %}ly_i18n_replace_for_[ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Vimeo' ]_begin{% endcomment %}{% capture ly_template %}{{ 'layout.footer.social_platform' | t: name: langify_shop_name, platform: 'Vimeo' }}{% endcapture %}{% include 'ly-static-string' with '15015663' %}{% if ly_translation %}{% assign escape_content = true %}{% assign ly_template = ly_translation %}{% else %}{% assign escape_content = false %}{% endif %}{% assign replacement = langify_shop_name %}{% assign ly_template = ly_template | replace: '[[name]]', replacement %}{% include 'ly-static-string' with '15015662' %}{% if ly_translation %}{% assign replacement = ly_translation %}{% else %}{% assign replacement = 'Vimeo ' %}{% endif %}{% assign ly_template = ly_template | replace: '[[platform]]', replacement %}{% if escape_content %}{{ ly_template | escape}}{% else %}{{ ly_template }}{% endif %}{% comment %}ly_i18n_replace_end{% endcomment %}">
+          <a target="_blank" href="{{ settings.social_vimeo_link }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
             {% include 'icon-vimeo' %}
-            <span class="icon__fallback-text"><ly-as-15007348>Vimeo</ly-as-15007348></span>
+            <span class="icon__fallback-text">Vimeo</span>
           </a>
         </li>
       {% endif %}
