@@ -1066,4 +1066,16 @@ i.check-icon {
 }
 
 {%- comment -%}/* Add custom styles here */{%- endcomment -%}
+.pt-display-swatch i.check-icon:before {
+    height: 41px;
+    line-height: 40px;
+    width: 41px;
+    font-size: 33px;
+    border: 1px solid grey;
+    border-radius: 50%;
+    padding-left: 3px;
+}
 
+.pt-display-swatch i.check-icon:hover:before {
+  border-color: black;
+}
