@@ -38,12 +38,8 @@
           {% when 'newsletter' %}
             {% include 'footer-newsletter', block: block %}
             <div id='jobo_custom_translate_widget' data-placement='top'></div>
-
               {%- assign img_url = 'EthicalAward.svg' | asset_url -%}
-              <img class="lazyload" style="max-width: 225px" data-src="{{ img_url }}" alt="">
-              <noscript>
-                <img class="lazyloaded"  style="max-width: 225px" src="{{'EthicalAward.svg' | asset_url }}" alt="">
-              </noscript>
+              <img class="lazyload" style="max-width: 225px" data-src="{{ img_url }}" alt=""><noscript><img class="lazyloaded"  style="max-width: 225px" src="{{'EthicalAward.svg' | asset_url }}" alt=""></noscript>
           {% when 'menu' %}
             {% include 'footer-menu', block: block %}
           {% endcase %}
