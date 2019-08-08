@@ -3,7 +3,9 @@
     .AboutUSs {
         max-width: 1032px !important;
         font-weight: 100 !important;
-        font-size: 14px !important
+        font-size: 14px !important;
+    margin: 0 auto;
+    margin-top: 20px;
     }
 
     .FoldorOverGrid .FoldorOverGrid2-1x {
@@ -165,13 +167,10 @@
 
     .secondWhiteboxs h2 {
         position: absolute;
-        left: 30%;
+        left: 23%;
         top: 19%;
         opacity: 1 !important;
 
-        * {
-            filter: inherit;
-        }
     }
 
     .wrappersecond div:hover .FirstWhiteboxs {
@@ -207,8 +206,20 @@
         <div class="Midtexts"> Whether they were making yoga pants, yoga mats or yoga gifts, they were informed by their
             knowledge of what yogis need, and by yogi values – making with sustainability in mind. <br /><br /> Feeling
             inspired by this expertise, and desire to make the world a better place, I decided to create a yoga shop –
-            YogaClicks would be a gathering of the very best yogi makers from around the world. </div><br /><br /> <img
-            data-src="{{'about-us-mid-image.webp' | asset_url}}"> <br /> <br /> <br />
+            YogaClicks would be a gathering of the very best yogi makers from around the world. </div><br /><br /> 
+            <div class="custom__item">
+      <div class="custom__item-inner custom__item-inner-- custom__item-inner--placeholder-image">
+     
+            <div class="aos-animate"><a>
+                
+             
+                <div class="image-wrap" >
+                <img src="{{'about-us-mid-image.webp' | asset_url | , 'lazyload'}}" /></div>
+                      
+                    </a>
+                      </div>
+                    </div>  </div>
+             <br /> <br /> <br />
         <div class="othdiv12">
             <h1 class="welcomef">From yoga pants to the best yoga mats</h1>
         </div><br /><br />
@@ -223,12 +234,12 @@
         <div class="othdiv12">
             <h1 class="welcomef">DISCOVER MORE</h1>
         </div>
-        <div class="wrappersecond">
-            <div> <a href="/pages/meet-your-makers">{{'about-us-makers.png.webp' | asset_url | img_tag: 'MEET THE MAKERS', 'responsive'}}<span
+        <div class="wrappersecond"> 
+            <div> <a href="/pages/meet-your-makers">{{'about-us-makers.webp' | asset_url | img_tag: 'MEET THE MAKERS', 'responsive lazyload'}}<span
                         class="secondWhiteboxs Swoperimage">
                         <h2> MEET THE MAKERS </h2>
                     </span> </a> </div>
-            <div> <a href="/pages/sustainability">{{'about-us-sustainable.webp' | asset_url | img_tag: ' SUSTAINABILITY STORIES', 'responsive '}}<span
+            <div> <a href="/pages/sustainability">{{'about-us-sustainable.webp' | asset_url | img_tag: ' SUSTAINABILITY STORIES', 'responsive lazyload'}}<span
                         class="secondWhiteboxs Swoperimage">
                         <h2> SUSTAINABILITY STORIES </h2>
                     </span> </a> </div>
