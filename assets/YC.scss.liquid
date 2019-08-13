@@ -92,8 +92,26 @@
     font-size: 16px
 }
 
+.hidden-lg{
+    display: block;
+}
+.hidden-xs{
+    display: none;
+}
+
+
 
 @media (max-width:768px) {
+
+    .hidden-lg{
+        display: none!important;
+    }
+    .hidden-xs{
+        display: block!important;
+    }
+    
+
+
     .FoldorOverGrid .FoldorOverGrid5x {
         margin: 0 .5% .2% !important;
         width: 97% !important;
@@ -163,3 +181,6 @@
     }
 
 }
+
+
+
