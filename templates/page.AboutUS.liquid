@@ -4,8 +4,8 @@
         max-width: 1032px !important;
         font-weight: 100 !important;
         font-size: 14px !important;
-    margin: 0 auto;
-    margin-top: 20px;
+        margin: 0 auto;
+        margin-top: 20px;
     }
 
     .FoldorOverGrid .FoldorOverGrid2-1x {
@@ -71,11 +71,11 @@
     }
 
     .YogiGlobal {
-        background: url({{'about-us-lead-image.webp' | asset_url}}) no-repeat;
+        background:url({{'about-us-lead-image.webp' | asset_url}}) no-repeat;
     }
 
     .YogiGlobalMid {
-        background: url({{'about-us-mid-image.webp' | asset_url}}) no-repeat;
+        background:url({{'about-us-mid-image.webp' | asset_url}}) no-repeat;
     }
 
     .HeaderWhite span {
@@ -110,13 +110,13 @@
         font-size: 12px;
     }
 
-    @media (min-width: 1597px) {
+    @media (min-width:1597px) {
         .secondWhiteboxs {
             font-size: 15px !important;
         }
     }
 
-    @media (max-width: 800px) {
+    @media (max-width:800px) {
         .secondWhiteboxs h2 {
             left: 32% !important;
             top: 19% !important;
@@ -170,27 +170,26 @@
         left: 23%;
         top: 19%;
         opacity: 1 !important;
-
     }
 
     .wrappersecond div:hover .FirstWhiteboxs {
         opacity: 0.6;
     }
 
-    @media (min-width: 800px) and (max-width: 1000px) {
+    @media (min-width:800px) and (max-width:1000px) {
         .secondWhiteboxs {
             font-size: calc(0.5vmax + 4px);
         }
 
-        ) .wrapper div:hover .secondWhiteboxs {
+         .wrapper div:hover .secondWhiteboxs {
             opacity: 0.95;
         }
+    }
 </style>
-
 <div class="AboutUSs page-body " style="max-width:1200px!important">
     <div class="page-body-content" style="max-width:1200px!important">
         <div class="HeaderWhite YogiGlobal"><span>OUR STORY</span></div><img
-            data-src="{{'about-us-lead-image.webp' | asset_url}}" class="hiddenman"> <br /> <br />
+            src="{{'about-us-lead-image.webp' | asset_url}}" class="hiddenman lazyload"> <br /> <br />
         <div class="othdiv12">
             <h1 class="welcomef">Yoga book inspires yoga shop</h1>
         </div><br /><br />
@@ -206,42 +205,32 @@
         <div class="Midtexts"> Whether they were making yoga pants, yoga mats or yoga gifts, they were informed by their
             knowledge of what yogis need, and by yogi values – making with sustainability in mind. <br /><br /> Feeling
             inspired by this expertise, and desire to make the world a better place, I decided to create a yoga shop –
-            YogaClicks would be a gathering of the very best yogi makers from around the world. </div><br /><br /> 
-            <div class="custom__item">
-      <div class="custom__item-inner custom__item-inner-- custom__item-inner--placeholder-image">
-     
-            <div class="aos-animate"><a>
-                
-             
-                <div class="image-wrap" >
-                <img src="{{'about-us-mid-image.webp' | asset_url | , 'lazyload'}}" /></div>
-                      
-                    </a>
-                      </div>
-                    </div>  </div>
-             <br /> <br /> <br />
-        <div class="othdiv12">
-            <h1 class="welcomef">From yoga pants to the best yoga mats</h1>
-        </div><br /><br />
-        <div class="Midtexts">It's a daily joy to work with these amazing yogis, most of whom are also yoga teachers.
-            From sustainable fashion guru Natalia who makes yoga pants out of recycled coffee grounds, to Reiki healer
-            Delphine, charging her gemstones with rays of light, to Anna – a mother of three who somehow finds the time
-            to create beautifully patterned, super soft, eco yoga mats. <br /><br /> I hope all this creativity will act
-            as a beacon of light to you, inspiring you to fulfil a yoga-inspired dream of your own. <br /><br /> With
-            gratitude for the practice of yoga, and all my teachers. <br /> <br /> <span class="Lucy"> Lucy xx </span>
-            <br /> <span class="LucyF"> YogaClicks Founder </span> </div><br /><br />
-        <hr /> <br /><br />
-        <div class="othdiv12">
-            <h1 class="welcomef">DISCOVER MORE</h1>
-        </div>
-        <div class="wrappersecond"> 
-            <div> <a href="/pages/meet-your-makers">{{'about-us-makers.webp' | asset_url | img_tag: 'MEET THE MAKERS', 'responsive lazyload'}}<span
-                        class="secondWhiteboxs Swoperimage">
-                        <h2> MEET THE MAKERS </h2>
-                    </span> </a> </div>
-            <div> <a href="/pages/sustainability">{{'about-us-sustainable.webp' | asset_url | img_tag: ' SUSTAINABILITY STORIES', 'responsive lazyload'}}<span
-                        class="secondWhiteboxs Swoperimage">
-                        <h2> SUSTAINABILITY STORIES </h2>
-                    </span> </a> </div>
-        </div><br /><br /> <br /><br />
-    </div>  </div>
+            YogaClicks would be a gathering of the very best yogi makers from around the world. </div><br /><br /> <img
+            src="{{'about-us-mid-image.webp' | asset_url | , 'lazyload'}}" />
+    </div> <br /> <br /> <br />
+    <div class="othdiv12">
+        <h1 class="welcomef">From yoga pants to the best yoga mats</h1>
+    </div><br /><br />
+    <div class="Midtexts">It's a daily joy to work with these amazing yogis, most of whom are also yoga teachers. From
+        sustainable fashion guru Natalia who makes yoga pants out of recycled coffee grounds, to Reiki healer Delphine,
+        charging her gemstones with rays of light, to Anna – a mother of three who somehow finds the time to create
+        beautifully patterned, super soft, eco yoga mats. <br /><br /> I hope all this creativity will act as a beacon
+        of light to you, inspiring you to fulfil a yoga-inspired dream of your own. <br /><br /> With gratitude for the
+        practice of yoga, and all my teachers. <br /> <br /> <span class="Lucy"> Lucy xx </span> <br /> <span
+            class="LucyF"> YogaClicks Founder </span> </div><br /><br />
+    <hr /> <br /><br />
+    <div class="othdiv12">
+        <h1 class="welcomef">DISCOVER MORE</h1>
+    </div>
+    <div class="wrappersecond">
+        <div> <a href="/pages/meet-your-makers">{{'about-us-makers.webp' | asset_url | img_tag:'MEET THE MAKERS', 'lazyload'}}<span
+                    class="secondWhiteboxs Swoperimage">
+                    <h2> MEET THE MAKERS </h2>
+                </span> </a> </div>
+        <div> <a href="/pages/sustainability">{{'about-us-sustainable.webp' | asset_url | img_tag:' SUSTAINABILITY STORIES', 'lazyload'}}<span
+                    class="secondWhiteboxs Swoperimage">
+                    <h2> SUSTAINABILITY STORIES </h2>
+                </span> </a> </div>
+    </div><br /><br /> <br /><br />
+</div>
+</div>

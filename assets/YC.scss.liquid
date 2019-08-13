@@ -53,6 +53,113 @@
 }
 
 
-// Pages css
+.FoldorOverGridhover:hover {
+    opacity: .85
+}
+
+.FoldorOverGrid {
+    display: inline-block
+}
+
+.FoldorOverGrid img {
+    width: 100%
+}
+
+.FoldorOverGrid .FoldorOverGrid2x {
+    margin: 0 .5% .5%;
+    display: block;
+    width: 49%;
+    float: left
+}
+
+.FoldorOverGrid .FoldorOverGrid3x {
+    margin: 0 .5% .5%;
+    display: block;
+    width: 32%;
+    float: left
+}
+
+.FoldorOverGrid .FoldorOverGrid4x {
+    margin: 0 .5% .5%;
+    display: block;
+    width: 24%;
+    float: left
+}
 
 
+
+.FoldorOverGridBorer {
+    font-size: 16px
+}
+
+
+@media (max-width:768px) {
+    .FoldorOverGrid .FoldorOverGrid5x {
+        margin: 0 .5% .2% !important;
+        width: 97% !important;
+    }
+
+    .FoldorOverGrid .FoldorOverGrid5x img {
+        margin: 20px .5% .2% !important;
+        width: 97% !important;
+        max-width: 250px;
+    }
+
+    .FoldorOverGrid .FoldorOverGrid2x {
+        margin: 0 .5% .2%;
+        width: 97%
+    }
+
+    .FoldorOverGridBorer a {
+        position: relative;
+        color: #444
+    }
+
+    .FoldorOverGridBorer {
+        border: 1px solid #444;
+        padding: 8px 10px;
+        margin: 0 -1px -1px 0 !important;
+        display: block !important;
+        width: 50% !important;
+        text-align: center
+    }
+
+    .FoldorOverGrid .FoldorOverGrid3x,
+    .FoldorOverGrid .FoldorOverGrid4x {
+        margin: 0 .5% .2%;
+        width: 97%
+    }
+
+}
+
+@media (max-width:1000px) and (min-width:769px) {
+
+
+    .FoldorOverGridBorer a {
+        position: relative;
+        color: #444
+    }
+ 
+    .FoldorOverGridBorer {
+        border: 1px solid #444;
+        padding: 8px 10px;
+        margin: 0 -1px -1px 0 !important;
+        display: block !important;
+        width: 50% !important;
+        text-align: center
+    }
+
+    .FoldorOverGrid .FoldorOverGrid4x {
+        margin: 0 8px 16px;
+        width: 47%
+    }
+}
+
+@media (max-width:480px) {
+
+    .FoldorOverGridBorer {
+        padding: 8px 5px !important;
+        font-size: 11px
+    }
+
+}
