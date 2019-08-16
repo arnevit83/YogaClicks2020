@@ -1,0 +1,39 @@
+{% comment %}
+NOTE: must be called inside the 'paginate' tag
+{% endcomment %}
+
+
+
+{% if paginate.pages > 1 %}
+  <div class="pager">
+  	<ul class="pager-list">
+    {% if paginate.previous %}
+      <li class="pager-item prev-item">
+        <a class="item-text item-link prev-page" href="{{ paginate.previous.url }}" title="{{ paginate.previous.title }}">{{ paginate.previous.title }}</a>
+	  </li>
+    {% endif %}
+    
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+      	<li class="pager-item">
+          <a class="item-text item-link" href="{{ part.url }}" title="{{ part.title }}">{{ part.title }}</a>
+      	</li>
+      {% elsif paginate.current_page == part.title %}
+      	<li class="pager-item">
+          <span class="item-text item-current">{{ part.title }}</span>
+      	</li>
+      {% else %}
+        <li class="pager-item">
+          <span class="item-text">{{ part.title }}</span>
+        </li>
+      {% endif %}
+    {% endfor %}
+    
+    {% if paginate.next %}
+      <li class="pager-item next-item">
+        <a class="item-text item-link next-page" href="{{ paginate.next.url }}" title="{{ paginate.next.title }}">{{ paginate.next.title }}</a>
+      </li>
+    {% endif %}
+    </ul>
+  </div>
+{% endif %}
