@@ -13,46 +13,91 @@
             <h2 class="section-header__title">
               {{ block.settings.title }}
             </h2>
+
           </div>
         {% endif %}
 
-        <div class="form-vertical">
-          {% form 'contact' %}
+<br />
+<div class="FoldorOverGrid" style="width: 100%;">
+  <div class="FoldorOverGrid2x" style="padding-right: 20px">
 
-            {% if form.posted_successfully? %}
-              <p class="note note--success">
-                {{ 'contact.form.post_success' | t }}
-              </p>
-            {% endif %}
+      <div style="text-align: center;">
+       
+          <div style="margin:0 auto; width:320px">
+              <script src="https://widget.reviews.co.uk/badge-ribbon/dist.js"></script>
+              <div id="badge-ribbon"></div>
+              <script>
+                reviewsBadgeRibbon("badge-ribbon", {
+                  store: "yogaclicks-store",
+                  mono: "",
+                  size: "small",
+                });
+              </script>
+              </div>   <br />
+          <p style="text-align: center;"><b>Call us</b> </p>
+        <a href="tel:08456440231">0845 644 0231</a></div>
+      
+      <br /><br /> 
+      <p style="text-align: center;"><b>Email</b></p>
+      <div style="text-align: center;">General customer support <a href="mailto:support@yogaclicks.com">support@yogaclicks.com</a></div><br />
+    <div style="text-align: center;">Media enquiries – please email <a href="mailto:media@yogaclicks.com">media@yogaclicks.com</a></div>
+    <div style="text-align: center;">New makers – please email <a href="mailto:makers@yogaclicks.com">makers@yogaclicks.com</a></div>
+    <div style="text-align: center;">Account enquiries – please email <a href="mailto:accounts@yogaclicks.com">accounts@yogaclicks.com</a></div>
+    <br /><br />      <p style="text-align: center;"> We’re open Monday to Friday 9.30-17.00 GMT</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2421.6694520229153!2d1.2965200160262773!3d52.62981723583696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d9e3e7d8a9e2b3%3A0xafb2673b030ac29b!2s12+Upper+King+St%2C+Norwich+NR3+1HA!5e0!3m2!1sen!2suk!4v1565947526875!5m2!1sen!2suk" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+<br /><br />
+  </div>
+  <div class="FoldorOverGrid2x">
+    <div class="form-vertical">
+        <p style="text-align: center;"><b>Got a question or a suggestion?</b> </p>
+        <div style="text-align: center;">YogaClicks would love to hear from you.</div>
+        <br /><br />
+        <div style="text-align: center;"> </div>
+      {% form 'contact' %}
 
-            {{ form.errors | default_errors }}
+        {% if form.posted_successfully? %}
+          <p class="note note--success">
+            {{ 'contact.form.post_success' | t }}
+          </p>
+        {% endif %}
 
-            <div class="grid grid--small">
-              <div class="grid__item medium-up--one-half">
-                <label for="ContactFormName-{{ blockId }}">{{ 'contact.form.name' | t }}</label>
-                <input type="text" id="ContactFormName-{{ blockId }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
-              </div>
+        {{ form.errors | default_errors }}
 
-              <div class="grid__item medium-up--one-half">
-                <label for="ContactFormEmail-{{ blockId }}">{{ 'contact.form.email' | t }}</label>
-                <input type="email" id="ContactFormEmail-{{ blockId }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
-              </div>
-            </div>
+        <div class="grid grid--small">
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormName-{{ blockId }}">{{ 'contact.form.name' | t }}</label>
+            <input type="text" id="ContactFormName-{{ blockId }}" class="input-full" name="contact[name]" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}">
+          </div>
 
-            {% if block.settings.show_phone %}
-              <label for="ContactFormPhone-{{ blockId }}">{{ 'contact.form.phone' | t }}</label>
-              <input type="tel" id="ContactFormPhone-{{ blockId }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
-            {% endif %}
-
-            <label for="ContactFormMessage-{{ blockId }}">{{ 'contact.form.message' | t }}</label>
-            <textarea rows="5" id="ContactFormMessage-{{ blockId }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
-
-            <button type="submit" class="btn">
-              {{ 'contact.form.send' | t }}
-            </button>
-
-          {% endform %}
+          <div class="grid__item medium-up--one-half">
+            <label for="ContactFormEmail-{{ blockId }}">{{ 'contact.form.email' | t }}</label>
+            <input type="email" id="ContactFormEmail-{{ blockId }}" class="input-full" name="contact[email]" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+          </div>
         </div>
+
+        {% if block.settings.show_phone %}
+          <label for="ContactFormPhone-{{ blockId }}">{{ 'contact.form.phone' | t }}</label>
+          <input type="tel" id="ContactFormPhone-{{ blockId }}" class="input-full" name="contact[phone]" pattern="[0-9\-]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}">
+        {% endif %}
+
+        <label for="ContactFormMessage-{{ blockId }}">{{ 'contact.form.message' | t }}</label>
+        <textarea rows="5" id="ContactFormMessage-{{ blockId }}" class="input-full" name="contact[body]">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+
+        <button type="submit" class="btn">
+          {{ 'contact.form.send' | t }}
+        </button>
+
+      {% endform %}
+   
+    </div>
+  </div>
+</div>
+
+
+
+
+
+       
       </div>
     </div>
   </div>
