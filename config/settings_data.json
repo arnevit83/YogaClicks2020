@@ -369,7 +369,7 @@
           "text": "<p>Shop ethical. Award winning yoga shop for yoga clothes, yoga mats,<br> yoga gifts and yoga jewellery. Sustainably made by yogis.<\/p>",
           "align_text": "center",
           "narrow_column": false,
-          "enlarge_text": true,
+          "enlarge_text": false,
           "divider": false
         }
       },
@@ -774,7 +774,7 @@
           "section_height": "750px",
           "mobile_height": "auto",
           "parallax": true,
-          "style": "dots",
+          "style": "bars",
           "autoplay": true,
           "autoplay_speed": 5
         }
@@ -814,8 +814,8 @@
       "1525295772132": {
         "type": "featured-collection",
         "settings": {
-          "title": "Featured collection",
-          "home_featured_products": "",
+          "title": "Brand of the Month",
+          "home_featured_products": "urban-goddess",
           "per_row": 4,
           "rows": 1,
           "mobile_scrollable": true,
@@ -836,7 +836,7 @@
               "cta_link1": "shopify:\/\/collections\/all",
               "cta_text2": "Shop All",
               "cta_link2": "",
-              "image": "shopify:\/\/shop_images\/friends-laughing-on-beach.jpg",
+              "image": "shopify:\/\/shop_images\/beach-towel-in-wind.jpg",
               "video_url": "",
               "width": "100",
               "height": 720,
@@ -851,7 +851,7 @@
           "1525886854810": {
             "type": "sale_collection",
             "settings": {
-              "sale_collection": "",
+              "sale_collection": "annakataika",
               "top_text": "Up to",
               "middle_text": "50% off",
               "bottom_text": "Select products",
@@ -902,13 +902,13 @@
               "cta_link1": "shopify:\/\/collections\/all",
               "cta_text2": "Shop All",
               "cta_link2": "",
-              "image": "shopify:\/\/shop_images\/woman-meditating-thailand.jpg",
+              "image": "shopify:\/\/shop_images\/cool-pool-pineapple.jpg",
               "video_url": "",
               "width": "50",
               "height": 800,
               "text_size": 120,
               "text_align": "vertical-center horizontal-center",
-              "focal_point": "80% 50%",
+              "focal_point": "20% 50%",
               "color_accent": "rgba(0,0,0,0)",
               "boxed": false,
               "framed": true
@@ -961,6 +961,25 @@
       },
       "collection-promotions": {
         "type": "collection-promotions",
+        "blocks": {
+          "1566207886826": {
+            "type": "banner",
+            "settings": {
+              "promo_collection": "",
+              "heading": "Christmas is Coming!",
+              "text": "Shop yoga gifts and jewellery for yoga lovers",
+              "link": "",
+              "label": "Shop now",
+              "image": "shopify:\/\/shop_images\/womens-hand-moon-bracelet.jpg",
+              "color_tint": "#000",
+              "color_tint_opacity": 8,
+              "framed": false
+            }
+          }
+        },
+        "block_order": [
+          "1566207886826"
+        ],
         "settings": {
           "gutter_size": 20
         }
@@ -972,11 +991,11 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/friends-backpacking-together.jpg",
               "title": "FREE DELIVERY & PRICE GUARANTEE",
-              "text": "<p>Free shipping to the UK, from all our makers in UK, Europe &amp; US. We also won't be beaten on price, if it's cheaper elsewhere tell us &nbsp;<\/p>",
+              "text": "<p>Free shipping to the UK, from all our makers in UK, Europe &amp; US. We also won't be beaten on price, if it's cheaper elsewhere tell us!&nbsp;&nbsp;<\/p>",
               "button_label": "",
-              "button_link": "shopify:\/\/pages\/shipping"
+              "button_link": ""
             }
           },
           "1563552715417": {

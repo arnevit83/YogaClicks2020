@@ -1,11 +1,14 @@
 
-
 <!doctype html>
 <html class="no-js" lang="{{ shop.locale }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta property="fb:app_id" content="812614575505636" />
+  <meta name="p:domain_verify" content="2baeb13e22f348ff885e4b961d08ad77"/>
+<meta name="msvalidate.01" content="BC5BE1BBD53CD965EE390CEC81E848A2" />
+<meta name="google-site-verification" content="B5LgZl7j5Ky3_cxMroQp7dQVoU-F3AvCCq3MjYGKgDc" />
   <meta name="theme-color" content="{{ settings.color_button }}">
   <link rel="canonical" href="{{ canonical_url }}">
   <meta name="format-detection" content="telephone=no">
@@ -94,7 +97,7 @@
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
-{% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
+<!-- {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %} -->
             {% unless the_snippet_content contains 'Liquid error' %}
               {{ the_snippet_content }}
             {% endunless %}
@@ -156,7 +159,7 @@
   <script src="https://widget.reviews.co.uk/product/dist.js"  defer="defer"></script>
 
   <script src="https://widget.reviews.co.uk/rating-snippet/dist.js"  defer="defer"></script>
-  <link rel="stylesheet" href="https://widget.reviews.co.uk/rating-snippet/dist.css" async/>
+  <link rel="stylesheet" href="https://widget.reviews.co.uk/rating-snippet/dist.css" media="none" onload="if(media!='all')media='all'"/>
 
 
   <script >

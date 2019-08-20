@@ -150,12 +150,23 @@ background: #333;
  <h1 class="background"><span>{{ blog.title }}</span></h1>
 
 
+ {% if blog.title == "Events & retreats" %}
+<div style="width: 800px;margin:0 auto;text-align: center"><br />
+ Would you like to list your Event or Retreat on Yogaclicks.com, <br />Email us on <a href="mailto:Events@yogaclicks.com">Events@yogaclicks.com</a> with all the details and images and we will do our best to list it!
+</div>
+
+ {% endif %}
+
   <div class="blog-posts" style="  display:                 flex;
   display:                 -webkit-flex; /* Safari 8 */
   flex-wrap:               wrap;
   -webkit-flex-wrap:       wrap;         /* Safari 8 */
   justify-content:         center;
   -webkit-justify-content: center;       /* Safari 8 */">
+
+
+
+ 
     {% for article in blog.articles %}
     <div class="post">
       <div class="post-head">
