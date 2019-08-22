@@ -12,7 +12,7 @@
     "color_large_image_bg": "#0f0f0f",
     "color_header": "#fff",
     "color_header_text": "#000000",
-    "color_announcement": "#2196bd",
+    "color_announcement": "#0f0f0f",
     "color_announcement_text": "#fff",
     "color_footer": "#ffffff",
     "color_footer_text": "#000000",
@@ -49,7 +49,7 @@
     "sku_enable": true,
     "quantity_enable": false,
     "variant_labels_enable": true,
-    "variant_type": "button",
+    "variant_type": "dropdown",
     "enable_payment_button": false,
     "inventory_enable": true,
     "product_save_amount": false,
@@ -369,7 +369,7 @@
           "text": "<p>Shop ethical. Award winning yoga shop for yoga clothes, yoga mats,<br> yoga gifts and yoga jewellery. Sustainably made by yogis.<\/p>",
           "align_text": "center",
           "narrow_column": false,
-          "enlarge_text": false,
+          "enlarge_text": true,
           "divider": false
         }
       },
@@ -681,16 +681,16 @@
             "type": "image",
             "settings": {
               "top_subheading": "",
-              "title": "FEEL PROUD OF WHAT YOU BUY",
+              "title": "AUTUMN VIBES",
               "title_size": 60,
-              "subheading": "Looks. Comfort. Affordability. Ethics",
-              "link": "shopify:\/\/collections\/all",
+              "subheading": "Our pick of the new season",
+              "link": "shopify:\/\/collections",
               "link_text": "Shop all",
               "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "shopify:\/\/shop_images\/half-of-an-avocado.jpg",
+              "link_text_2": "SHOP TOPS",
+              "color_accent": "#0f0f0f",
+              "text_align": "vertical-center horizontal-left",
+              "image": "shopify:\/\/shop_images\/close-up-of-woman-spreading-arms-in-autumn-breeze.jpg",
               "focal_point": "top center"
             }
           },
@@ -698,16 +698,16 @@
             "type": "image",
             "settings": {
               "top_subheading": "",
-              "title": "FREE SHIPPING TO THE UK",
+              "title": "CHRISTMAS IS COMING",
               "title_size": 60,
-              "subheading": "From 60 national & international locations",
-              "link": "",
-              "link_text": "Optional button",
-              "link_2": "",
-              "link_text_2": "",
-              "color_accent": "rgba(0,0,0,0)",
-              "text_align": "vertical-center horizontal-center",
-              "image": "",
+              "subheading": "Gifts for Yoga Lovers",
+              "link": "shopify:\/\/collections\/gift-boxes",
+              "link_text": "Shop Gifts For Her",
+              "link_2": "shopify:\/\/collections\/yoga-gifts-for-home",
+              "link_text_2": "Shop All Gifts",
+              "color_accent": "#0f0f0f",
+              "text_align": "vertical-bottom horizontal-center",
+              "image": "shopify:\/\/shop_images\/happy-family-in-front-of-christmas-tree.jpg",
               "focal_point": "center center"
             }
           },
@@ -962,23 +962,23 @@
       "collection-promotions": {
         "type": "collection-promotions",
         "blocks": {
-          "1566207886826": {
-            "type": "banner",
+          "1566470747586": {
+            "type": "simple",
             "settings": {
               "promo_collection": "",
-              "heading": "Christmas is Coming!",
-              "text": "Shop yoga gifts and jewellery for yoga lovers",
               "link": "",
-              "label": "Shop now",
-              "image": "shopify:\/\/shop_images\/womens-hand-moon-bracelet.jpg",
-              "color_tint": "#000",
+              "text": "Christmas is Coming",
+              "image": "shopify:\/\/shop_images\/winter-greens-with-snow.jpg",
+              "width": "100",
+              "height": 100,
+              "color_tint": "#ffffff",
               "color_tint_opacity": 8,
-              "framed": false
+              "framed": true
             }
           }
         },
         "block_order": [
-          "1566207886826"
+          "1566470747586"
         ],
         "settings": {
           "gutter_size": 20
