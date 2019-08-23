@@ -972,7 +972,7 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
-              "image": "shopify:\/\/shop_images\/friends-backpacking-together.jpg",
+              "image": "shopify:\/\/shop_images\/woman-celebrates-winter.jpg",
               "title": "FREE DELIVERY & PRICE GUARANTEE",
               "text": "<p>Free shipping to the UK, from all our makers in UK, Europe &amp; US. We also won't be beaten on price, if it's cheaper elsewhere tell us!&nbsp;&nbsp;<\/p>",
               "button_label": "",
@@ -983,7 +983,7 @@
             "type": "promotion",
             "settings": {
               "enable_image": true,
-              "image": "",
+              "image": "shopify:\/\/shop_images\/team-hands-linked-together.jpg",
               "title": "Ethical Award",
               "text": "<p>Use this section to promote content throughout every page of your site. Add images for further impact.<\/p>",
               "button_label": "",
