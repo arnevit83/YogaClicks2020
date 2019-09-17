@@ -56,9 +56,16 @@
 
                   {%- assign subcollection_drop = false -%}
                   {% if childlink.levels > 0 and childlink.url contains '/collections/' %}
+              
                     {%- assign subcollection_handle = childlink.url | remove: '/collections/' -%}
+       
+              
+                 {%- assign subcollection_handle = childlink.url | remove: '/collections/' | remove: '/women' | remove: '/men' -%}
+                 
                     {%- assign subcollection_drop = collections[subcollection_handle] -%}
+          
                     {% if subcollection_drop.image != blank %}
+             
                       <a
                         href="{{ childlink.url }}"
                         class="megamenu__colection-image"
