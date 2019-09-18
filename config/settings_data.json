@@ -944,25 +944,6 @@
       },
       "collection-promotions": {
         "type": "collection-promotions",
-        "blocks": {
-          "1568627749727": {
-            "type": "banner",
-            "settings": {
-              "promo_collection": "",
-              "heading": "Find your happy pants.",
-              "text": "Yoga pants, yoga leggings, yoga capris and yoga shorts, all beautifully made by yogis.",
-              "link": "",
-              "label": "Shop now",
-              "image": "",
-              "color_tint": "#000",
-              "color_tint_opacity": 8,
-              "framed": false
-            }
-          }
-        },
-        "block_order": [
-          "1568627749727"
-        ],
         "settings": {
           "gutter_size": 20
         }
