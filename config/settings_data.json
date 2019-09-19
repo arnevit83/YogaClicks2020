@@ -277,7 +277,7 @@
           "sticky_index": false,
           "sticky_collection": false,
           "header_search_enable": true,
-          "toolbar_menu": "",
+          "toolbar_menu": "toolbar",
           "toolbar_social": true,
           "toolbar_currencies": true,
           "announcement_compact": true,
