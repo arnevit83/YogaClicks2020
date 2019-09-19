@@ -889,7 +889,7 @@
               "video_url": "",
               "width": "50",
               "height": 800,
-              "text_size": 120,
+              "text_size": 110,
               "text_align": "vertical-center horizontal-center",
               "focal_point": "20% 50%",
               "color_accent": "#000000",
@@ -911,12 +911,12 @@
               "video_url": "",
               "width": "50",
               "height": 500,
-              "text_size": 120,
+              "text_size": 110,
               "text_align": "vertical-center horizontal-center",
               "focal_point": "bottom",
               "color_accent": "#000000",
               "boxed": false,
-              "framed": false
+              "framed": true
             }
           }
         },
@@ -926,7 +926,7 @@
         ],
         "settings": {
           "full_width": true,
-          "gutter_size": 20,
+          "gutter_size": 5,
           "space_above": false,
           "space_below": false
         }
