@@ -111,7 +111,7 @@
                     font-family: "object-fit: cover; object-position: {{ block.settings.focal_point }};";
                   }
                 {% endstyle %}
-
+            
                 {%- assign img_url = block.settings.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
 
                 <img class="image-fit hero__image hero__image--{{ block.id }} lazyload"
