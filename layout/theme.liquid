@@ -1,4 +1,5 @@
-
+	
+{%- capture minified -%}
 <!doctype html>
 <html class="no-js" lang="{{ shop.locale }}">
 <head>
@@ -93,11 +94,15 @@
   {%- if template contains 'customers' -%}
     <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
   {%- endif -%}
-{% section 'filter-menu-settings' %}
+  {% if template contains 'collection' %}
+  {% section 'filter-menu-settings' %}
+{% endif %}
+
 </head>
 
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
-<!-- {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %} -->
+
+  <!-- {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %} -->
             {% unless the_snippet_content contains 'Liquid error' %}
               {{ the_snippet_content }}
             {% endunless %}
@@ -183,3 +188,7 @@
 
 </body>
 </html>
+
+	
+{%- endcapture minified -%}
+{%- include 'minifier', minified: minified -%}
