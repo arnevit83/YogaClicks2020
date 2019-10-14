@@ -49,7 +49,7 @@
     "sku_enable": true,
     "quantity_enable": false,
     "variant_labels_enable": true,
-    "variant_type": "dropdown",
+    "variant_type": "button",
     "enable_payment_button": false,
     "inventory_enable": true,
     "product_save_amount": false,
@@ -718,7 +718,7 @@
               "title": "GO WITH THE FLOW",
               "title_size": 60,
               "subheading": "Men’s yoga clothing - engineered for freedom warriors",
-              "link": "shopify:\/\/collections\/men",
+              "link": "https:\/\/yogaclicks.com\/collections\/mens-yoga-clothing\/men",
               "link_text": "SHOP ALL MEN'S CLOTHING",
               "link_2": "shopify:\/\/collections\/mens-pants-leggings",
               "link_text_2": "SHOP MEN'S YOGA PANTS",
@@ -1201,16 +1201,47 @@
           "page_title_enable": true,
           "page_content_enable": true
         }
+      },
+      "1570543275497": {
+        "type": "hero-video",
+        "settings": {
+          "title": "",
+          "title_size": 80,
+          "subheading": "",
+          "link_text": "",
+          "link": "",
+          "color_accent": "rgba(0,0,0,0)",
+          "text_align": "vertical-center horizontal-center",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=wGod6QpDRdo",
+          "section_height": "650px",
+          "mobile_height": "auto"
+        }
+      },
+      "1570543521215": {
+        "type": "text-and-image",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/2019_October_That_s_a_wrap.png",
+          "image_width": 500,
+          "subtitle": "Deal of the week",
+          "title": "35% OFF",
+          "text": "<p>It has never been so easy to keep warm in winter!<\/p>",
+          "button_label": "Get on it",
+          "button_link": "https:\/\/yogaclicks.com\/collections\/wraps-and-sweatshirts\/products\/wrap-me-up-yoga-top",
+          "layout": "left",
+          "divider": false
+        }
       }
     },
     "content_for_index": [
       "1524769873765",
       "1498163293234",
       "1525912530555",
+      "1570543521215",
       "1499789718857",
       "1525886124958",
       "1525295772132",
       "1563289618771",
+      "1570543275497",
       "1525115199973",
       "1526068199595"
     ]

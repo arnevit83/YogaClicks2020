@@ -44,7 +44,7 @@
       }
     },
     "newsletter_form": {
-      "newsletter_email": "Enter your email for exclusive discounts and advance notice of amazing events",
+      "newsletter_email": "Enter email for exclusive discounts!",
       "newsletter_confirmation": "Thanks for subscribing - you are now an official supporter of yogi makers ",
       "submit": "Subscribe"
     },
