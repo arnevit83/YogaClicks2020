@@ -7,7 +7,7 @@ theme new --password=0e1e27baecf993602d88ef7e8f99eb90 --store=Yogaclicks.myshopi
 
 ##Download Theme
 theme get --list -p=0e1e27baecf993602d88ef7e8f99eb90 -s=Yogaclicks.myshopify.com
-theme get --themeid=75001299043 -p=0e1e27baecf993602d88ef7e8f99eb90 -s=Yogaclicks.myshopify.com
+theme get --themeid=78303166563 -p=0e1e27baecf993602d88ef7e8f99eb90 -s=Yogaclicks.myshopify.com
 
 
 ##Watch command / Batch File

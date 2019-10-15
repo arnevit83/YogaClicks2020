@@ -1,8 +1,8 @@
 development:
   password: 0e1e27baecf993602d88ef7e8f99eb90
-  theme_id: "75001299043"
+  theme_id: "78303166563"
   store: Yogaclicks.myshopify.com
 production:
   password: 0e1e27baecf993602d88ef7e8f99eb90
-  theme_id: "75001299043"
+  theme_id: "78303166563"
   store: Yogaclicks.myshopify.com
