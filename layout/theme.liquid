@@ -91,7 +91,8 @@
   {% include "Footer-added-code-collection" %}
   {% endif %}
   <script src="{{ 'reviews.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-  <script type="text/javascript">window.onload=function(){ratingSnippet("ruk_rating_snippet",{store:"yogaclicks-store",color:"#d79f45",linebreak:true,text:"Reviews"})};</script> 
+  <script type="text/javascript">
+  window.onload=function(){ratingSnippet("ruk_rating_snippet",{store:"yogaclicks-store",color:"#d79f45",linebreak:true,text:"Reviews"})};
 _linkedin_partner_id = "1579705";
 window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
 window._linkedin_data_partner_ids.push(_linkedin_partner_id);

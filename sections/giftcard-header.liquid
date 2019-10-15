@@ -16,18 +16,18 @@
     {% endstyle %}
   {% endif %}
 
-  <h1 class="site-header__logo{% unless has_logo %} text-center{% endunless %}" itemscope itemtype="http://schema.org/Organization">
+  <h1 class="site-header__logo{% unless has_logo %} text-center{% endunless %}" >
     {% if section.settings.logo %}
       <a
         href="/"
-        itemprop="url"
+      
         class="site-header__logo-link">
         <img
           class="small--hide"
           src="{{ section.settings.logo | img_url: header_logo_size }}"
           srcset="{{ section.settings.logo | img_url: header_logo_size }} 1x, {{ section.settings.logo | img_url: header_logo_size, scale: 2 }} 2x"
           alt="{{ section.settings.logo.alt | default: shop.name }}"
-          itemprop="logo">
+          >
         <img
           class="medium-up--hide"
           src="{{ section.settings.logo | img_url: header_logo_size_mobile }}"
@@ -35,7 +35,7 @@
           alt="{{ section.settings.logo.alt | default: shop.name }}">
       </a>
     {% else %}
-      <a href="/" itemprop="url">{{ shop.name }}</a>
+      <a href="/" >{{ shop.name }}</a>
     {% endif %}
   </h1>
 
