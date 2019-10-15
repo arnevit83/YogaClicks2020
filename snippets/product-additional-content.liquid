@@ -62,7 +62,7 @@
 
     {% if settings.product_content_1 != blank %}
       {% if settings.product_content_collapse_1 %}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-1-{{ section_id }}">
+        <button type="button"  id="size-btn" class="label Product-content-1 collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-1-{{ section_id }}">
           {{ pages[settings.product_content_1].title }}
           {% include 'collapsible-icons' %}
         </button>
@@ -81,7 +81,7 @@
     {% endif %}
     {% if settings.product_content_2 != blank %}
       {% if settings.product_content_collapse_2 %}
-        <button type="button" class="label collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders" aria-controls="Product-content-2-{{ section_id }}">
+        <button type="button" class="label Product-content-2 collapsible-trigger collapsible-trigger-btn collapsible-trigger-btn--borders " aria-controls="Product-content-2-{{ section_id }}">
           {{ pages[settings.product_content_2].title }}
           {% include 'collapsible-icons' %}
         </button>

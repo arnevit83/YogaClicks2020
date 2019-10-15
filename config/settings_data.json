@@ -450,7 +450,7 @@
               "image_4": "",
               "image_4_link": "",
               "enable_gutter": false,
-              "enable_zoom": true
+              "enable_zoom": false
             }
           },
           "product-text-and-image": {
@@ -1504,7 +1504,7 @@
               "type": "image-row",
               "settings": {
                 "enable_gutter": false,
-                "enable_zoom": true
+                "enable_zoom": false
               }
             },
             "product-text-and-image": {
@@ -2052,7 +2052,7 @@
               "type": "image-row",
               "settings": {
                 "enable_gutter": false,
-                "enable_zoom": true
+                "enable_zoom": false
               }
             },
             "product-text-and-image": {
