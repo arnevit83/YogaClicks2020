@@ -649,7 +649,7 @@
           "popup_days": 30,
           "popup_title": "Sign up and save",
           "popup_image": "shopify:\/\/shop_images\/beach-towel-in-wind.jpg",
-          "popup_text": "<p>Get the latest offers and yoga news and<\/p>\n<p>Get<strong> 10% off<\/strong> when you sign up<\/p>\n<p><\/p>",
+          "popup_text": "<p>Get the <strong>latest offers<\/strong> and <strong>yoga news<\/strong><\/p>\n<p>Get<strong> 10% off<\/strong> when you sign up<\/p>\n<p><\/p>",
           "close_text": "No thanks",
           "enable_newsletter": true,
           "button_label": "Optional button",
