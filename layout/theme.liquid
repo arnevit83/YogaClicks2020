@@ -72,7 +72,6 @@
       {% section 'footer-promotions' %}
       {% section 'footer' %}
 
-    <script src="//cdn.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=yogaclicks.myshopify.com"></script>
     <script src="{{ 'cool-image-magnifier.js' | asset_url | split: '?' | first }}" defer="defer"></script>
     </div>
   </div>
@@ -88,6 +87,7 @@
   {% include 'photoswipe-template' %}
   {% if template contains 'product' %}
     {% include 'recently-viewed-product-template' %}
+    <script src="{{ 'cool-image-magnifier.js' | asset_url | split: '?' | first }}" defer="defer"></script>
   {% endif %}
   {% if template contains 'collection' %}
   {% include "Footer-added-code-collection" %}

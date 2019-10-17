@@ -271,8 +271,8 @@
     },
     "customer": {
       "account": "Account",
-      "log_out": "Log out",
-      "log_in": "Log in",
+      "log_out": "Log Out",
+      "log_in": "Log In",
       "create_account": "Create account"
     },
     "footer": {
@@ -316,11 +316,11 @@
     "month_day_year": "%b %d, %Y"
   },
   "socialshopwave": {
-    "log_in": "Log in",
+    "log_in": "Log In",
     "log_in_to_account": "Log in to your account",
     "cancel": "Cancel",
     "create_account": "Create Account",
-    "sign_up": "Sign up",
+    "sign_up": "Sign Up",
     "not_created_customer_on_shopify": "Not created customer on Shopify",
     "create_your_account": "Create your account",
     "my_orders": "My Orders",
