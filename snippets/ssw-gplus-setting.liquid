@@ -21,18 +21,13 @@ ssw.ajax({
               shopifyLogin.login({
                 customer_id: response.customer_id,
                 token: response.account_activation_token,
-                verified: response.verified,
-        				service: 'gplus',
                 customer: {
                   'password': response.password,
                   'password_confirmation': response.password
                 }
               });
             } else {
-              shopifyLogin.login({
-                verified: response.verified,
-                service: 'gplus'
-              });
+              shopifyLogin.login();
             }
           } else {
             targetSEMModal(response, 'gplus');
@@ -44,10 +39,7 @@ ssw.ajax({
             if (response.password) {
               var shopifyLogin = new ShopifyLogin();
               shopifyLogin.preLogin(response.email, response.password);
-              shopifyLogin.login({
-                verified: response.verified,
-                service: 'gplus'
-              });
+              shopifyLogin.login();
             } else {
               addMessage('#login_modal .login-failed', "sswLangs.t('already_registered_to_social_service2', [response.email])", 'warning');
               ssw('#login_modal').sswModal();
@@ -61,7 +53,7 @@ ssw.ajax({
         });
         var gplusData = {};
         var gplusClicked = false;
-                        ssw(document).on('click', '.ssw-gconnect', function(){
+                      ssw(document).on('click', '.ssw-gconnect', function(){
           onSubmitForm();
 if( gplusClicked )
     return;

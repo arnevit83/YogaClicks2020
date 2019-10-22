@@ -336,7 +336,7 @@
       "collection-template": {
         "type": "collection-template",
         "settings": {
-          "subcollection_style": "above",
+          "subcollection_style": "none",
           "subcollections_per_row": 5,
           "per_row": 4,
           "rows_per_page": 10
@@ -648,7 +648,7 @@
           "popup_seconds": 5,
           "popup_days": 30,
           "popup_title": "Sign up and save",
-          "popup_image": "shopify:\/\/shop_images\/beach-towel-in-wind.jpg",
+          "popup_image": "shopify:\/\/shop_images\/beach-towel-in-wind_1080x_5bdadb2d-d82d-4d07-b276-5f93a5019ad0.jpg",
           "popup_text": "<p>Get the <strong>latest offers<\/strong> and <strong>yoga news<\/strong><\/p>\n<p>Get<strong> 10% off<\/strong> when you sign up<\/p>\n<p><\/p>",
           "close_text": "No thanks",
           "enable_newsletter": true,
@@ -673,7 +673,7 @@
               "link_text_2": "SHOP MATS",
               "color_accent": "#0f0f0f",
               "text_align": "vertical-center horizontal-right",
-              "image": "shopify:\/\/shop_images\/MandukaFW18_LA981.jpg",
+              "image": "shopify:\/\/shop_images\/MandukaFW18_LA981_1728x_dc27507d-f48c-4958-8a52-19250df5e4ea.jpg",
               "focal_point": "center center"
             }
           },
@@ -690,7 +690,7 @@
               "link_text_2": "SHOP EYE PILLOWS",
               "color_accent": "#0f0f0f",
               "text_align": "vertical-center horizontal-right",
-              "image": "shopify:\/\/shop_images\/Eyepillow_Natural.png",
+              "image": "shopify:\/\/shop_images\/Eyepillow_Natural_1512x_74b86b9c-7359-4032-87e1-81469830127e.png",
               "focal_point": "20% 0"
             }
           },
@@ -707,7 +707,7 @@
               "link_text_2": "SHOP WOMEN'S YOGA BOTTOMS",
               "color_accent": "#000000",
               "text_align": "vertical-center horizontal-center",
-              "image": "shopify:\/\/shop_images\/IMG_1783.png",
+              "image": "shopify:\/\/shop_images\/IMG_1783_1512x_c90eadbb-8935-41c3-b58d-34ea63e9edd2.png",
               "focal_point": "center center"
             }
           },
@@ -724,7 +724,7 @@
               "link_text_2": "SHOP MEN'S YOGA PANTS",
               "color_accent": "#0f0f0f",
               "text_align": "vertical-center horizontal-center",
-              "image": "shopify:\/\/shop_images\/soweflow-lookbook-web-93.jpg",
+              "image": "shopify:\/\/shop_images\/wert.png",
               "focal_point": "center center"
             }
           },
@@ -741,7 +741,7 @@
               "link_text_2": "SHOP CHAKRA BRACELETS",
               "color_accent": "#0f0f0f",
               "text_align": "vertical-center horizontal-center",
-              "image": "shopify:\/\/shop_images\/DSC6223_1.jpg",
+              "image": "shopify:\/\/shop_images\/DSC6223_1_1728x_3bad6316-98f0-41f2-a9e7-3b7ef10d1140.png",
               "focal_point": "center center"
             }
           }
@@ -756,7 +756,7 @@
         "settings": {
           "section_height": "750px",
           "mobile_height": "auto",
-          "parallax": true,
+          "parallax": false,
           "style": "bars",
           "autoplay": true,
           "autoplay_speed": 5
@@ -819,7 +819,7 @@
               "cta_link1": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/women",
               "cta_text2": "Shop Yoga Gifts for Him",
               "cta_link2": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/men",
-              "image": "shopify:\/\/shop_images\/cozy-eggnog-by-the-christmas-tree.jpg",
+              "image": "shopify:\/\/shop_images\/cozy-eggnog-by-the-christmas-tree_2808x_82959a2f-87c4-4cad-8be4-8bbd2e52d068.jpg",
               "video_url": "",
               "width": "100",
               "height": 720,
@@ -885,7 +885,7 @@
               "cta_link1": "shopify:\/\/collections\/eye-pillows",
               "cta_text2": "Shop All Yoga Gifts",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts",
-              "image": "shopify:\/\/shop_images\/diy-organic-candle.jpg",
+              "image": "shopify:\/\/shop_images\/diy-organic-candle_1296x_4f05c96c-1808-4bd1-a4ea-35e3446e8611.jpg",
               "video_url": "",
               "width": "50",
               "height": 800,
@@ -907,7 +907,7 @@
               "cta_link1": "shopify:\/\/collections\/mala-bracelets",
               "cta_text2": "Shop All Men's Yoga gifts",
               "cta_link2": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/men",
-              "image": "shopify:\/\/shop_images\/mens-hand-in-park.jpeg",
+              "image": "shopify:\/\/shop_images\/mens-hand-in-park_1512x_75ae9bab-7146-495c-959b-305a2457d856.jpeg",
               "video_url": "",
               "width": "50",
               "height": 500,

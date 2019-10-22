@@ -135,7 +135,7 @@
         {%- assign should_replace_alt_tags = false -%}
     {%- else -%}
         {%- assign should_replace_alt_tags = true -%}            
-        {%- capture replacement_alt_template -%} {{ template_content_481 | replace: 'null', '' | newline_to_br | replace: '<br />', ' ' | strip_newlines | replace: '   ', ' ' | replace: '  ', ' ' | replace: ', , ,', ',' | replace: ',,,', ',' | replace: ', ,', ',' | replace: ',,', ',' | replace: '| | |', '|' | replace: '|||', '|' | replace: '| |', '|' | replace: '||', '|' | replace: ': : :', ':' | replace: ':::', ':' | replace: ': :', ':' | replace: '::', ':' | strip | prepend: '$#' | append: '$#' | replace: '$# ,', '' | replace: '$#,', '' | replace: ', $#', '' | replace: ',$#', '' | replace: '$# |', '' | replace: '$#|', '' | replace: '| $#', '' | replace: '|$#', '' | replace: '$# :', '' | replace: '$#:', '' | replace: ': $#', '' | replace: ':$#', '' | replace: '$#', ''| replace: '\', '\\\\'  | strip | strip_html | escape_once }}{%- endcapture -%}
+        {%- capture replacement_alt_template -%} {{ template_content_481  }}{%- endcapture -%}
         {%- assign stop_template_processing = true -%}
     {%- endif -%}
 {%- endif -%}
