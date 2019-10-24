@@ -38,7 +38,7 @@
   {% endif %}
   <!-- {% if settings.enable_currencies %}
     <script src="/services/javascripts/currencies.js" defer="defer"></script>
-    <script src="{{ 'currencies.jquery.min.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+
   {% endif %} -->
   <script src="{{ 'theme.js' | asset_url | split: '?' | first  }}" defer="defer"></script>
   {%- if template contains 'customers' -%}
@@ -50,17 +50,9 @@
 </head>
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
 
-  <!-- {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %} -->
-            {% unless the_snippet_content contains 'Liquid error' %}
-              {{ the_snippet_content }}
-            {% endunless %}
 
-  {% comment %}
-    Enable below script if page transitions enabled
-  {% endcomment %}
-  {% comment %}
   <script type="text/javascript">window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script>
-  {% endcomment %}
+
 
   <a class="in-page-link visually-hidden skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
   <div id="PageContainer" class="page-container">
@@ -71,10 +63,6 @@
       </main>
       {% section 'footer-promotions' %}
       {% section 'footer' %}
-
-    <!-- <script src="//cdn.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=yogaclicks.myshopify.com"></script> -->
-
-    <script src="{{ 'cool-image-magnifier.js' | asset_url | split: '?' | first }}" defer="defer"></script>
     </div>
   </div>
   {% section 'newsletter-popup' %}
