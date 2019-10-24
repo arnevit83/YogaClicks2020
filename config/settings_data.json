@@ -88,7 +88,7 @@
     "cart_notes_enable": false,
     "cart_terms_conditions_enable": false,
     "cart_terms_conditions_link": "shopify:\/\/pages\/terms-and-conditions",
-    "enable_currencies": true,
+    "enable_currencies": false,
     "currency_format": "money_format",
     "supported_currencies": "GBP EUR USD CAD",
     "default_currency": "GBP",
@@ -224,7 +224,7 @@
     "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_accent_color": "#111111",
     "checkout_button_color": "#111111",
-    "checkout_error_color": "#ff6d6d",
+    "checkout_error_color": "#6d8dff",
     "breadcrumb": true,
     "sections": {
       "header": {
@@ -366,7 +366,7 @@
         "type": "featured-content",
         "settings": {
           "title": "",
-          "text": "<p>Award winning ethical yoga shop for yoga clothes, yoga mats,<br> yoga gifts and yoga jewellery.&nbsp;Beautifully made by yogis.<\/p>",
+          "text": "<p>Award winning ethical yoga shop for your wellbeing and pleasure - yoga wear, yoga mats, yoga gifts, yoga jewellery and self care.&nbsp;Beautifully made by yogis.<\/p>",
           "align_text": "center",
           "narrow_column": false,
           "enlarge_text": true,
@@ -781,6 +781,7 @@
       },
       "1525115199973": {
         "type": "blog-posts",
+        "disabled": true,
         "settings": {
           "title": "YogaClicks Blog",
           "blog": "product-guides",
@@ -796,6 +797,7 @@
       },
       "1525295772132": {
         "type": "featured-collection",
+        "disabled": true,
         "settings": {
           "title": "New In",
           "home_featured_products": "new-in-homepage",
@@ -818,7 +820,7 @@
               "cta_text1": "Shop Yoga Gifts for her",
               "cta_link1": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/women",
               "cta_text2": "Shop Yoga Gifts for Him",
-              "cta_link2": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/men",
+              "cta_link2": "shopify:\/\/collections\/yoga-gifts-for-men",
               "image": "shopify:\/\/shop_images\/cozy-eggnog-by-the-christmas-tree_2808x_82959a2f-87c4-4cad-8be4-8bbd2e52d068.jpg",
               "video_url": "",
               "width": "100",
@@ -906,7 +908,7 @@
               "cta_text1": "Shop mala bracelets",
               "cta_link1": "shopify:\/\/collections\/mala-bracelets",
               "cta_text2": "Shop All Men's Yoga gifts",
-              "cta_link2": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/men",
+              "cta_link2": "shopify:\/\/collections\/yoga-gifts-for-men",
               "image": "shopify:\/\/shop_images\/mens-hand-in-park_1512x_75ae9bab-7146-495c-959b-305a2457d856.jpeg",
               "video_url": "",
               "width": "50",
@@ -1012,6 +1014,7 @@
       },
       "1563289618771": {
         "type": "advanced-content",
+        "disabled": true,
         "blocks": {
           "1563289618771-1": {
             "type": "html",
@@ -1204,6 +1207,7 @@
       },
       "1570543275497": {
         "type": "hero-video",
+        "disabled": true,
         "settings": {
           "title": "",
           "title_size": 80,
