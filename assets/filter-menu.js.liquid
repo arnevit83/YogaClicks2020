@@ -237,22 +237,4 @@ function deferFilterjQuery() {
               $('.filter-menu .pt-mobile-header a').trigger('click');
             });
           });
-          {% endif %}
-
-          // Ajax
-          {% if settings.pt_ajax_enable %}
-          $.getScript("{{ 'jquery.pjax.js' | asset_url }}").done(function(script, textStatus) {
-            $body = $("body");
-            $(document).pjax('{{ settings.pt_ajax_selector }} .filter-group a, {{ settings.pt_ajax_selector }} .pagination a', '{{ settings.pt_ajax_selector }}', { fragment: '{{ settings.pt_ajax_selector }}', timeout: 10000, scrollTo: false, push: true });
-            $(document).on('pjax:start', function(){  $body.addClass("pt-ajax-loading"); $('{{ settings.pt_ajax_selector }}').fadeTo('slow', 0.8); })
-            $(document).on('pjax:end', function(){ $body.removeClass("pt-ajax-loading"); $('{{ settings.pt_ajax_selector }}').fadeTo('fast', 1); pt_on_load(); {{ settings.pt_ajax_script }} });
-          });
-          {% endif %}
-      });
-    }
-    else {
-        setTimeout(function() { deferFilterjQuery() }, 50);
-    }
-}
-
-deferFilterjQuery();
+          {% endif %}{% if settings.pt_ajax_enable %}$.getScript("{{ 'jquery.pjax.js' | asset_url }}").done(function(t,a){$body=$("body"),$(document).pjax("{{ settings.pt_ajax_selector }} .filter-group a, {{ settings.pt_ajax_selector }} .pagination a","{{ settings.pt_ajax_selector }}",{fragment:"{{ settings.pt_ajax_selector }}",timeout:1e4,scrollTo:!1,push:!0}),$(document).on("pjax:start",function(){$body.addClass("pt-ajax-loading"),$("{{ settings.pt_ajax_selector }}").fadeTo("slow",.8)}),$(document).on("pjax:end",function(){$body.removeClass("pt-ajax-loading"),$("{{ settings.pt_ajax_selector }}").fadeTo("fast",1),pt_on_load(),settings.pt_ajax_script})});{% endif %}});}else {setTimeout(function() { deferFilterjQuery() }, 10);}}deferFilterjQuery();
