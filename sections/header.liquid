@@ -1,58 +1,14 @@
-{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}
-{%- assign toolbar_menu = linklists[section.settings.toolbar_menu] -%}
+{%- assign main_menu = linklists[section.settings.main_menu_link_list] -%}{%- assign toolbar_menu = linklists[section.settings.toolbar_menu] -%}{%- assign logo_alignment = 'left' -%}{% if section.settings.main_menu_alignment == 'center-left' or section.settings.main_menu_alignment == 'center-split' or section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-drawer' %}{%- assign logo_alignment = 'center' -%}{% endif %}
+{%- assign dropdown_alignment = 'left' -%}{% if section.settings.main_menu_alignment == 'left-center' or section.settings.main_menu_alignment == 'center-split' or section.settings.main_menu_alignment == 'center' %}{%- assign dropdown_alignment = 'center' -%}{% endif %}
+{% include 'drawer-menu' %}{% include 'cart-drawer' %}{%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
+{%- assign sticky_header = false -%}{% if section.settings.header_style == 'sticky' %}{%- assign sticky_header = true -%}{% endif %}{%- assign overlay_header = false -%}{%- assign has_logo = false -%}{% if template_name == 'index' and section.settings.sticky_index %}{%- assign overlay_header = true -%}{% endif %}{% if template_name == 'collection' and collection.image and section.settings.sticky_collection %}{%- assign overlay_header = true -%}{% endif %}
 
-{%- assign logo_alignment = 'left' -%}
-{% if section.settings.main_menu_alignment == 'center-left' or section.settings.main_menu_alignment == 'center-split' or section.settings.main_menu_alignment == 'center' or section.settings.main_menu_alignment == 'center-drawer' %}
-  {%- assign logo_alignment = 'center' -%}
-{% endif %}
-
-{%- assign dropdown_alignment = 'left' -%}
-{% if section.settings.main_menu_alignment == 'left-center' or section.settings.main_menu_alignment == 'center-split' or section.settings.main_menu_alignment == 'center' %}
-  {%- assign dropdown_alignment = 'center' -%}
-{% endif %}
-
-{% include 'drawer-menu' %}
-{% include 'cart-drawer' %}
-
-{%- assign template_name = template | replace: '.', ' ' | truncatewords: 2, '' | handle -%}
-
-{%- assign sticky_header = false -%}
-{% if section.settings.header_style == 'sticky' %}
-  {%- assign sticky_header = true -%}
-{% endif %}
-{%- assign overlay_header = false -%}
-{%- assign has_logo = false -%}
-{% if template_name == 'index' and section.settings.sticky_index %}
-  {%- assign overlay_header = true -%}
-{% endif %}
-{% if template_name == 'collection' and collection.image and section.settings.sticky_collection %}
-  {%- assign overlay_header = true -%}
-{% endif %}
-
-{% style %}
-  .site-nav__link,
-  .site-nav__dropdown-link:not(.site-nav__dropdown-link--top-level) {
-    font-size: {{ settings.type_navigation_size }}px;
-  }
-
-  {% if settings.type_navigation_size < 18 %}
-    .site-nav__link {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  {% endif %}
-{% endstyle %}
-
-<div data-section-id="{{ section.id }}" data-section-type="header-section">
-  {% if overlay_header or section.settings.announcement_above_header %}
-    {% include 'announcement-bar' %}
-  {% endif %}
+<div data-section-id="{{ section.id }}" data-section-type="header-section">{% if overlay_header or section.settings.announcement_above_header %}{% include 'announcement-bar' %}{% endif %}
 
   {% unless overlay_header %}
     {% if section.settings.toolbar_currencies or section.settings.toolbar_social or section.settings.toolbar_menu != blank %}
       {% include 'toolbar', overlay_header: overlay_header  %}
-    {% endif %}
-  {% endunless %}
+    {% endif %}{% endunless %}
 
   <div class="header-sticky-wrapper">
     <div class="header-wrapper{% if overlay_header %} header-wrapper--sticky is-light{% endif %}">
