@@ -113,7 +113,7 @@
     "pt_show_clear": true,
     "pt_show_view_all": true,
     "pt_show_collection_count": false,
-    "pt_show_show_single_group": true,
+    "pt_show_show_single_group": false,
     "pt_scroll_filter_group": false,
     "pt_show_inactive_filters": false,
     "pt_force_dropdown": false,
@@ -339,7 +339,7 @@
           "subcollection_style": "none",
           "subcollections_per_row": 5,
           "per_row": 4,
-          "rows_per_page": 10
+          "rows_per_page": 6
         }
       },
       "product-template": {
@@ -767,7 +767,7 @@
         "settings": {
           "enable": true,
           "collection_image_enable": true,
-          "parallax": true
+          "parallax": false
         }
       },
       "collection-sidebar": {
