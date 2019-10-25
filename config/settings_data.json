@@ -339,7 +339,7 @@
           "subcollection_style": "none",
           "subcollections_per_row": 5,
           "per_row": 4,
-          "rows_per_page": 6
+          "rows_per_page": 7
         }
       },
       "product-template": {
@@ -832,46 +832,16 @@
               "boxed": false,
               "framed": false
             }
-          },
-          "1525886854810": {
-            "type": "sale_collection",
-            "settings": {
-              "sale_collection": "yoga-gifts-under-25",
-              "top_text": "Gifts Under",
-              "middle_text": "£25",
-              "bottom_text": "Shop Now",
-              "width": "50",
-              "color_tint": "#000",
-              "color_tint_opacity": 0,
-              "boxed": false,
-              "framed": true
-            }
-          },
-          "1525911710924": {
-            "type": "sale_collection",
-            "settings": {
-              "sale_collection": "yoga-gifts-over-25",
-              "top_text": "Gifts Over",
-              "middle_text": "£25",
-              "bottom_text": "Shop Now",
-              "width": "50",
-              "color_tint": "#000",
-              "color_tint_opacity": 0,
-              "boxed": false,
-              "framed": true
-            }
           }
         },
         "block_order": [
-          "1525886482727",
-          "1525886854810",
-          "1525911710924"
+          "1525886482727"
         ],
         "settings": {
           "full_width": false,
-          "gutter_size": 20,
+          "gutter_size": 0,
           "space_above": false,
-          "space_below": false
+          "space_below": true
         }
       },
       "1525912530555": {
@@ -1000,7 +970,7 @@
       "product-recommendations": {
         "type": "product-recommendations",
         "settings": {
-          "show_product_recommendations": true,
+          "show_product_recommendations": false,
           "product_recommendations_heading": "You may also like",
           "related_count": 5
         }

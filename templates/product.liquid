@@ -1,8 +1,8 @@
 {% section 'product-template' %}
 <div class="hidden-xs">{% include 'EthicalProduct' %}</div>
-{% section 'product-recommendations' %}
-{% section 'recently-viewed' %}
-
+<!-- {% section 'product-recommendations' %}
+{% section 'recently-viewed' %} -->
+{% include 'recently-viewed-products' %}
 {% if collection %}
   <div class="text-center page-content page-content--bottom">
     <a href="{% if collection.handle == 'frontpage' %}/{% else %}{{ collection.url }}{% endif %}" class="btn btn--small return-link">
@@ -12,12 +12,11 @@
 {% endif %}
 
 <script>
-  // Override default values of shop.strings for each template.
-  // Alternate product templates can change values of
-  // add to cart button, sold out, and unavailable states here.
   theme.productStrings = {
     addToCart: {{ 'products.product.add_to_cart' | t | json }},
     soldOut: {{ 'products.product.sold_out' | t | json }},
     unavailable: {{ 'products.product.unavailable' | t | json }}
   };
+
+
 </script>

@@ -1,0 +1,191 @@
+{% assign product_collection = product.collections.first %}
+{% assign design_version = "2" %}
+{% assign product_style= "grid" %}
+{% assign products_per_slider = "5" %}
+{% if template == "index"%}
+    {% assign heading_title= shop.metafields.evmRecentView.title_home  %}
+    {% assign heading_status= shop.metafields.evmRecentView.description_home  %}
+    {% assign  product_view = 'evm-product-grid' %}
+    {% assign  no_of_products = '6' %}
+    {% assign  enable_add_to_cart = 'true' %}
+    {% assign  add_to_cart_text = "ADD TO CART" %} 
+    {% assign  truncate_title = "30" %} 
+    {% assign  enable_truncate_title = "true" %} 
+    {% assign  show_price = "block" %} 
+    {% assign  product_view_type="recently-viewed,trending-products,evm-most-popular-products,evm-new-arrivals-product,evm-featured-collections-product" %}
+    {% assign heading_align= "center" %}
+    {% assign image_size= "large" %}
+    {% elsif template == "collection"  %}
+    {% assign heading_title= shop.metafields.evmRecentView.title_collection  %}
+    {% assign heading_status= shop.metafields.evmRecentView.description_collection  %}
+    {% assign  product_view = 'evm-product-grid' %}
+    {% assign  no_of_products = '6' %}
+    {% assign  enable_add_to_cart = 'true' %}
+    {% assign  add_to_cart_text = "ADD TO CART" %} 
+    {% assign  truncate_title = "30" %} 
+    {% assign  enable_truncate_title = "true" %} 
+    {% assign  show_price = "block" %} 
+    {% assign  product_view_type="trending-products,recently-viewed,evm-new-arrivals-product,evm-featured-collections-product,evm-most-popular-products" %}
+    {% assign heading_align= "center" %}
+    {% assign image_size= "large" %}
+    {% elsif template == "product" or template contains "product" %}
+    {% assign heading_title= shop.metafields.evmRecentView.title_product  %}
+    {% assign heading_status= shop.metafields.evmRecentView.description_product  %}
+    {% assign  product_view = 'evm-product-grid' %}
+    {% assign  no_of_products = '5' %}
+    {% assign  enable_add_to_cart = 'true' %}
+    {% assign  add_to_cart_text = "ADD TO CART" %} 
+    {% assign  truncate_title = "30" %} 
+    {% assign  enable_truncate_title = "true" %} 
+    {% assign  show_price = "block" %} 
+    {% assign product_view_type="evm-related-product,evm-recommended-products,evm-also-bought-products,recently-viewed,evm-most-popular-products,trending-products,evm-new-arrivals-product,evm-featured-collections-product" %}
+    {% assign heading_align= "center" %}
+    {% assign image_size= "large" %}
+    {% elsif template == "cart"   %}
+    {% assign heading_title= shop.metafields.evmRecentView.title_cart  %}
+    {% assign heading_status= shop.metafields.evmRecentView.description_cart  %}
+    {% assign  product_view = 'evm-product-grid' %}
+    {% assign  no_of_products = '5' %}{% assign  enable_add_to_cart = 'true' %}{% assign  add_to_cart_text = "ADD TO CART" %} {% assign  truncate_title = "30" %} {% assign  enable_truncate_title = "true" %}{% assign  show_price = "block" %} {% assign product_view_type="trending-products,recently-viewed,evm-new-arrivals-product,evm-featured-collections-product,evm-most-popular-products" %}{% assign heading_align= "center"%}{% assign image_size= "medium" %}{% else  %} {% assign heading_title= shop.metafields.evmRecentView.title_other  %}{% assign heading_status= shop.metafields.evmRecentView.description_other  %}{% endif %}{% if product_view_type !="" %}{% assign snippetsvalues= product_view_type | split: ',' %}{% for snippetsvalue in snippetsvalues %}{% if  snippetsvalue =='recently-viewed' %}<div class="{{snippetsvalue}} snippetsHTML evmrelated_container " style="display:none"><section id="recently-products" class="evm-product-rcv" style="display:none"><h2 class="recently-title" ></h2><ul class="{{product_view}}"></ul></section></div><script src="{{ 'wiser_recom.js' | asset_url  | split: '?' | first }}" data-productid="{{product.id}}" data-collectid="{% if product_collection %}{{ product_collection.id }}{% endif %}" data-page="{{template}}" data-shop-id="yogaclicks.myshopify.com"></script><script>
+    
+    
+  if (typeof Shopify.resizeImage === 'undefined' && typeof Shopify.getProduct=== 'undefined') {
+      document.write({{ "api.jquery.js" | shopify_asset_url | script_tag | json }});
+    }
+  var product_view="{{product_view}}";
+
+
+  var pHandle = "{{current_product}}";
+           
+           var no_of_products = '{{no_of_products}}';
+           var enable_add_to_cart='{{enable_add_to_cart}}';
+           var add_to_cart_text = "{{add_to_cart_text}}";
+           var truncate_title = "{{truncate_title}}";
+           var enable_truncate_title = "{{enable_truncate_title}}";
+           var show_price = "{{show_price}}";
+           var design_version = "{{design_version}}";
+
+var pLimit   = no_of_products; 
+var pPointer = 0;
+  
+jQuery(function($){
+  {% if heading_title %}
+     var statusSet = jQuery.parseJSON('{{heading_status}}');
+     var titleobj = jQuery.parseJSON('{{heading_title}}');
+
+    setTimeout(function(){
+      var evm_recent_products=getCookie("evm_recent_products");
+      {% if template == "product" %}
+      if(evm_recent_products == null){
+        if(pHandle){
+           setCookie("evm_recent_products",pHandle,3);
+        }
+      }
+      {% endif %}
+      
+      var currentProducts = [];
+      if(evm_recent_products != null){
+        currentProducts = evm_recent_products.split(",");  
+      }
+      if(currentProducts.length >= 1){
+          
+          var recenttitle=(titleobj.recently_viewed_title!="")?titleobj.recently_viewed_title:"Recently View Products"
+          $("#recently-products .recently-title").text(recenttitle);
+      }
+      if(currentProducts.indexOf(pHandle) == -1){
+        if(currentProducts.length >= pLimit){
+          currentProducts.unshift;
+        }
+        currentProducts.push(pHandle); 
+
+      }
+      {% if template == "product" %}
+      if(pHandle && currentProducts.length > 0){
+          setCookie("evm_recent_products",currentProducts.join(","),3);
+      }
+      {% endif %}
+      
+      $("#evm_spinner").hide();
+       var str = window.location.href;
+      var res = str.split("products/");
+                  var j=0;
+      if(design_version == 1){
+        $.each(currentProducts, function(i,e){
+          //alert(e);
+          if(pPointer >= pLimit || e == ''){
+            return false;
+          }else{
+            pPointer += 1;
+            Shopify.getProduct(e, function(product){  
+            if(j>=no_of_products)
+                    {return false;}
+              if('/products/'+res[1]!=product.url && j<(no_of_products-1))
+              {
+                  $("#recently-products").show();
+              j++;
+                if(enable_truncate_title=="true")
+                {
+                var truncated_title = product.title.substring(0,truncate_title);
+                truncated_title = truncated_title+"...";
+                }
+                else
+                {
+                  var truncated_title = product.title;
+                }
+               var productContainer = $("<li />",{class: "evm-product"});
+                var imageurl=product.featured_image;
+                if(imageurl){  
+                  var imgurl=imageurl.replace(".jpg?","_{{image_size}}.jpg?");
+                  var imgurl=imgurl.replace(".png?","_{{image_size}}.png?");
+                }else{
+                  var imgurl="http://cdn.shopify.com/s/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_400x400.gif";
+                }
+                var supportsjs=$("<div />",{class:"product-image", style:"background-image:url('"+imgurl+"')"});
+              var plink            = $("<a />",{class:"checkurl",id:"wiserclick",data_id:product.id,"wiser-widget":"recently_products","wiser-template":"old_template",  alt: product.title, title: product.title , href: "{{ shop.url }}"+product.url});
+              
+              var producttitle=$("<div />",{class:"product__title text-center"}) ;   
+              var plink2            = $("<p />",{html:truncated_title});
+              
+              var productprice =$("<div >",{class:"product__prices text-center"}); 
+              var compare_at_price = product.compare_at_price;
+              if(compare_at_price && product.price < compare_at_price){
+                var productpricecont=$("<p />",{class:"checkurl",html: "<span class='ws-compare-original-price'>" + Shopify.formatMoney(product.compare_at_price,"{{ shop.money_format }}") + "</span> " + Shopify.formatMoney(product.price,"{{ shop.money_format }}") });
+              }else{
+                var productpricecont=$("<p />",{class:"checkurl",html: Shopify.formatMoney(product.price,"{{ shop.money_format }}")});
+              }
+              {% if enable_add_to_cart != "false" %}                                                                      
+                var Pcart='<div class="add_to_cart text-center"><a href="{{ shop.url }}'+product.url+'" class="cartbutton btn checkurl" wiser-widget="recently_products" wiser-template="old_template" id="wiserclick" wiser-addcart=1 data_id="'+product.id+'">{{add_to_cart_text}}</a></div>';
+              {% else %}  
+                    var Pcart="";
+              {% endif%} 
+              plink.append(supportsjs)
+              
+              producttitle.append(plink2)  
+              productprice.append(productpricecont);                                    
+              plink.append(producttitle)
+              plink.append(productprice)
+              productContainer.append(plink);
+              productContainer.append(Pcart);                                                                                         
+              if($("#recently-products .wiser-carousel").hasClass("owl-loaded")){
+                $("#recently-products .wiser-carousel").trigger('add.owl.carousel', [productContainer]).trigger('refresh.owl.carousel');
+              }else{                            
+                $("#recently-products .{{product_view}}:last").append(productContainer);
+              }
+            
+              
+            }
+            });
+          } 
+        });
+      }  
+    }, 850);
+  //}  
+  {% endif %} 
+});
+  
+ 
+    
+    </script>{% else %}<div class="{{snippetsvalue}} snippetsHTML"></div>{% endif %}{% endfor %}<br /><br />{% assign current_product = product.handle %}{% endif %} 
+
+
+
+    
