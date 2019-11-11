@@ -20,7 +20,11 @@
               'new_widget': {{ ssw_new_widget }}
             };
             ssw.get(sswProxyUrl + '/lite2/review/index', data, function (response) {
-              ssw('#ssw-widget-recommends-html').html(response);
+              var tmpDiv = ssw('<div>').html(response);
+              var tmpScripts = ssw('<div>')
+              tmpDiv.find('script').appendTo(tmpScripts);
+              ssw('#ssw-widget-recommends-html').html(tmpDiv.html());
+              ssw('body').append(tmpScripts.html());
               if (ssw('#site-body').length) {
                 ssw('#recommend_modal').appendTo('#site-body');
               } else {

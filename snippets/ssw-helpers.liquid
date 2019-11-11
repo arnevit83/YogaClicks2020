@@ -2,10 +2,6 @@
 {% unless ssw_login_helper contains 'Liquid error' %}
 	{{ ssw_login_helper }}
 {% endunless %}
-{% capture ssw_fave_helper %}{% include 'ssw-fave-helper' %}{% endcapture %}
-{% unless ssw_fave_helper contains 'Liquid error' %}
-	{{ ssw_fave_helper }}
-{% endunless %}
 {% capture ssw_instagram_helper %}{% include 'ssw-instagram-helper' %}{% endcapture %}
 {% unless ssw_instagram_helper contains 'Liquid error' %}
 	{{ ssw_instagram_helper }}

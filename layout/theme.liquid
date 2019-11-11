@@ -49,6 +49,10 @@
 {% endif %}
 </head>
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
+{% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
+            {% unless the_snippet_content contains 'Liquid error' %}
+              {{ the_snippet_content }}
+            {% endunless %}
 
 
   <!-- <script type="text/javascript">window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script> -->
