@@ -47,6 +47,7 @@
   {% if template contains 'collection' %}
   {% section 'filter-menu-settings' %}
 {% endif %}
+{% include 'scapp-customerinfo' %} 
 </head>
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
 {% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
@@ -91,18 +92,9 @@
   <script src="{{ 'reviews.js' | asset_url | split: '?' | first }}" defer="defer"></script>
   <script type="text/javascript">
   window.onload=function(){ratingSnippet("ruk_rating_snippet",{store:"yogaclicks-store",color:"#d79f45",linebreak:true,text:"Reviews"})};
-_linkedin_partner_id = "1579705";
-window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-window._linkedin_data_partner_ids.push(_linkedin_partner_id);
-(function(){var s = document.getElementsByTagName("script")[0];
-var b = document.createElement("script");
-b.type = "text/javascript";b.async = true;
-b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-s.parentNode.insertBefore(b, s);})();
+
 </script>
-<noscript>
-<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=1579705&fmt=gif" />
-</noscript>
+
 
 {% include 'smile-initializer' %}
 </body>
