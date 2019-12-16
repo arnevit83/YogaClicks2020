@@ -339,7 +339,7 @@
           "subcollection_style": "none",
           "subcollections_per_row": 5,
           "per_row": 4,
-          "rows_per_page": 7
+          "rows_per_page": 8
         }
       },
       "product-template": {
@@ -665,14 +665,14 @@
             "settings": {
               "top_subheading": "",
               "title": "RELAX, RELEASE, RESTORE",
-              "title_size": 60,
+              "title_size": 80,
               "subheading": "Yoga equipment to stretch your body and still your mind (if only for a minute)",
               "link": "shopify:\/\/collections\/yoga-mats-and-equipment",
               "link_text": "SHOP ALL EQUIPMENT",
               "link_2": "shopify:\/\/collections\/yoga-mats",
               "link_text_2": "SHOP MATS",
               "color_accent": "#0f0f0f",
-              "text_align": "vertical-center horizontal-right",
+              "text_align": "vertical-center horizontal-center",
               "image": "shopify:\/\/shop_images\/MandukaFW18_LA981_1728x_dc27507d-f48c-4958-8a52-19250df5e4ea.jpg",
               "focal_point": "center center"
             }
@@ -682,15 +682,15 @@
             "settings": {
               "top_subheading": "",
               "title": "BAG A GIFT",
-              "title_size": 60,
+              "title_size": 80,
               "subheading": "Yoga gifts for yoga lovers - from eye pillows to essential oils",
               "link": "shopify:\/\/collections\/yoga-gifts",
               "link_text": "SHOP ALL GIFTS",
               "link_2": "shopify:\/\/collections\/eye-pillows",
               "link_text_2": "SHOP EYE PILLOWS",
               "color_accent": "#0f0f0f",
-              "text_align": "vertical-center horizontal-right",
-              "image": "shopify:\/\/shop_images\/Eyepillow_Natural_1512x_74b86b9c-7359-4032-87e1-81469830127e.png",
+              "text_align": "vertical-center horizontal-center",
+              "image": "shopify:\/\/shop_images\/Carousel_Eye_pillow_pink_love.png",
               "focal_point": "20% 0"
             }
           },
@@ -716,7 +716,7 @@
             "settings": {
               "top_subheading": "",
               "title": "GO WITH THE FLOW",
-              "title_size": 60,
+              "title_size": 80,
               "subheading": "Men’s yoga clothing - engineered for freedom warriors",
               "link": "https:\/\/yogaclicks.com\/collections\/mens-yoga-clothing\/men",
               "link_text": "SHOP ALL MEN'S CLOTHING",
@@ -1193,17 +1193,16 @@
       },
       "1570543521215": {
         "type": "text-and-image",
-        "disabled": true,
         "settings": {
           "image": "shopify:\/\/shop_images\/Deal_Of_The_Week1.png",
           "image_width": 500,
           "subtitle": "Deal of the week",
           "title": "30% OFF",
-          "text": "<p>Let your energy flow this winter!<\/p>",
+          "text": "<p>Happy Holidays and harmonious flow!<\/p>",
           "button_label": "Get on it",
-          "button_link": "https:\/\/yogaclicks.com\/products\/healing-intentions-7-gemstone-and-sandalwood-chakra-bracelet",
+          "button_link": "https:\/\/yogaclicks.com\/collections\/urban-goddess\/products\/shaktified-organic-yoga-leggings-city-glam",
           "layout": "left",
-          "divider": false
+          "divider": true
         }
       }
     },
