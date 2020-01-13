@@ -68,8 +68,8 @@ if( gplusClicked )
   gplusClicked = true;
 
 var path = HE_DOMAIN + '/lite2/auth/gconnect?_sid=' + ssw.cookie("hesid") + '&shop=' + encodeURIComponent(Shopify.shop);
-path += sswIsiOSWebView() && ('&oauth_redirect_uri=' + encodeURIComponent(location.href));
-if (sswIsiOSWebView()) {
+path += sswIsWebView() && ('&oauth_redirect_uri=' + encodeURIComponent(location.href));
+if (sswIsWebView()) {
   location.href = path;
 } else {
 ssw.oauthpopup({

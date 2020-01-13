@@ -814,14 +814,14 @@
           "1525886482727": {
             "type": "advanced",
             "settings": {
-              "subheading": "Limited time",
-              "heading": "Christmas Yoga Gifts",
+              "subheading": "",
+              "heading": "Yoga Gifts",
               "textarea": "Yoga gifts for yoga lovers including yoga gift sets and yoga gifts for her",
               "cta_text1": "Shop Yoga Gifts for her",
               "cta_link1": "https:\/\/yogaclicks.com\/collections\/yoga-gifts\/women",
               "cta_text2": "Shop Yoga Gifts for Him",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts-for-men",
-              "image": "shopify:\/\/shop_images\/cozy-eggnog-by-the-christmas-tree_2808x_82959a2f-87c4-4cad-8be4-8bbd2e52d068.jpg",
+              "image": "shopify:\/\/shop_images\/samuel-austin-S_TIOyYuiJI-unsplash_b59348b2-8703-4267-9b55-92a3b6419f2e.jpg",
               "video_url": "",
               "width": "100",
               "height": 720,
@@ -850,14 +850,14 @@
           "1525912530555-0": {
             "type": "advanced",
             "settings": {
-              "subheading": "Christmas is coming!",
+              "subheading": "",
               "heading": "Yoga Gifts for Her",
               "textarea": "Best gifts for yoga lovers including eye pillows and candles",
               "cta_text1": "Shop Eye Pillows",
               "cta_link1": "shopify:\/\/collections\/eye-pillows",
               "cta_text2": "Shop All Yoga Gifts",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts",
-              "image": "shopify:\/\/shop_images\/diy-organic-candle_1296x_4f05c96c-1808-4bd1-a4ea-35e3446e8611.jpg",
+              "image": "shopify:\/\/shop_images\/Silatha_Amethyst_Bracelet_White_Gold_03b83a96-ff44-4f75-bffd-34463716ab7a.jpg",
               "video_url": "",
               "width": "50",
               "height": 800,
@@ -872,14 +872,14 @@
           "1525912530555-1": {
             "type": "advanced",
             "settings": {
-              "subheading": "HAPPY HOLIDAYS!",
+              "subheading": "",
               "heading": "Yoga Gifts for Him",
               "textarea": "Yoga gift ideas including yoga gift sets and mala bracelets",
               "cta_text1": "Shop mala bracelets",
               "cta_link1": "shopify:\/\/collections\/mala-bracelets",
               "cta_text2": "Shop All Men's Yoga gifts",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts-for-men",
-              "image": "shopify:\/\/shop_images\/mens-hand-in-park_1512x_75ae9bab-7146-495c-959b-305a2457d856.jpeg",
+              "image": "shopify:\/\/shop_images\/UME_1_6adebdac-5883-487c-b5f9-b104fe60a98f.jpg",
               "video_url": "",
               "width": "50",
               "height": 500,
@@ -1193,21 +1193,52 @@
       },
       "1570543521215": {
         "type": "text-and-image",
+        "disabled": true,
         "settings": {
-          "image": "shopify:\/\/shop_images\/Deal_Of_The_Week1.png",
+          "image": "shopify:\/\/shop_images\/EXPRESS_DELIVERY_Deal_Of_The_Week.png",
           "image_width": 500,
-          "subtitle": "Deal of the week",
-          "title": "30% OFF",
-          "text": "<p>Happy Holidays and harmonious flow!<\/p>",
+          "subtitle": "Holiday Update!",
+          "title": "Express Delivery  Available!",
+          "text": "<p><strong>Shop this collection for items still available for Express Shipping. <\/strong><a href=\"https:\/\/bit.ly\/2EArA1y\"><\/a><\/p>",
           "button_label": "Get on it",
-          "button_link": "https:\/\/yogaclicks.com\/collections\/urban-goddess\/products\/shaktified-organic-yoga-leggings-city-glam",
+          "button_link": "shopify:\/\/collections\/last-minute-gifts-for-christmas",
           "layout": "left",
           "divider": true
+        }
+      },
+      "1576498977607": {
+        "type": "promo-grid",
+        "disabled": true,
+        "blocks": {
+          "1576499026034": {
+            "type": "sale_collection",
+            "settings": {
+              "sale_collection": "made-by-yogis",
+              "top_text": "Up to",
+              "middle_text": "40% off",
+              "bottom_text": "Made by Yogies",
+              "width": "100",
+              "color_tint": "#000",
+              "color_tint_opacity": 0,
+              "boxed": false,
+              "framed": false
+            }
+          }
+        },
+        "block_order": [
+          "1576499026034"
+        ],
+        "settings": {
+          "full_width": false,
+          "gutter_size": 20,
+          "space_above": false,
+          "space_below": false
         }
       }
     },
     "content_for_index": [
       "1524769873765",
+      "1576498977607",
       "1498163293234",
       "1525912530555",
       "1570543521215",
