@@ -3,7 +3,24 @@
 <html class="no-js" lang="{{ shop.locale }}">
 <head>{%- comment -%}smartseo_integration_begin{%- endcomment -%}{% include 'smartseo' %}{%- comment -%}smartseo_integration_end{%- endcomment -%}
 <meta charset="utf-8">
- 
+
+<meta name="apple-itunes-app" content="app-id=1490421947">
+<meta name="google-play-app" content="app-id=co.tapcart.app.id_O9T539MtxZ">
+
+<meta name="smartbanner:title" content="Ethical & Sustainable Yoga Shop">
+<meta name="smartbanner:author" content="YogaClicks">
+<meta name="smartbanner:price" content="FREE">
+<meta name="smartbanner:price-suffix-apple" content=" - On the App Store">
+<meta name="smartbanner:price-suffix-google" content=" - In Google Play">
+<meta name="smartbanner:icon-apple" content="https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/86/02/30/86023048-dd74-7fca-2563-708a9dcd769b/AppIcon-0-0-1x_U007emarketing-0-0-0-10-0-0-P3-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/246x0w.png">
+<meta name="smartbanner:icon-google" content="https://lh3.googleusercontent.com/NfErrtCDpvD-aKi1ltYwK1qXFkD5ASl1erT2zy6IXebndcV6Oy3vspVXQi9MOv3uWKkd=s180">
+<meta name="smartbanner:button" content="View">
+<meta name="smartbanner:button-url-apple" content="https://apps.apple.com/us/app/yoga-clicks/id1490421947?ls=1">
+<meta name="smartbanner:button-url-google" content="https://play.google.com/store/apps/details?id=co.tapcart.app.id_O9T539MtxZ">
+<meta name="smartbanner:enabled-platforms" content="android,ios">
+<meta name="smartbanner:close-label" content="Close this banner">
+
+
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="fb:app_id" content="812614575505636" /><meta name="p:domain_verify" content="2baeb13e22f348ff885e4b961d08ad77"/><meta name="msvalidate.01" content="BC5BE1BBD53CD965EE390CEC81E848A2" /><meta name="google-site-verification" content="B5LgZl7j5Ky3_cxMroQp7dQVoU-F3AvCCq3MjYGKgDc" /><meta name="theme-color" content="{{ settings.color_button }}"><link rel="canonical" href="{{ canonical_url }}"><meta name="format-detection" content="telephone=no">{%- if settings.favicon -%}<link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />{%- endif -%}{%- comment smartseo_integration_begin_meta_data -%}{% include 'seo-title' %}{%- endcomment smartseo_integration_end_meta_data -%}{%- comment smartseo_integration_begin_meta_data -%}<title>{{ seo_title }}</title>{%- endcomment smartseo_integration_end_meta_data -%}{%- if page_description -%}{%- comment smartseo_integration_begin_meta_data -%}<meta name="description" content="{{ page_description | escape }}">{%- endcomment smartseo_integration_end_meta_data -%}{%- endif -%}{% include 'social-meta-tags' %}{% include 'font-face' %}{{ 'theme.scss.css' | asset_url | stylesheet_tag }}{{ 'YC.scss.css' | asset_url | stylesheet_tag }}
   <script>
     document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
@@ -34,7 +51,7 @@
 | split: '?' | first 
 {% endcomment %}
   <script src="{{ 'vendor-scripts-v2.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-  <script src="{{ 'YC.min.js' | asset_url | split: '?' | first  }}" defer="defer"></script>
+  <script src="{{ 'YC.min.js' | asset_url | split: '?' | first }}" defer="defer"></script>
   {% if template contains 'product' %}
     {% include "Footer-added-code-product" %}
   {% endif %}
@@ -52,10 +69,7 @@
 
 </head>
 <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if settings.enable_currencies %} currencies-enabled{% endif %}" data-transitions="false">
-{% capture the_snippet_content %}{% include 'socialshopwave-helper' %}{% endcapture %}
-            {% unless the_snippet_content contains 'Liquid error' %}
-              {{ the_snippet_content }}
-            {% endunless %}
+
 
 
   <!-- <script type="text/javascript">window.setTimeout(function() { document.body.className += " loaded"; }, 25);</script> -->
@@ -71,7 +85,7 @@
       {% section 'footer-promotions' %}
       {% section 'footer' %}
 
-    <script src="//cdn.codeblackbelt.com/js/modules/cool-image-magnifier/main.min.js?shop=yogaclicks.myshopify.com"></script>
+
     </div>
   </div>
   {% section 'newsletter-popup' %}
@@ -81,24 +95,31 @@
   {% if settings.enable_currencies %}
     <span id="CurrencyData" class="hide" data-shop-currency="{{ shop.currency }}" data-default-currency="{{ settings.default_currency | default: shop.currency }}" data-format="{{ settings.currency_format | default: 'money_with_currency_format' }}" data-money-format="{{ shop.money_format | strip_html }}" data-money-currency-format="{{ shop.money_with_currency_format | strip_html }}"></span>
   {% endif %}
-
+<!-- 
   {% include 'video-modal' %}
-  {% include 'photoswipe-template' %}
+  {% include 'photoswipe-template' %} -->
+
+
   {% if template contains 'product' %}
     {% include 'recently-viewed-product-template' %}
-    <script src="{{ 'cool-image-magnifier.js' | asset_url | split: '?' | first }}" defer="defer"></script>
+    <script src="{{ 'reviews.js' | asset_url | split: '?' | first }}" defer="defer"></script>
   {% endif %}
+
+
+
+
+
   {% if template contains 'collection' %}
   {% include "Footer-added-code-collection" %}
   {% endif %}
-  <script src="{{ 'reviews.js' | asset_url | split: '?' | first }}" defer="defer"></script>
-  <script type="text/javascript">
-  window.onload=function(){ratingSnippet("ruk_rating_snippet",{store:"yogaclicks-store",color:"#d79f45",linebreak:true,text:"Reviews"})};
 
-</script>
-
-
-{% include 'smile-initializer' %}
+  <script>
+    let onLoadHandlerForConflictTesting = function() {};
+    window.onload = onLoadHandlerForConflictTesting;
+    document.addEventListener('smartbanner.view', function() { console.log('smartbanner.view'); });
+    document.addEventListener('smartbanner.exit', function() { console.log('smartbanner.exit'); });
+    document.addEventListener('smartbanner.clickout', function() { console.log('smartbanner.clickout'); });
+  </script>
 
 </body>
 </html>

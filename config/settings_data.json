@@ -212,7 +212,7 @@
     "pt_filter_padding": 6,
     "pt_temporary_disable": false,
     "checkout_header_image": "",
-    "checkout_logo_image": "shopify:\/\/shop_images\/MBY-logo-rectangle.png",
+    "checkout_logo_image": "shopify:\/\/shop_images\/yogaclicks-rectangle.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_image": "",
@@ -233,7 +233,7 @@
           "1524770014057": {
             "type": "logo",
             "settings": {
-              "logo": "shopify:\/\/shop_images\/MBY-logo-rectangle.png",
+              "logo": "shopify:\/\/shop_images\/yogaclicks-rectangle.png",
               "logo-inverted": "",
               "desktop_logo_width": 160,
               "mobile_logo_width": 120
@@ -278,8 +278,8 @@
           "sticky_collection": false,
           "header_search_enable": true,
           "toolbar_menu": "toolbar",
-          "toolbar_social": true,
-          "toolbar_currencies": true,
+          "toolbar_social": false,
+          "toolbar_currencies": false,
           "announcement_compact": true,
           "announcement_above_header": false
         }
@@ -339,7 +339,7 @@
           "subcollection_style": "none",
           "subcollections_per_row": 5,
           "per_row": 4,
-          "rows_per_page": 8
+          "rows_per_page": 6
         }
       },
       "product-template": {
@@ -779,35 +779,6 @@
           "enable_sort": true
         }
       },
-      "1525115199973": {
-        "type": "blog-posts",
-        "disabled": true,
-        "settings": {
-          "title": "YogaClicks Blog",
-          "blog": "product-guides",
-          "post_limit": 3,
-          "blog_show_tags": false,
-          "blog_show_date": false,
-          "blog_show_comments": false,
-          "blog_show_author": false,
-          "view_all": true,
-          "blog_image_size": "square",
-          "divider": true
-        }
-      },
-      "1525295772132": {
-        "type": "featured-collection",
-        "disabled": true,
-        "settings": {
-          "title": "New In",
-          "home_featured_products": "new-in-homepage",
-          "per_row": 4,
-          "rows": 1,
-          "mobile_scrollable": true,
-          "view_all": true,
-          "divider": false
-        }
-      },
       "1525886124958": {
         "type": "promo-grid",
         "blocks": {
@@ -857,7 +828,7 @@
               "cta_link1": "shopify:\/\/collections\/eye-pillows",
               "cta_text2": "Shop All Yoga Gifts",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts",
-              "image": "shopify:\/\/shop_images\/Silatha_Amethyst_Bracelet_White_Gold_03b83a96-ff44-4f75-bffd-34463716ab7a.jpg",
+              "image": "shopify:\/\/shop_images\/1.jpg",
               "video_url": "",
               "width": "50",
               "height": 800,
@@ -879,7 +850,7 @@
               "cta_link1": "shopify:\/\/collections\/mala-bracelets",
               "cta_text2": "Shop All Men's Yoga gifts",
               "cta_link2": "shopify:\/\/collections\/yoga-gifts-for-men",
-              "image": "shopify:\/\/shop_images\/UME_1_6adebdac-5883-487c-b5f9-b104fe60a98f.jpg",
+              "image": "shopify:\/\/shop_images\/2.jpg",
               "video_url": "",
               "width": "50",
               "height": 500,
@@ -980,27 +951,6 @@
         "settings": {
           "show_section": true,
           "recent_count": 5
-        }
-      },
-      "1563289618771": {
-        "type": "advanced-content",
-        "disabled": true,
-        "blocks": {
-          "1563289618771-1": {
-            "type": "html",
-            "settings": {
-              "code": "<h1 style=\"margin: 21px auto;\n    display: block;\n    width: 420px;\">Our Customer Reviews<\/h1>\n\n\n<script src=\"https:\/\/widget.reviews.co.uk\/rich-snippet-reviews-widgets\/dist.js\" type=\"text\/javascript\"><\/script>\n<div id=\"carousel-widget\"><\/div>\n\n<script>\n        richSnippetReviewsWidgets(\"carousel-widget\", {\n            store: \"yogaclicks-store\",\n            primaryClr: \"#f47e27\",\n            neutralClr: \"#cccccc\",\n            reviewTextClr: \"#333333\",\n            widgetName: \"carousel\",\n            layout: \"fullWidth\",\n            numReviews: 40,\n            contentMode: \"company\",\n            hideDates: false\n        });\n<\/script>",
-              "width": "100%",
-              "alignment": "center"
-            }
-          }
-        },
-        "block_order": [
-          "1563289618771-1"
-        ],
-        "settings": {
-          "full_width": false,
-          "space_around": true
         }
       },
       "filter-menu-settings": {
@@ -1175,79 +1125,22 @@
           "page_content_enable": true
         }
       },
-      "1570543275497": {
-        "type": "hero-video",
-        "disabled": true,
+      "list-collections-template": {
+        "type": "list-collections-template",
         "settings": {
-          "title": "",
-          "title_size": 80,
-          "subheading": "",
-          "link_text": "",
-          "link": "",
-          "color_accent": "rgba(0,0,0,0)",
-          "text_align": "vertical-center horizontal-center",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=wGod6QpDRdo",
-          "section_height": "650px",
-          "mobile_height": "auto"
-        }
-      },
-      "1570543521215": {
-        "type": "text-and-image",
-        "disabled": true,
-        "settings": {
-          "image": "shopify:\/\/shop_images\/EXPRESS_DELIVERY_Deal_Of_The_Week.png",
-          "image_width": 500,
-          "subtitle": "Holiday Update!",
-          "title": "Express Delivery  Available!",
-          "text": "<p><strong>Shop this collection for items still available for Express Shipping. <\/strong><a href=\"https:\/\/bit.ly\/2EArA1y\"><\/a><\/p>",
-          "button_label": "Get on it",
-          "button_link": "shopify:\/\/collections\/last-minute-gifts-for-christmas",
-          "layout": "left",
-          "divider": true
-        }
-      },
-      "1576498977607": {
-        "type": "promo-grid",
-        "disabled": true,
-        "blocks": {
-          "1576499026034": {
-            "type": "sale_collection",
-            "settings": {
-              "sale_collection": "made-by-yogis",
-              "top_text": "Up to",
-              "middle_text": "40% off",
-              "bottom_text": "Made by Yogies",
-              "width": "100",
-              "color_tint": "#000",
-              "color_tint_opacity": 0,
-              "boxed": false,
-              "framed": false
-            }
-          }
-        },
-        "block_order": [
-          "1576499026034"
-        ],
-        "settings": {
-          "full_width": false,
-          "gutter_size": 20,
-          "space_above": false,
-          "space_below": false
+          "title_enable": true,
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": "3"
         }
       }
     },
     "content_for_index": [
       "1524769873765",
-      "1576498977607",
       "1498163293234",
       "1525912530555",
-      "1570543521215",
       "1499789718857",
       "1525886124958",
-      "1525295772132",
-      "1563289618771",
-      "1570543275497",
-      "1525115199973",
       "1526068199595"
     ]
   },
